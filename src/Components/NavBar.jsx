@@ -1,21 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { IoSearchOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { FaMoon } from "react-icons/fa";
 import { GoSun } from "react-icons/go";
-export default function NavBar() {
-    let [isDarkMode, setIsDarkMode] = useState(true); // Track theme state
-    let switchThemeFunction = () => {
-        setIsDarkMode(!isDarkMode); // Toggle the theme state
+
+// Child component for the dark mode toggle
+function DarkModeToggle() {
+    const [isDarkMode, setIsDarkMode] = useState(true);
+
+    const toggleTheme = () => {
+        setIsDarkMode(!isDarkMode);
     };
 
+    return (
+        <button onClick={toggleTheme}>
+            {isDarkMode ? <FaMoon /> : <GoSun />}
+        </button>
+    );
+}
+
+export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
             <div>
-                <nav className='d-'>    
-                    <div>      
+                <nav className='d-'>
+                    <div>
                         {/* Logo */}
                         <img src="./images/logo.png.webp" alt="Time-Zone" />
                     </div>
@@ -27,23 +38,23 @@ export default function NavBar() {
                         <li>
                             <a href="">Latest</a>
                             {/* Sub Menu */}
-                            <ul>        
+                            <ul>
                                 <li>Product List</li>
                                 <li>Product Details</li>
                             </ul>
                         </li>
-                        <li>   
+                        <li>
                             <a href="">Blog</a>
                             {/* Sub Menu */}
-                            <ul>        
+                            <ul>
                                 <li>Blog</li>
                                 <li>Blog Details</li>
                             </ul>
                         </li>
                         <li>
-                            <a href="">Pages</a> 
+                            <a href="">Pages</a>
                             {/* Sub Menu */}
-                            <ul>    
+                            <ul>
                                 <li>Login</li>
                                 <li>Cart</li>
                                 <li>Element</li>
@@ -56,16 +67,14 @@ export default function NavBar() {
                 </nav>
                 <div>
                     {/* User Actions */}
-                    <ul>        
+                    <ul>
                         <li><IoSearchOutline /></li>
                         <li><CiUser /></li>
                         <li><PiShoppingCartThin /></li>
                         {/* Dark Mode */}
                         <li>
-                            <button onClick={switchThemeFunction}>
-                                {isDarkMode ? <FaMoon /> : <GoSun />}
-                            </button>
-                        </li>  
+                            <DarkModeToggle />
+                        </li>
                     </ul>
                 </div>
             </div>
