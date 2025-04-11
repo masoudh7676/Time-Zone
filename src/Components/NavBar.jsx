@@ -5,7 +5,7 @@ import { PiShoppingCartThin } from "react-icons/pi";
 export default function NavBar() {
   return (
     <>
-        <nav>
+        <nav className='d-'>
             <div>
                 <img src="./images/logo.png.webp" alt="Time-Zone" />
             </div>
@@ -21,12 +21,27 @@ export default function NavBar() {
                 </li>
                 <li>
                     <a href="">Latest</a>
+                    <ul>
+                        <li>Product List</li>
+                        <li>Product Details</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="">Blog</a>
+                    <ul>
+                        <li>Blog</li>
+                        <li>Blog Details</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="">Pages</a>
+                    <ul>
+                        <li>Login</li>
+                        <li>Cart</li>
+                        <li>Element</li>
+                        <li>Confirmation</li>
+                        <li>Product Checkout</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="">Contact</a>
