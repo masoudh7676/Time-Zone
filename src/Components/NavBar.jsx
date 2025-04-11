@@ -1,5 +1,7 @@
 import React from 'react'
 import { IoSearchOutline } from "react-icons/io5";
+import { CiUser } from "react-icons/ci";
+import { PiShoppingCartThin } from "react-icons/pi";
 export default function NavBar() {
   return (
     <>
@@ -32,9 +34,9 @@ export default function NavBar() {
             </ul>
             <div>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li><IoSearchOutline /></li>
+                    <li><CiUser /></li>
+                    <li><PiShoppingCartThin /></li>
                 </ul>
             </div>
         </nav>
