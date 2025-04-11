@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { IoSearchOutline } from "react-icons/io5";
 export default function NavBar() {
   return (
     <>
