@@ -2,6 +2,12 @@ import React from 'react'
 
 export default function NavBar() {
   return (
-    <div>NavBar</div>
+    <>
+        <nav>
+            <div>
+                <img src="./images/logo.png.webp" alt="" />
+            </div>
+        </nav>
+    </>
   )
 }
