@@ -24,21 +24,21 @@ export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='bg-black/50 w-[90%] nav '>
-                <nav className=''>
+            <div className='bg-black/50 w-[90%] nav d-flex p-[10%]'>
+                <nav className='d-flex'>
                     <div>
                         {/* Logo */}
                         <img src="./images/logo.png.webp" alt="Time-Zone" />
                     </div>
                     {/* Nav */}
-                    <ul>
+                    <ul className='flex'>
                         <li><a href="">Home</a></li>
                         <li><a href="">Shop</a></li>
                         <li><a href="">About</a></li>
                         <li>
                             <a href="">Latest</a>
                             {/* Sub Menu */}
-                            <ul>
+                            <ul className='hidden'>
                                 <li>Product List</li>
                                 <li>Product Details</li>
                             </ul>
@@ -46,7 +46,7 @@ export default function NavBar() {
                         <li>
                             <a href="">Blog</a>
                             {/* Sub Menu */}
-                            <ul className=''>
+                            <ul className='hidden'>
                                 <li>Blog</li>
                                 <li>Blog Details</li>
                             </ul>
@@ -54,7 +54,7 @@ export default function NavBar() {
                         <li>
                             <a href="">Pages</a>
                             {/* Sub Menu */}
-                            <ul>
+                            <ul className='hidden'>
                                 <li>Login</li>
                                 <li>Cart</li>
                                 <li>Element</li>
@@ -67,7 +67,7 @@ export default function NavBar() {
                 </nav>
                 <div>
                     {/* User Actions */}
-                    <ul>
+                    <ul className='flex'>
                         <li><IoSearchOutline /></li>
                         <li><CiUser /></li>
                         <li><PiShoppingCartThin /></li>
