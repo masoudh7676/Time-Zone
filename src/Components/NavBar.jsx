@@ -4,7 +4,7 @@ import { CiUser } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { FaMoon } from "react-icons/fa";
 import { GoSun } from "react-icons/go";
-
+import './Navbar.css'
 // Child component for the dark mode toggle
 function DarkModeToggle() {
     const [isDarkMode, setIsDarkMode] = useState(true);
@@ -24,8 +24,8 @@ export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
-            <div>
-                <nav className='d-'>
+            <div className='bg-black/50 w-[90%] nav '>
+                <nav className=''>
                     <div>
                         {/* Logo */}
                         <img src="./images/logo.png.webp" alt="Time-Zone" />
@@ -46,7 +46,7 @@ export default function NavBar() {
                         <li>
                             <a href="">Blog</a>
                             {/* Sub Menu */}
-                            <ul>
+                            <ul className=''>
                                 <li>Blog</li>
                                 <li>Blog Details</li>
                             </ul>
