@@ -24,14 +24,14 @@ export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='bg-black/50 w-[90%] nav d-flex p-[10%]'>
-                <nav className='d-flex'>
+            <div className='bg-black/50 h-24 d-flex justify-between items-center'>
+                <nav className='d-flex w-[90%] nav'>
                     <div>
                         {/* Logo */}
                         <img src="./images/logo.png.webp" alt="Time-Zone" />
                     </div>
                     {/* Nav */}
-                    <ul className='flex'>
+                    <ul className='flex w-[100%] justify-center gap-7'>
                         <li><a href="">Home</a></li>
                         <li><a href="">Shop</a></li>
                         <li><a href="">About</a></li>
@@ -64,10 +64,9 @@ export default function NavBar() {
                         </li>
                         <li><a href="">Contact</a></li>
                     </ul>
-                </nav>
-                <div>
+                    <div>
                     {/* User Actions */}
-                    <ul className='flex'>
+                    <ul className='flex gap-5'>
                         <li><IoSearchOutline /></li>
                         <li><CiUser /></li>
                         <li><PiShoppingCartThin /></li>
@@ -77,6 +76,8 @@ export default function NavBar() {
                         </li>
                     </ul>
                 </div>
+                </nav>
+
             </div>
         </>
     );
