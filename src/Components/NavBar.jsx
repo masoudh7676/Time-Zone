@@ -24,7 +24,7 @@ export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='bg-black/50 h-24 d-flex justify-between items-center'>
+            <div className='h-24 d-flex justify-between items-center'>
                 <nav className='d-flex w-[90%] nav'>
                     <div>
                         {/* Logo */}
@@ -36,7 +36,7 @@ export default function NavBar() {
                         <li><a href="">Shop</a></li>
                         <li><a href="">About</a></li>
                         <li>
-                            <a href="">Latest</a>
+                            <a href="" className='relative'>Latest <span className='absolute red-btn rounded-2xl text-white shadow'>Hot</span></a>
                             {/* Sub Menu */}
                             <ul className='hidden'>
                                 <li>Product List</li>

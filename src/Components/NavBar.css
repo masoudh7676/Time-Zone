@@ -4,3 +4,11 @@
 .nav {
     margin: 0 auto !important;
 }
+.red-btn{
+    background-color: #ff003c;
+    font-size: 12px;
+    bottom: 20px;
+    left: 1.8rem;
+    padding: 5px 12px;
+    box-shadow: 0 2px 12px #000;
+}
