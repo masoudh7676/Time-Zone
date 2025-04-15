@@ -12,3 +12,13 @@
     padding: 5px 12px;
     box-shadow: 0 2px 12px #000;
 }
+.hover-effect{
+    transition: ease 260ms;
+    -webkit-transition: ease 260ms;
+    -moz-transition: ease 260ms;
+    -ms-transition: ease 260ms;
+    -o-transition: ease 260ms;
+}
+.hover-effect:hover{
+    color: #ff003c;
+}
