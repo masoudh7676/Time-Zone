@@ -32,11 +32,11 @@ export default function NavBar() {
                     </div>
                     {/* Nav */}
                     <ul className='flex w-[100%] justify-center gap-7'>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Shop</a></li>
-                        <li><a href="">About</a></li>
+                        <li><a href="" className = 'hover-effect'>Home</a></li>
+                        <li><a href="" className = 'hover-effect'>Shop</a></li>
+                        <li><a href="" className = 'hover-effect'>About</a></li>
                         <li>
-                            <a href="" className='relative'>Latest <span className='absolute red-btn rounded-2xl text-white shadow'>Hot</span></a>
+                            <a href="" className='relative hover-effect' >Latest <span className='absolute red-btn rounded-2xl text-white shadow'>Hot</span></a>
                             {/* Sub Menu */}
                             <ul className='hidden'>
                                 <li>Product List</li>
@@ -44,7 +44,7 @@ export default function NavBar() {
                             </ul>
                         </li>
                         <li>
-                            <a href="">Blog</a>
+                            <a href="" className = 'hover-effect'>Blog</a>
                             {/* Sub Menu */}
                             <ul className='hidden'>
                                 <li>Blog</li>
@@ -52,7 +52,7 @@ export default function NavBar() {
                             </ul>
                         </li>
                         <li>
-                            <a href="">Pages</a>
+                            <a href="" className='hover-effect'>Pages</a>
                             {/* Sub Menu */}
                             <ul className='hidden'>
                                 <li>Login</li>
@@ -62,7 +62,7 @@ export default function NavBar() {
                                 <li>Product Checkout</li>
                             </ul>
                         </li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="" className = 'hover-effect'>Contact</a></li>
                     </ul>
                     <div>
                     {/* User Actions */}
