@@ -39,7 +39,7 @@ export default function NavBar() {
                         <li className='relative'>
                             <a href="#" className='relative hover-effect' >Latest <span className='absolute red-btn rounded-2xl text-white shadow'>Hot</span></a>
                             {/* Sub Menu */}
-                            <div className='absolute w-[290%] rounded-sm bg-white latest-sub latest__sub'>
+                            <div className='hidden absolute w-[290%] rounded-sm bg-white latest-sub latest__sub'>
                                 <li className='arrow'>Product List</li>
                                 <li>Product Details</li>
                             </div>
