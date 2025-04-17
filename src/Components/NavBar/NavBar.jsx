@@ -36,13 +36,13 @@ export default function NavBar() {
                         <li><Link to="/home" className = 'hover-effect'>Home</Link></li>
                         <li><Link to="shop" className = 'hover-effect'>Shop</Link></li>
                         <li><Link to="about" className = 'hover-effect'>About</Link></li>
-                        <li>
+                        <li className='relative'>
                             <a href="#" className='relative hover-effect' >Latest <span className='absolute red-btn rounded-2xl text-white shadow'>Hot</span></a>
                             {/* Sub Menu */}
-                            <ul className='hidden'>
-                                <li>Product List</li>
+                            <div className='absolute w-[290%] rounded-sm bg-white latest-sub latest__sub'>
+                                <li className='arrow'>Product List</li>
                                 <li>Product Details</li>
-                            </ul>
+                            </div>
                         </li>
                         <li>
                             <Link to="blog" className = 'hover-effect'>Blog</Link>

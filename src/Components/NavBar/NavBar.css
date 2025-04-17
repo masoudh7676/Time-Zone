@@ -22,3 +22,19 @@
 .hover-effect:hover{
     color: #ff003c;
 }
+.latest__sub{
+    padding: 10px;
+   margin-top: 4rem;
+   line-height: 25px;
+   border-top: 4px solid #ff003c;
+   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
+}
+.arrow::before{
+    position: absolute;
+    content: '';
+    border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+    border-bottom: 10px solid #ff003c;
+    top: -13px;
+    left: 7px;
+}
