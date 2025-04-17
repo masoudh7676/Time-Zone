@@ -5,6 +5,7 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import { FaMoon } from "react-icons/fa";
 import { GoSun } from "react-icons/go";
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 // Child component for the dark mode toggle
 function DarkModeToggle() {
     const [isDarkMode, setIsDarkMode] = useState(true);
@@ -32,11 +33,11 @@ export default function NavBar() {
                     </div>
                     {/* Nav */}
                     <ul className='flex w-[100%] justify-center gap-7'>
-                        <li><a href="" className = 'hover-effect'>Home</a></li>
-                        <li><a href="" className = 'hover-effect'>Shop</a></li>
-                        <li><a href="" className = 'hover-effect'>About</a></li>
+                        <li><Link to="/home" className = 'hover-effect'>Home</Link></li>
+                        <li><Link to="shop" className = 'hover-effect'>Shop</Link></li>
+                        <li><Link to="about" className = 'hover-effect'>About</Link></li>
                         <li>
-                            <a href="" className='relative hover-effect' >Latest <span className='absolute red-btn rounded-2xl text-white shadow'>Hot</span></a>
+                            <a href="#" className='relative hover-effect' >Latest <span className='absolute red-btn rounded-2xl text-white shadow'>Hot</span></a>
                             {/* Sub Menu */}
                             <ul className='hidden'>
                                 <li>Product List</li>
@@ -44,7 +45,7 @@ export default function NavBar() {
                             </ul>
                         </li>
                         <li>
-                            <a href="" className = 'hover-effect'>Blog</a>
+                            <Link to="blog" className = 'hover-effect'>Blog</Link>
                             {/* Sub Menu */}
                             <ul className='hidden'>
                                 <li>Blog</li>
@@ -52,7 +53,7 @@ export default function NavBar() {
                             </ul>
                         </li>
                         <li>
-                            <a href="" className='hover-effect'>Pages</a>
+                            <a href="#" className='hover-effect'>Pages</a>
                             {/* Sub Menu */}
                             <ul className='hidden'>
                                 <li>Login</li>
@@ -62,7 +63,7 @@ export default function NavBar() {
                                 <li>Product Checkout</li>
                             </ul>
                         </li>
-                        <li><a href="" className = 'hover-effect'>Contact</a></li>
+                        <li><Link to="contact" className = 'hover-effect'>Contact</Link></li>
                     </ul>
                     <div>
                     {/* User Actions */}
