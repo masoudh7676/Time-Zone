@@ -39,19 +39,19 @@ export default function NavBar() {
                         <li className='relative action red__btn'>
                             <a href="#" className='relative hover-effect with-sub'>Latest</a>
                             {/* Sub Menu */}
-                            <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest-sub latest__sub animate-[fadeIn]'>
+                            <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest__sub'>
                             <ul>
-                                <li className='arrow hover-effect'>Product List</li>
-                                <li className='hover-effect'>Product Details</li>
+                                <li className='arrow hover-effect'><a href="">Product List</a> </li>
+                                <li className='hover-effect'><a href="">Product Details</a> </li>
                                 </ul>
                             </div>
                         </li>
-                        <li>
-                            <Link to="blog" className='hover-effect'>Blog</Link>
+                        <li className='action'>
+                            <Link to="blog" className='hover-effect with-sub'>Blog</Link>
                             {/* Sub Menu */}
-                            <ul className='hidden'>
-                                <li>Blog</li>
-                                <li>Blog Details</li>
+                            <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub'>
+                                <li className='arrow hover-effect'><a href="">Blog</a></li>
+                                <li className='hover-effect'><a href="">Blog Details</a></li>
                             </ul>
                         </li>
                         <li>
