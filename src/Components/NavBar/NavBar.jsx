@@ -54,15 +54,15 @@ export default function NavBar() {
                                 <li className='hover-effect'><a href="">Blog Details</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#" className='hover-effect'>Pages</a>
+                        <li className='action'>
+                            <a href="#" className='hover-effect with-sub'>Pages</a>
                             {/* Sub Menu */}
-                            <ul className='hidden'>
-                                <li>Login</li>
-                                <li>Cart</li>
-                                <li>Element</li>
-                                <li>Confirmation</li>
-                                <li>Product Checkout</li>
+                            <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub'>
+                                <li className='hover-effect'>Login</li>
+                                <li className='hover-effect'>Cart</li>
+                                <li className='hover-effect'>Element</li>
+                                <li className='hover-effect'>Confirmation</li>
+                                <li className='hover-effect'>Product Checkout</li>
                             </ul>
                         </li>
                         <li><Link to="contact" className='hover-effect'>Contact</Link></li>
