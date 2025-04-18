@@ -33,19 +33,21 @@ export default function NavBar() {
                     </div>
                     {/* Nav */}
                     <ul className='flex w-[100%] justify-center gap-7'>
-                        <li><Link to="/home" className = 'hover-effect'>Home</Link></li>
-                        <li><Link to="shop" className = 'hover-effect'>Shop</Link></li>
-                        <li><Link to="about" className = 'hover-effect'>About</Link></li>
-                        <li className='relative'>
-                            <a href="#" className='relative hover-effect' >Latest <span className='absolute red-btn rounded-2xl text-white shadow'>Hot</span></a>
+                        <li><Link to="/home" className='hover-effect'>Home</Link></li>
+                        <li><Link to="shop" className='hover-effect'>Shop</Link></li>
+                        <li><Link to="about" className='hover-effect'>About</Link></li>
+                        <li className='relative action red__btn'>
+                            <a href="#" className='relative hover-effect with-sub'>Latest</a>
                             {/* Sub Menu */}
-                            <div className='hidden absolute w-[290%] rounded-sm bg-white latest-sub latest__sub'>
-                                <li className='arrow'>Product List</li>
-                                <li>Product Details</li>
+                            <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest-sub latest__sub animate-[fadeIn]'>
+                            <ul>
+                                <li className='arrow hover-effect'>Product List</li>
+                                <li className='hover-effect'>Product Details</li>
+                                </ul>
                             </div>
                         </li>
                         <li>
-                            <Link to="blog" className = 'hover-effect'>Blog</Link>
+                            <Link to="blog" className='hover-effect'>Blog</Link>
                             {/* Sub Menu */}
                             <ul className='hidden'>
                                 <li>Blog</li>
@@ -63,20 +65,20 @@ export default function NavBar() {
                                 <li>Product Checkout</li>
                             </ul>
                         </li>
-                        <li><Link to="contact" className = 'hover-effect'>Contact</Link></li>
+                        <li><Link to="contact" className='hover-effect'>Contact</Link></li>
                     </ul>
                     <div>
-                    {/* User Actions */}
-                    <ul className='flex gap-5'>
-                        <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline/></li>
-                        <li className='cursor-pointer hover:scale-[1.4]'><CiUser/></li>
-                        <li className='cursor-pointer hover:scale-[1.4]'><PiShoppingCartThin/></li>
-                        {/* Dark Mode */}
-                        <li className='cursor-pointer hover:scale-[1.4]'>
-                           <DarkModeToggle/> 
-                        </li>
-                    </ul>
-                </div>
+                        {/* User Actions */}
+                        <ul className='flex gap-5'>
+                            <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
+                            <li className='cursor-pointer hover:scale-[1.4]'><CiUser /></li>
+                            <li className='cursor-pointer hover:scale-[1.4]'><PiShoppingCartThin /></li>
+                            {/* Dark Mode */}
+                            <li className='cursor-pointer hover:scale-[1.4]'>
+                                <DarkModeToggle />
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
 
             </div>
