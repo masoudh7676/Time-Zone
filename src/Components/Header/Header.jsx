@@ -12,7 +12,7 @@ export default function Header() {
             <button className='bg-[#4a4a4b] p-[17px] px-[35px] rounded-2xl cursor-pointer hover:bg-[#ff203c] text-white mt-7'>Shop Now</button>
         </div>
         <div>
-                <img src="/images/watch.png.webp" alt="Time-Zone" />
+                <img src="/images/watch.png.webp" className='w-[40%] sm:w-full' alt="Time-Zone" />
             </div>
             </div>
     </div>
