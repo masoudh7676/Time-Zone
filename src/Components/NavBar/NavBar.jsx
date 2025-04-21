@@ -71,7 +71,7 @@ export default function NavBar() {
                         {/* User Actions */}
                         <ul className='flex gap-5'>
                             <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
-                            <li className='cursor-pointer hover:scale-[1.4]'><CiUser /></li>
+                            <li className='cursor-pointer hover:scale-[1.4]'><Link href="user"><CiUser /></Link></li>
                             <li className='cursor-pointer hover:scale-[1.4]'><PiShoppingCartThin /></li>
                             {/* Dark Mode */}
                             <li className='cursor-pointer hover:scale-[1.4]'>
