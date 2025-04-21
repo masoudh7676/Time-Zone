@@ -4,7 +4,7 @@ import Shop from './Components/Shop/Shop'
 import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
 import Blog from './Components/Blog/Blog'
-import User from './Components/User/User';
+import User from './Components/User/SignIn/User';
 const routes = [
     {path: '/', element: <Navigate to="/home" />}, // Redirect '/' to '/home'
     {path: '/home', element: <Home />},
