@@ -1,6 +1,10 @@
 .examples{
     margin-top: 8rem;
 }
+.padding{
+    padding: 26px 26px;
+}
 .margin__top{
-    margin-top: 20px;
+    margin-top: 1rem;
+    line-height: 20px;
 }

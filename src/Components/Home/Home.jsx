@@ -7,24 +7,47 @@ export default function Home() {
       <Header />
       <div className='examples flex justify-center align-middle'>
         <div className='grid grid-cols-2 gap-54'>
-          <div>
-            <img src="./images/rolex1.jpg" className='w-md mx-9 object-contain' alt="" />
-            <p className='text-center capitalize  margin__top'> <a href="">see other from rolex watch's</a></p>
-          </div>
-          <div>
-            <img src="./images/citizen.jpeg" className='w-md object-contain' alt="" />
-            <p className='text-center capitalize margin__top'> <a href="">see other from citizen watch's</a></p>
-          </div>
-          <div>
-            <img src="./images/casio.webp" className='w-md object-contain' alt="" />
-            <p className='text-center capitalize margin__top'> <a href="">see other from casio watch's</a></p>
-          </div>
-          <div>
-            <img src="./images/swatch.jpg" className='w-md object-contain' alt="" />
-            <p className='text-center capitalize margin__top'> <a href="">see other from swatch watch's</a></p>
+          <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <img className="w-full" src="./images/rolex1.jpg" alt="Time-Zone"/>
+              <div className="padding">
+                <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click see other watch's from this brand</a></div>
+                <p className="text-gray-700 text-base margin__top">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                </p>
+              </div>
+              </div>
+              <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <img className="w-full" src="./images/casio.webp" alt="Time-Zone"/>
+              <div className="padding">
+                <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click see other watch's from this brand</a></div>
+                <p className="text-gray-700 text-base margin__top">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                </p>
+              </div>
+              </div>
+              <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <img className="w-full" src="./images/swatch.jpg" alt="Time-Zone"/>
+              <div className="padding">
+                <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click see other watch's from this brand</a></div>
+                <p className="text-gray-700 text-base margin__top">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                </p>
+              </div>
+              </div>
+              <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <img className="w-full" src="./images/citizen.jpeg" alt="Time-Zone"/>
+              <div className="padding">
+                <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click see other watch's from this brand</a></div>
+                <p className="text-gray-700 text-base margin__top">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                </p>
+              </div>
+              </div>
           </div>
         </div>
-      </div>
-    </>
-  )
+        <div className='popular'>
+
+        </div>
+      </>
+      )
 }
