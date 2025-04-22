@@ -1,5 +1,6 @@
 import React from 'react'
 import './user.css'
+import { Link } from 'react-router'
 export default function User() {
   return (
     <>
@@ -42,7 +43,7 @@ export default function User() {
 
     <div className="mt__6 text-center text-sm text-gray-600">
       Don't have an account? 
-      <a href="#" class="text-indigo-600 hover:text-indigo-500 font-medium"> Sign up</a>
+      <Link to="/signup" class="text-indigo-600 hover:text-indigo-500 font-medium"> Sign up</Link>
     </div>
   </div>
 </div>

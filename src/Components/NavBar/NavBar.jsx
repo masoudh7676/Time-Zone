@@ -29,7 +29,8 @@ export default function NavBar() {
                 <nav className='d-flex w-[90%] nav'>
                     <div>
                         {/* Logo */}
-                        <img src="./images/logo.png.webp" alt="Time-Zone" />
+                        <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+                        
                     </div>
                     {/* Nav */}
                     <ul className='flex w-[100%] justify-center gap-7'>
