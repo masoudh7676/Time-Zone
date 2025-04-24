@@ -1,9 +1,11 @@
 import React from 'react'
 import Header from '../Header/Header'
 import './Home.css'
+import NavBar from '../NavBar/NavBar'
 export default function Home() {
   return (
     <>
+    <NavBar/>
       <Header />
       <h2 className='text-center text-3xl font-bold'>top sales!</h2>
       <div className='examples flex justify-center align-middle'>

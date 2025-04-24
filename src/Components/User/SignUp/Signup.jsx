@@ -1,11 +1,12 @@
 import React from 'react'
 import './Signup.css'
-import { Formik } from 'formik'
+import { useFormik } from 'formik'
 export default function Signup() {
   return (
     <>
       <div className="h-screen w-screen bg-gray-100 pt-10">
         <div className="max-w-xl mx-auto bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <h2 className='text-center text-2xl mb-12'>Sign Up</h2>
           <form className="flex-col space-y-4">
             <div className="flex flex-col space-y-2">
               <label className="block font-medium text-gray-700">E-Mail Adress</label><input type="email" className="shadow-sm block w-full py-2 sm:text-sm rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none  " name="email" required="" placeholder="E-Mail Adress" />

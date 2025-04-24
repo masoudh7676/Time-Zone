@@ -25,7 +25,7 @@ export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='h-28 d-flex w-full fixed top-0 bg-white justify-between items-center '>
+            <div className='h-28 d-flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center '>
                 <nav className='d-flex w-[90%] nav'>
                     <div>
                         {/* Logo */}
@@ -72,7 +72,7 @@ export default function NavBar() {
                         {/* User Actions */}
                         <ul className='flex gap-5'>
                             <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
-                            <li className='cursor-pointer hover:scale-[1.4]'><Link to="user"><CiUser /></Link></li>
+                            <li className='cursor-pointer hover:scale-[1.4]'><Link to="/user"><CiUser /></Link></li>
                             <li className='cursor-pointer hover:scale-[1.4]'><PiShoppingCartThin /></li>
                             {/* Dark Mode */}
                             <li className='cursor-pointer hover:scale-[1.4]'>
