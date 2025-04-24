@@ -9,7 +9,7 @@ export default function Home() {
       <div className='examples flex justify-center align-middle'>
         <div className='grid grid-cols-2 gap-54'>
           <div className="max-w-sm rounded overflow-hidden shadow-lg">
-            <img className="w-full hover:scale-110" src="./images/rolex1.jpg" alt="Time-Zone"/>
+            <img className="w-full transition-all hover:scale-110" src="./images/rolex1.jpg" alt="Time-Zone"/>
               <div className="padding">
                 <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click to see other watch's from this brand</a></div>
                 <p className="text-gray-700 text-base margin__top">
@@ -18,7 +18,7 @@ export default function Home() {
               </div>
               </div>
               <div className="max-w-sm rounded overflow-hidden shadow-lg">
-            <img className="w-full hover:scale-110" src="./images/casio.webp" alt="Time-Zone"/>
+            <img className="w-full transition-all hover:scale-110" src="./images/casio.webp" alt="Time-Zone"/>
               <div className="padding">
                 <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click to see other watch's from this brand</a></div>
                 <p className="text-gray-700 text-base margin__top">
@@ -27,7 +27,7 @@ export default function Home() {
               </div>
               </div>
               <div className="max-w-sm rounded overflow-hidden shadow-lg">
-            <img className="w-full hover:scale-110" src="./images/swatch.jpg" alt="Time-Zone"/>
+            <img className="w-full transition-all hover:scale-110" src="./images/swatch.jpg" alt="Time-Zone"/>
               <div className="padding">
                 <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click to see other watch's from this brand</a></div>
                 <p className="text-gray-700 text-base margin__top">
@@ -36,7 +36,7 @@ export default function Home() {
               </div>
               </div>
               <div className="max-w-sm rounded overflow-hidden shadow-lg">
-            <img className="w-full hover:scale-110" src="./images/citizen.jpeg" alt="Time-Zone"/>
+            <img className="w-full transition-all hover:scale-110" src="./images/citizen.jpeg" alt="Time-Zone"/>
               <div className="padding">
                 <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click to see other watch's from this brand</a></div>
                 <p className="text-gray-700 text-base margin__top">
