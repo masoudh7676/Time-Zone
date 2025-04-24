@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Header/Header'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
+import Footer from '../Footer/Footer'
 export default function Home() {
   return (
     <>
@@ -9,7 +10,7 @@ export default function Home() {
       <Header />
       <h2 className='text-center text-3xl font-bold'>top sales!</h2>
       <div className='examples flex justify-center align-middle'>
-        <div className='grid grid-cols-2 gap-54'>
+        <div className='grid  grid-cols-1 gap-54 sm:grid-cols-2 sm:gap-12 md:gap-52'>
           <div className="max-w-sm rounded overflow-hidden shadow-lg">
             <img className="w-full transition-all hover:scale-110" src="./images/rolex1.jpg" alt="Time-Zone"/>
               <div className="padding">
@@ -48,9 +49,7 @@ export default function Home() {
               </div>
           </div>
         </div>
-        <div className='popular'>
-
-        </div>
+        <Footer/>
       </>
       )
 }
