@@ -2,4 +2,14 @@
 @import "./fonts/fonts.css";
 *, body, html{
     font-family: 'josefin-sans' !important;
+    @layer base {
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+    
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    }    
 }
