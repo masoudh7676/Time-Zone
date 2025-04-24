@@ -14,7 +14,7 @@ const routes = [
     {path:'/contact', element: <Contact />},
     {path:'/blog', element: <Blog />},
     {path: '/user', element: <User/>},
-    {path: 'signup', element: <Signup/>}
+    {path: '/signup', element: <Signup/>}
 ]
 
 export default routes
