@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 export default function Footer() {
     return (
         <>
-            <div className='footer w-9/12 mx-auto grid grid-cols-3 gap-40 px-8 py-4 mt-40'>
+            <div className='footer w-[70%] mx-auto grid grid-cols-3 gap-40 px-8 py-4 mt-40'>
                 <div>
                     <div className='text-white text-5xl'><BsBoxSeam /></div>
                     <div className='mt-8'>
@@ -30,63 +30,65 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div>
+            
+            <div className='flex justify-center gap-50  align-middle w-full mt-26'>
                 <div>
-                    <Link to="/home"><img src="./images/logo.png.webp" alt="" /></Link>
-                    <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
+                    <Link to="/home" ><img src="./images/logo.png.webp" className='mb-4' alt="time-zone" /></Link>
+                    <p>Asorem ipsum adipolor sdit amet, <br /> consectetur adipisicing elitcf sed do <br /> eiusmod tem.</p>
                 </div>
                 <div>
-                <p>Quick Links</p>
+                <h5 className='text-xl font-bold mb-3'>Quick Links</h5>
                 <ul>
-                    <li>
+                    <li className='transition delay-100 hover:text-[#ff003c]'>
                         <Link to="/about" className='capitalize'>about</Link>
                     </li>
-                    <li>
+                    <li className='transition delay-100 hover:text-[#ff003c]'>
                         <a href="#" className='capitalize'>offers & discount's</a>
                     </li>
-                    <li>
+                    <li className='transition delay-100 hover:text-[#ff003c]'>
                         <a href="#" className='capitalize'>get coupon</a>
                     </li>
-                    <li>
+                    <li className='transition delay-100 hover:text-[#ff003c]'>
                         <a href="#" className='capitalize'>contact us</a>
                     </li>
                 </ul>
                 </div>
                 <div>
-                    <h3>New Products</h3>
+                    <h5 className='text-xl font-bold mb-3'>New Products</h5>
                     <ul>
-                        <li>
+                        <li className='transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Woman Cloth</a>
                         </li>
-                        <li>
+                        <li className='transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Fashion Accessories</a>
                         </li>
-                        <li>
+                        <li className='transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Man Accessories</a>
                         </li>
-                        <li>
+                        <li className='transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Man Accessories</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h5>Support</h5>
-                    <ul>
-                        <li>
+                    <h5 className='text-xl font-bold mb-3'>Support</h5>
+                    <ul className='gap-4'>
+                        <li className='transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Frequently Asked Questions</a>
                         </li>
-                        <li>
+                        <li className='transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Terms & Conditions</a>
                         </li>
-                        <li>
+                        <li className='transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Privacy Policy</a>
                         </li>
-                        <li>
+                        <li className=' transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Report a Payment Issue</a>
                         </li>
                     </ul>
                 </div>
             </div>
+            
         </>
     )
 }
