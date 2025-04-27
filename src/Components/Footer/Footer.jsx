@@ -38,14 +38,54 @@ export default function Footer() {
                 <div>
                 <p>Quick Links</p>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <Link to="/about" className='capitalize'>about</Link>
+                    </li>
+                    <li>
+                        <a href="#" className='capitalize'>offers & discount's</a>
+                    </li>
+                    <li>
+                        <a href="#" className='capitalize'>get coupon</a>
+                    </li>
+                    <li>
+                        <a href="#" className='capitalize'>contact us</a>
+                    </li>
                 </ul>
                 </div>
-                <div></div>
-                <div></div>
+                <div>
+                    <h3>New Products</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Woman Cloth</a>
+                        </li>
+                        <li>
+                            <a href="#">Fashion Accessories</a>
+                        </li>
+                        <li>
+                            <a href="#">Man Accessories</a>
+                        </li>
+                        <li>
+                            <a href="#">Man Accessories</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Support</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Frequently Asked Questions</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Report a Payment Issue</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </>
     )
