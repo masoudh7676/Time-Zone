@@ -66,7 +66,7 @@ export default function NavBar() {
                                 <li className='hover-effect'>Product Checkout</li>
                             </ul>
                         </li>
-                        <li><Link to="contact" className='hover-effect'>Contact</Link></li>
+                        <li><Link to="/contact" className='hover-effect'>Contact</Link></li>
                     </ul>
                     <div>
                         {/* User Actions */}
