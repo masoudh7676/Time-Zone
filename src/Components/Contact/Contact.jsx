@@ -4,11 +4,21 @@ export default function Contact() {
   return (
     <>
     <NavBar/>
-    <div className='relative top-24'>
+    <div className='relative top-24 -z-50'>
       <img src="/images/about_hero.png.webp" alt="" className=' w-full h-full'/>
       <div className='absolute top-2/5 text-center text-7xl font-black w-full'>
         <h4>contact</h4>
       </div>
+    </div>
+    <div className='mt-50'>
+      <h5>get in touch</h5>
+      <form className='flex flex-col'>
+        <textarea name="" id="" rows={15} cols={20} className='w-72 border border-gray-300' placeholder='Enter message'></textarea>
+        <input type="text" className='w-50 border border-gray-300' placeholder='Enter your name'/>
+        <input type="email" className='w-50 border border-gray-300' placeholder='Email'/>
+        <input type="text" className='w-100 border border-gray-300' placeholder='Subject'/>
+        <button type='submit'>SEND</button>
+      </form>
     </div>
     </>
   )
