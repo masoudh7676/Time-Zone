@@ -31,24 +31,24 @@ export default function Footer() {
                 </div>
             </div>
             
-            <div className='flex justify-center gap-50  align-middle w-full mt-26'>
+            <div className='flex justify-center gap-50  align-middle w-full mt-26 mb-20'>
                 <div>
                     <Link to="/home" ><img src="./images/logo.png.webp" className='mb-4' alt="time-zone" /></Link>
-                    <p>Asorem ipsum adipolor sdit amet, <br /> consectetur adipisicing elitcf sed do <br /> eiusmod tem.</p>
+                    <p className='text-[#868c98]'>Asorem ipsum adipolor sdit amet, <br /> consectetur adipisicing elitcf sed do <br /> eiusmod tem.</p>
                 </div>
                 <div>
                 <h5 className='text-xl font-bold mb-3'>Quick Links</h5>
                 <ul>
-                    <li className='transition delay-100 hover:text-[#ff003c]'>
+                    <li className='text-[#868c98]  transition delay-100 hover:text-[#ff003c] mb-3'>
                         <Link to="/about" className='capitalize'>about</Link>
                     </li>
-                    <li className='transition delay-100 hover:text-[#ff003c]'>
+                    <li className='text-[#868c98] transition delay-100 hover:text-[#ff003c] mb-3'>
                         <a href="#" className='capitalize'>offers & discount's</a>
                     </li>
-                    <li className='transition delay-100 hover:text-[#ff003c]'>
+                    <li className='text-[#868c98] transition delay-100 hover:text-[#ff003c] mb-3'>
                         <a href="#" className='capitalize'>get coupon</a>
                     </li>
-                    <li className='transition delay-100 hover:text-[#ff003c]'>
+                    <li className='text-[#868c98] transition delay-100 hover:text-[#ff003c]'>
                         <a href="#" className='capitalize'>contact us</a>
                     </li>
                 </ul>
@@ -56,33 +56,33 @@ export default function Footer() {
                 <div>
                     <h5 className='text-xl font-bold mb-3'>New Products</h5>
                     <ul>
-                        <li className='transition delay-100 hover:text-[#ff003c]'>
+                        <li className='text-[#868c98] transition delay-100 hover:text-[#ff003c] mb-3'>
                             <a href="#">Woman Cloth</a>
                         </li>
-                        <li className='transition delay-100 hover:text-[#ff003c]'>
+                        <li className='text-[#868c98] transition delay-100 hover:text-[#ff003c] mb-3'>
                             <a href="#">Fashion Accessories</a>
                         </li>
-                        <li className='transition delay-100 hover:text-[#ff003c]'>
+                        <li className='text-[#868c98] transition delay-100 hover:text-[#ff003c] mb-3'>
                             <a href="#">Man Accessories</a>
                         </li>
-                        <li className='transition delay-100 hover:text-[#ff003c]'>
-                            <a href="#">Man Accessories</a>
+                        <li className='text-[#868c98] transition delay-100 hover:text-[#ff003c]'>
+                            <a href="#">Rubber made Toys</a>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <h5 className='text-xl font-bold mb-3'>Support</h5>
                     <ul className='gap-4'>
-                        <li className='transition delay-100 hover:text-[#ff003c]'>
+                        <li className='text-[#868c98] transition delay-100 hover:text-[#ff003c] mb-3'>
                             <a href="#">Frequently Asked Questions</a>
                         </li>
-                        <li className='transition delay-100 hover:text-[#ff003c]'>
+                        <li className='text-[#868c98]  transition delay-100 hover:text-[#ff003c] mb-3'>
                             <a href="#">Terms & Conditions</a>
                         </li>
-                        <li className='transition delay-100 hover:text-[#ff003c]'>
+                        <li className='text-[#868c98]  transition delay-100 hover:text-[#ff003c] mb-3'>
                             <a href="#">Privacy Policy</a>
                         </li>
-                        <li className=' transition delay-100 hover:text-[#ff003c]'>
+                        <li className='text-[#868c98]  transition delay-100 hover:text-[#ff003c]'>
                             <a href="#">Report a Payment Issue</a>
                         </li>
                     </ul>
