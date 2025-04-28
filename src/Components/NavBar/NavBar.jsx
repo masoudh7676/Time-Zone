@@ -35,8 +35,8 @@ export default function NavBar() {
                     {/* Nav */}
                     <ul className='flex w-[100%] justify-center gap-7'>
                         <li><Link to="/home" className='hover-effect'>Home</Link></li>
-                        <li><Link to="shop" className='hover-effect'>Shop</Link></li>
-                        <li><Link to="about" className='hover-effect'>About</Link></li>
+                        <li><Link to="/shop" className='hover-effect'>Shop</Link></li>
+                        <li><Link to="/about" className='hover-effect'>About</Link></li>
                         <li className='relative action red__btn'>
                             <a href="#" className='relative hover-effect with-sub'>Latest</a>
                             {/* Sub Menu */}
