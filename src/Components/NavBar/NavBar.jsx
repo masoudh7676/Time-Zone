@@ -25,7 +25,7 @@ export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='h-28 d-flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center '>
+            <div className='h-28 d-flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50'>
                 <nav className='d-flex w-[90%] nav'>
                     <div>
                         {/* Logo */}

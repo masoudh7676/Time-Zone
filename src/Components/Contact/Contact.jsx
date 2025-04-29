@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <>
     <NavBar/>
-    <div className='relative top-24 -z-50'>
+    <div className='relative top-24'>
       <img src="/images/about_hero.png.webp" alt="" className=' w-full h-full'/>
       <div className='absolute top-2/5 text-center text-7xl font-black w-full'>
         <h4>contact</h4>
@@ -19,7 +19,7 @@ export default function Contact() {
         <input type="email" className='w-73 border border-gray-300 p-2 rounded-md outline-0' placeholder='Email'/>
         </div>
         <input type="text" className='w-152 border border-gray-300 rounded-md p-2 outline-0' placeholder='Subject'/>
-        <button type='submit' className='bg-red-500 cursor-pointer text-white mx-auto hover:text-black w-45 rounded-md p-2 mt-6 mb-14'>SEND</button>
+        <button type='submit' className='bg-red-500 cursor-pointer text-white mx-auto hover:text-black w-45 rounded-md p-2 mt-10 mb-15'>SEND</button>
       </form>
     </div>
     </>

@@ -53,6 +53,9 @@ export default function Home() {
           </div>
           </div>
         </div>
+        <div>
+          <img src="/images/sectin_bg1.png.webp" alt="" className='relative'/>
+        </div>
         <Footer/>
       </>
       )
