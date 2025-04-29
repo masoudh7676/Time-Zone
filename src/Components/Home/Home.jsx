@@ -3,6 +3,8 @@ import Header from '../Header/Header'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
+import { FaArrowRightLong } from "react-icons/fa6";
+import { FaPlay } from "react-icons/fa6";
 export default function Home() {
   return (
     <>
@@ -53,8 +55,15 @@ export default function Home() {
           </div>
           </div>
         </div>
-        <div>
-          <img src="/images/sectin_bg1.png.webp" alt="" className='relative'/>
+        <div className='relative mt-25'>
+        <div className='absolute w-[85px] h-[85px] top-[40%] left-[45%] border border-amber-50 rounded-full cursor-pointer'><FaPlay className='text-4xl ml-6 mt-5.5 text-white'/></div>
+          <img src="/images/sectin_bg1.png.webp" alt="" />
+          <div className='bg-[#ff2020] absolute w-[30%] bottom-0 '>
+          <a href="" className='flex justify-around items-center cursor-pointer p-15'>
+            <span className='capitalize text-2xl text-white font-bold'>next video</span>
+            <FaArrowRightLong className='text-white text-2xl'/>
+            </a>
+          </div>
         </div>
         <Footer/>
       </>
