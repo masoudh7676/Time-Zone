@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
+import ScrollUp from '../ScrollUp/ScrollUp'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa6";
 export default function Home() {
@@ -66,6 +67,7 @@ export default function Home() {
           </div>
         </div>
         <Footer/>
+        <ScrollUp />
       </>
       )
 }
