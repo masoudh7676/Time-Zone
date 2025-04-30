@@ -34,11 +34,11 @@ export default function NavBar() {
                     </div>
                     {/* Nav */}
                     <ul className='flex w-[100%] justify-center gap-7'>
-                        <li><Link to="/home" className='hover-effect'>Home</Link></li>
-                        <li><Link to="/shop" className='hover-effect'>Shop</Link></li>
-                        <li><Link to="/about" className='hover-effect'>About</Link></li>
+                        <li><Link to="/home" className='hover-effect font-bold'>Home</Link></li>
+                        <li><Link to="/shop" className='hover-effect font-bold'>Shop</Link></li>
+                        <li><Link to="/about" className='hover-effect font-bold'>About</Link></li>
                         <li className='relative action red__btn'>
-                            <a href="#" className='relative hover-effect with-sub'>Latest</a>
+                            <a href="#" className='relative hover-effect with-sub font-bold'>Latest</a>
                             {/* Sub Menu */}
                             <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest__sub'>
                             <ul>
@@ -48,7 +48,7 @@ export default function NavBar() {
                             </div>
                         </li>
                         <li className='action'>
-                            <Link to="blog" className='hover-effect with-sub'>Blog</Link>
+                            <Link to="blog" className='hover-effect with-sub font-bold'>Blog</Link>
                             {/* Sub Menu */}
                             <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub'>
                                 <li className='arrow hover-effect'><a href="">Blog</a></li>
@@ -56,7 +56,7 @@ export default function NavBar() {
                             </ul>
                         </li>
                         <li className='action'>
-                            <a href="#" className='hover-effect with-sub'>Pages</a>
+                            <a href="#" className='hover-effect with-sub font-bold'>Pages</a>
                             {/* Sub Menu */}
                             <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub'>
                                 <li className='hover-effect'><Link to="/user">Login</Link></li>
@@ -66,7 +66,7 @@ export default function NavBar() {
                                 <li className='hover-effect'>Product Checkout</li>
                             </ul>
                         </li>
-                        <li><Link to="/contact" className='hover-effect'>Contact</Link></li>
+                        <li><Link to="/contact" className='hover-effect font-bold'>Contact</Link></li>
                     </ul>
                     <div>
                         {/* User Actions */}
