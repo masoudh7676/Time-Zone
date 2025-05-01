@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NavBar from '../NavBar/NavBar'
+import watchData from '../../watchsData'
 export default function Shop() {
+  const data = useContext(watchData)
   return (
     <>
       <NavBar/>
+      
       <div className='relative top-24'>
       <img src="/images/about_hero.png.webp" alt="" className=' w-full h-full'/>
       <div className='absolute top-2/5 text-center text-7xl font-black w-full'>
