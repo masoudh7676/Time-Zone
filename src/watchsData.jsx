@@ -8,7 +8,16 @@ let watchData = [
     {id:6, title: "Casio", price: 223, description: "Casio Analog Watch" , src: "/images/casio.webp"},
     {id:7, title: "Casio", price: 223, description: "Casio Analog Watch" , src: "/images/casio2.webp"},
     {id:8, title: "Casio", price: 285, description: "Casio Analog Watch" , src: "/images/casio3.webp"},
-    {id:9, title: "Casio", price: 300, description: "Casio Analog Watch" , src: "/images/casio4.webp"},
+    {id:9, title: "Casio", price: 323, description: "Casio Analog Watch" , src: "/images/casio4.webp"},
+    {id:10, title: "Swatch", price: 720, description: "Swatch Analog Watch" , src: "/images/swatch.jpg"},
+    {id:11, title: "Swatch", price: 654, description: "Swatch Analog Watch" , src: "/images/swatch2.jpg"},
+    {id:12, title: "Swatch", price: 654, description: "Swatch Analog Watch" , src: "/images/swatch3.jpg"},
+    {id:13, title: "Swatch", price: 654, description: "Swatch Analog Watch" , src: "/images/swatch4.jpg"},
+    {id:14, title: "Citizen", price: 256, description: "Citizen Analog Watch" , src: "/images/citizen.jpeg"},
+    {id:15, title: "Citizen", price: 172, description: "Citizen Analog Watch" , src: "/images/citizen2jpg.jpg"},
+    {id:16, title: "Citizen", price: 165, description: "Citizen Analog Watch" , src: "/images/citizen3.jpg"},
+    {id:17, title: "Citizen", price: 204, description: "Citizen Analog Watch" , src: "/images/citizen4.jpeg"},
+    {id:17, title: "Citizen", price: 337, description: "Citizen Analog Watch" , src: "/images/12320008.jpeg"},
 ]
 
 export default watchData

@@ -12,6 +12,7 @@ export default function Shop() {
           <h4 className='capitalize'>watch shop</h4>
         </div>
       </div>
+      
       <div className='parent w-[52%]  mt-50 mx-auto grid grid-cols-3 bg-gray-100 border border-gray-200'>
       {
         contextData.items.map(data => (
@@ -21,7 +22,7 @@ export default function Shop() {
             <button className='text-center hidden  group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 bg-[#ff203c]'>add to cart</button>
           </div>
           <div className='text-center'>
-            <h4>{data.title}</h4>
+            <h4>Brand: {data.title}</h4>
             <p>{data.description}</p>
             <span>Price: {data.price}$</span>
           </div>
