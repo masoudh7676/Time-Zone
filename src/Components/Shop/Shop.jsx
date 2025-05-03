@@ -12,14 +12,16 @@ export default function Shop() {
           <h4 className='capitalize'>watch shop</h4>
         </div>
       </div>
-      
+      <aside className='mt-30'>
+        <input type="range" min="0" max="4" aria-label='Price Filter'/>
+      </aside>
       <div className='parent w-[52%]  mt-50 mx-auto grid grid-cols-3 bg-gray-100 border border-gray-200'>
       {
         contextData.items.map(data => (
-          <div className=' group border p-2 border-gray-200'>
+          <div className=' group border p-2 border-gray-200 cursor-pointer'>
           <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
             <img src= {data.src} className='object-cover' alt="" />
-            <button className='text-center hidden  group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 bg-[#ff203c]'>add to cart</button>
+            <button className='text-center hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]'>add to cart</button>
           </div>
           <div className='text-center'>
             <h4>Brand: {data.title}</h4>
