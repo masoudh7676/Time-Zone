@@ -12,18 +12,18 @@ export default function Shop() {
           <h4 className='capitalize'>watch shop</h4>
         </div>
       </div>
-      <div className='parent mt-50 grid grid-cols-3'>
+      <div className='parent w-[52%]  mt-50 mx-auto grid grid-cols-3 bg-gray-100 border border-gray-200'>
       {
         contextData.items.map(data => (
-          <div className=' group mx-15'>
-          <div className='w-80 shadow-2xl rounded-4xl p-2 mb-8'>
+          <div className=' group border p-2 border-gray-200'>
+          <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
             <img src= {data.src} className='object-cover' alt="" />
             <button className='text-center hidden  group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 bg-[#ff203c]'>add to cart</button>
           </div>
           <div className='text-center'>
             <h4>{data.title}</h4>
             <p>{data.description}</p>
-            <span>{data.price}</span>
+            <span>Price: {data.price}$</span>
           </div>
         </div>
         ))
