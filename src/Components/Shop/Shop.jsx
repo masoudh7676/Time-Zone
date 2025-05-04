@@ -1,8 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import { Slider } from "@/components/ui/slider"
 import NavBar from '../NavBar/NavBar'
 import AllProductsContext from '../../Context/Products'
+
+const min = 0;
+const max = 1500;
 export default function Shop() {
   const contextData = useContext(AllProductsContext)
+  const [values, setValues] = useState([min, max])
+  console.log("values :", values)
   return (
     <>
       <NavBar />
@@ -13,7 +19,18 @@ export default function Shop() {
         </div>
       </div>
       <aside className='mt-30'>
-        <input type="range" min="0" max="4" aria-label='Price Filter'/>
+      <div>
+      <h5>Price:</h5>
+      <span>${values[0]} - ${values[1]}</span>
+      <small>Current Value: ${values[1] - values[0]}</small>
+      <Slider
+      onValueChange = {setValues}
+      value={values}
+      min={min}
+      max={max}
+       step={1}
+       className={'w-[32%] bg-blue-500 mx-auto'}/>
+       </div>
       </aside>
       <div className='parent w-[52%]  mt-50 mx-auto grid grid-cols-3 bg-gray-100 border border-gray-200'>
       {
@@ -31,10 +48,6 @@ export default function Shop() {
         </div>
         ))
       }
-
-
-
-
       </div>
     </>
   )
