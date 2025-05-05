@@ -49,6 +49,9 @@ export default function Shop() {
       </div>
       </div>
       </div> 
+      <div className=''>
+          
+      </div>
       </aside>
       <div className='parent w-[52%]  mt-50 grid grid-cols-3 bg-gray-100 border border-gray-200'>
       {
