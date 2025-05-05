@@ -1,4 +1,13 @@
-import React from 'react'
+import { useContext, useState } from "react"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Card, CardContent } from "@/components/ui/card"
+import AllProductsContext from '@/Context/Products'
 import Header from '../Header/Header'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
@@ -6,56 +15,30 @@ import Footer from '../Footer/Footer'
 import ScrollUp from '../ScrollUp/ScrollUp'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa6";
+
 export default function Home() {
+  const contextData = useContext(AllProductsContext)  
   return (
     <>
     <NavBar/>
       <Header />
-      <h2 className='text-center text-3xl font-bold'>top sales!</h2>
-      <div className='examples mt-20'>
-        <div className='flex justify-around'>
-        <div>
-          <div className="max-w-sm rounded overflow-hidden shadow-lg p-6 mb-14">
-            <img className="w-full transition-all hover:scale-110" src="./images/rolex1.jpg" alt="Time-Zone"/>
-              <div>
-                <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click to see other watch's from this brand</a></div>
-                <p className="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                </p>
-              </div>
-              </div>
-              <div className="max-w-sm rounded overflow-hidden shadow-lg p-6">
-            <img className="w-full transition-all hover:scale-110" src="./images/casio.webp" alt="Time-Zone"/>
-              <div className="padding">
-                <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click to see other watch's from this brand</a></div>
-                <p className="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                </p>
-              </div>
-              </div>
-              </div>
-              <div>
-              <div className="max-w-sm rounded overflow-hidden shadow-lg p-6 mb-14">
-            <img className="w-full transition-all hover:scale-110" src="./images/swatch.jpg" alt="Time-Zone"/>
-              <div>
-                <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click to see other watch's from this brand</a></div>
-                <p className="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                </p>
-              </div>
-              </div>
-              <div className="max-w-sm rounded overflow-hidden shadow-lg p-6">
-            <img className="w-full transition-all hover:scale-110" src="./images/citizen.jpeg" alt="Time-Zone"/>
-              <div>
-                <div className="font-bold text-xl mb-2"><a href="" className='capitalize hover:text-blue-500'>click to see other watch's from this brand</a></div>
-                <p className="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                </p>
-              </div>
-              </div>
-          </div>
-          </div>
-        </div>
+      <Carousel className="w-full max-w-7xl mx-auto">
+      <CarouselContent className="-ml-1">
+        {contextData.items.map((item) => (
+          <CarouselItem key={item.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <img src={item.src} alt={item.description} className="w-full h-full object-cover" />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
         <div className='relative mt-25'>
         <div className='absolute w-[85px] h-[85px] top-[40%] left-[45%] border border-amber-50 rounded-full cursor-pointer'><FaPlay className='text-4xl ml-6 mt-5.5 text-white'/></div>
           <img src="/images/sectin_bg1.png.webp" alt="" />

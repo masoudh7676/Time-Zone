@@ -68,7 +68,7 @@ export default function Shop() {
       setFilteredItems(filtered)
     }
   }
-
+  // dropdown items
   const category = [
     {
       value: "All Watch's",
@@ -181,7 +181,7 @@ export default function Shop() {
     </Popover>
       </div>
       </aside>
-      <div className='parent w-[52%]  mt-50 grid grid-cols-3 bg-gray-100 border border-gray-200'>
+      <div className='parent w-[52%]  mt-50 mb-16 grid grid-cols-3 bg-gray-100 border border-gray-200'>
       {
         filteredItems.map(data => (
           <div className=' group border p-2 border-gray-200 cursor-pointer' key={data.id}>
