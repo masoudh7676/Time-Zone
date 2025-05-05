@@ -7,7 +7,7 @@ import AllProductsContext from '../../Context/Products'
 const min = 0;
 const max = 1000;
 export default function Shop() {
-  const contextData = useContext(AllProductsContext)
+  const contextData = useContext(AllProductsContext)      // watch data
   const [values, setValues] = useState([min, max])          
   const [filteredItems, setFilteredItems] = useState(contextData.items) //creating filter price
 
