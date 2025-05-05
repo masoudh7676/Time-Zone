@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/popover"
 import NavBar from '../NavBar/NavBar'
 import AllProductsContext from '../../Context/Products'
+import ScrollUp from '../ScrollUp/ScrollUp'
 
 const min = 0;
 const max = 1000;
@@ -32,6 +33,42 @@ export default function Shop() {
     const filtered = contextData.items.filter(item => item.price >= minPrice && item.price <= maxPrice)
     setFilteredItems(filtered)
   }
+
+  // Function to filter items by category based on watchsData.jsx structure
+  const filterByCategory = (categoryValue) => {
+    if (categoryValue === "All Watch's") {
+      setFilteredItems(contextData.items)
+    } else if (categoryValue === "Smart Watch") {
+      // Includes both Apple and Samsung watches
+      const filtered = contextData.items.filter(
+        (item) => item.title === "Apple" || item.title === "Samsung"
+      )
+      setFilteredItems(filtered)
+    } else if (categoryValue === "Analog Watch") {
+      // Includes all watches except Apple and Samsung
+      const filtered = contextData.items.filter(
+        (item) => item.title !== "Apple" && item.title !== "Samsung"
+      )
+      setFilteredItems(filtered)
+    } else if (categoryValue === "Apple Smart Watch") {
+      const filtered = contextData.items.filter(
+        (item) => item.title === "Apple"
+      )
+      setFilteredItems(filtered)
+    } else if (categoryValue === "Samsung Smart Watch") {
+      const filtered = contextData.items.filter(
+        (item) => item.title === "Samsung"
+      )
+      setFilteredItems(filtered)
+    } else {
+      // For specific brands like Casio, Citizen
+      const filtered = contextData.items.filter(
+        (item) => item.title === categoryValue
+      )
+      setFilteredItems(filtered)
+    }
+  }
+
   const category = [
     {
       value: "All Watch's",
@@ -97,7 +134,7 @@ export default function Shop() {
       </div>
       </div>
       </div> 
-      <div className=' mt-10'>
+      <div className=' mt-10 sticky top-95 w-full'>
       <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
@@ -124,6 +161,7 @@ export default function Shop() {
                   value={framework.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue)
+                    filterByCategory(currentValue === value ? "All Watch's" : currentValue)
                     setOpen(false)
                   }}
                 >
@@ -161,6 +199,7 @@ export default function Shop() {
       }
       </div>
       </div>
+      <ScrollUp />
     </>
   )
 }
