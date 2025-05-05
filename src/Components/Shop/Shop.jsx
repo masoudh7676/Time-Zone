@@ -1,6 +1,22 @@
 import React, { useContext, useState } from 'react'
 import { Slider } from '../ui/slider'
 import { Button } from '../ui/button'
+import { Check, ChevronsUpDown } from "lucide-react"
+ 
+import { cn } from "@/lib/utils"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 import NavBar from '../NavBar/NavBar'
 import AllProductsContext from '../../Context/Products'
 
@@ -16,6 +32,38 @@ export default function Shop() {
     const filtered = contextData.items.filter(item => item.price >= minPrice && item.price <= maxPrice)
     setFilteredItems(filtered)
   }
+  const category = [
+    {
+      value: "All Watch's",
+      label: "All Watch's",
+    },
+    {
+      value: "Analog Watch",
+      label: "Analog Watch",
+    },
+    {
+      value: "Smart Watch",
+      label: "Smart Watch",
+    },
+    {
+      value: "Casio",
+      label: "Casio",
+    },
+    {
+      value: "Citizen",
+      label: "Citizen",
+    },
+    {
+      value: "Apple Smart Watch",
+      label: "Apple Smart Watch",
+    },
+    {
+      value: "Samsung Smart Watch",
+      label: "Samsung Smart Watch",
+    },
+  ]
+  const [open, setOpen] = React.useState(false)
+  const [value, setValue] = React.useState("")
 
   return (
     <>
@@ -49,8 +97,50 @@ export default function Shop() {
       </div>
       </div>
       </div> 
-      <div className=''>
-          
+      <div className=' mt-10'>
+      <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="w-[200px] justify-between"
+        >
+          {value
+            ? category.find((framework) => framework.value === value)?.label
+            : "Select Brand or Watch Type..."}
+          <ChevronsUpDown className="opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[200px] p-0">
+        <Command>
+          <CommandInput placeholder="Search Watch..." className="h-9" />
+          <CommandList>
+            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandGroup>
+              {category.map((framework) => (
+                <CommandItem
+                  key={framework.value}
+                  value={framework.value}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? "" : currentValue)
+                    setOpen(false)
+                  }}
+                >
+                  {framework.label}
+                  <Check
+                    className={cn(
+                      "ml-auto",
+                      value === framework.value ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
       </div>
       </aside>
       <div className='parent w-[52%]  mt-50 grid grid-cols-3 bg-gray-100 border border-gray-200'>
