@@ -6,6 +6,7 @@ import Contact from './Components/Contact/Contact'
 import Blog from './Components/Blog/Blog'
 import User from './Components/User/SignIn/User';
 import Signup from './Components/User/SignUp/Signup';
+import Cart from './Components/Cart/Cart';
 const routes = [
     {path: '/', element: <Navigate to="/home" />}, // Redirect '/' to '/home'
     {path: '/home', element: <Home />},
@@ -14,7 +15,8 @@ const routes = [
     {path:'/contact', element: <Contact />},
     {path:'/blog', element: <Blog />},
     {path: '/user', element: <User/>},
-    {path: '/signup', element: <Signup/>}
+    {path: '/signup', element: <Signup/>},
+    {path: '/cart', element: <Cart/>}
 ]
 
 export default routes
