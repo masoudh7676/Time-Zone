@@ -4,10 +4,12 @@ import AllProductsContext from './Context/Products'
 import routes from './router'
 import { useState } from 'react'
 import watchData from './watchsData'
+import { ThemeProvider } from 'next-themes'
 function App() {
   const router = useRoutes(routes)
   const [items,SetItems] = useState(watchData)
   return (
+    
       <>
       <AllProductsContext.Provider value= {{
         items,

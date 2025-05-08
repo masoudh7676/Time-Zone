@@ -17,16 +17,26 @@ function DarkModeToggle() {
 
     return (
         <button onClick={toggleTheme}>
-            {isDarkMode ? <FaMoon /> : <GoSun />}
+            {isDarkMode ? <FaMoon />  : <GoSun />}
         </button>
     );
 }
 
 export default function NavBar() {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
+
+    const closeMobileMenu = () => {
+        setMobileMenuOpen(false);
+    };
+
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='h-28 sm:hidden md:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50'>
+            <div className='h-28 hidden md:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50'>
                 <nav className='flex w-[90%] mx-auto'>
                     <div>
                         {/* Logo */}
@@ -84,20 +94,50 @@ export default function NavBar() {
                 </nav>
             </div>
             {/* Mobile Menu */}
-            <div className='flex md:hidden content-center justify-between p-5'>
+            <div className='fixed top-0 md:hidden z-99 bg-white w-full'>
+            <div className='flex content-center justify-between p-5'>
                 <div>
-                <Link to="/cart"><PiShoppingCartThin className='text-2xl '/></Link>
+                    <Link to="/cart"><PiShoppingCartThin className='text-2xl ' /></Link>
                 </div>
                 <div>
-                <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+                    <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
                 </div>
-                <div className='cursor-pointer'>
-                <HiOutlineBars3BottomRight  className='text-4xl '/>
+                <button onClick={toggleMobileMenu} aria-label="Toggle menu" className='cursor-pointer'>
+                    <HiOutlineBars3BottomRight className='text-4xl'/>
+                </button>
+            </div>
+            {mobileMenuOpen && (
+            <div className='bg-white h-full px-4 py-3 w-70 fixed right-0 z-99'>
+            <div className='flex flex-row-reverse'>
+                <div>
+                    <button onClick={closeMobileMenu} aria-label="Close menu" className='text-xl font-bold mb-4'>X</button>
+                    <div>
+                        <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+                    </div>
                 </div>
             </div>
-            <div>
-                
+            <div className='md:hidden flex mt-5 flex-row-reverse'>
+                <ul>
+                    <li><Link to="/home" className='font-bold'>Home</Link></li>
+                    <li><Link to="/shop" className='font-bold'>Shop</Link></li>
+                    <li><Link to="/about" className='font-bold'>About</Link></li>
+                    <li><a href="#" className='font-bold '>Latest</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Blog Details</a></li>
+                    </ul>
             </div>
+            <ul className='flex flex-row-reverse gap-5'>
+                    <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
+                            <li className='cursor-pointer'><Link to="/user"><CiUser /></Link></li>
+                            {/* Dark Mode */}
+                            <li className='cursor-pointer'>
+                                <DarkModeToggle />
+                            </li>
+                            </ul>
+            </div>
+            )}
+            </div>
+            <div className='bg-neutral-500 opacity-50 mask-alpha md:hidden fixed inset-0 z-10 w-full h-full'></div>
         </>
     );
 }
