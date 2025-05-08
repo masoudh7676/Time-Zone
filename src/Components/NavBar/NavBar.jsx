@@ -4,6 +4,7 @@ import { CiUser } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { FaMoon } from "react-icons/fa";
 import { GoSun } from "react-icons/go";
+import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 // Child component for the dark mode toggle
@@ -25,15 +26,15 @@ export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='h-28 d-flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50'>
-                <nav className='d-flex w-[90%] nav'>
+            <div className='h-28 sm:hidden md:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50'>
+                <nav className='flex w-[90%] mx-auto'>
                     <div>
                         {/* Logo */}
                         <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
-                        
+
                     </div>
                     {/* Nav */}
-                    <ul className='flex w-[100%] justify-center gap-7 sm:hidden md:flex'>
+                    <ul className='flex w-[100%] justify-center gap-7'>
                         <li><Link to="/home" className='hover-effect font-bold'>Home</Link></li>
                         <li><Link to="/shop" className='hover-effect font-bold'>Shop</Link></li>
                         <li><Link to="/about" className='hover-effect font-bold'>About</Link></li>
@@ -41,9 +42,9 @@ export default function NavBar() {
                             <a href="#" className='relative hover-effect with-sub font-bold'>Latest</a>
                             {/* Sub Menu */}
                             <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest__sub'>
-                            <ul>
-                                <li className='arrow hover-effect'><a href="">Product List</a> </li>
-                                <li className='hover-effect'><a href="">Product Details</a> </li>
+                                <ul>
+                                    <li className='arrow hover-effect'><a href="">Product List</a> </li>
+                                    <li className='hover-effect'><a href="">Product Details</a> </li>
                                 </ul>
                             </div>
                         </li>
@@ -81,10 +82,21 @@ export default function NavBar() {
                         </ul>
                     </div>
                 </nav>
-                 {/* Mobile Menu */}
+            </div>
+            {/* Mobile Menu */}
+            <div className='flex md:hidden content-center justify-between p-5'>
                 <div>
-
+                <Link to="/cart"><PiShoppingCartThin className='text-2xl '/></Link>
                 </div>
+                <div>
+                <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+                </div>
+                <div className='cursor-pointer'>
+                <HiOutlineBars3BottomRight  className='text-4xl '/>
+                </div>
+            </div>
+            <div>
+                
             </div>
         </>
     );

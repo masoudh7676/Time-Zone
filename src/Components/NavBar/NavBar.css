@@ -1,9 +1,3 @@
-.d-flex{
-    display: flex;
-}
-.nav {
-    margin: 0 auto !important;
-}
 .red__btn::before{
     position: absolute;
     content: 'Hot';
