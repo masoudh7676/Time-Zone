@@ -33,7 +33,7 @@ export default function NavBar() {
                         
                     </div>
                     {/* Nav */}
-                    <ul className='flex w-[100%] justify-center gap-7'>
+                    <ul className='flex w-[100%] justify-center gap-7 sm:hidden md:flex'>
                         <li><Link to="/home" className='hover-effect font-bold'>Home</Link></li>
                         <li><Link to="/shop" className='hover-effect font-bold'>Shop</Link></li>
                         <li><Link to="/about" className='hover-effect font-bold'>About</Link></li>
@@ -81,7 +81,10 @@ export default function NavBar() {
                         </ul>
                     </div>
                 </nav>
+                 {/* Mobile Menu */}
+                <div>
 
+                </div>
             </div>
         </>
     );
