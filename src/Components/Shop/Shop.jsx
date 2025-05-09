@@ -142,7 +142,7 @@ export default function Shop() {
                   variant="outline"
                   role="combobox"
                   aria-expanded={open}
-                  className="w-[200px] justify-between"
+                  className="sm:w-full xl:w-[200px] justify-between"
                 >
                   {value
                     ? category.find((framework) => framework.value === value)?.label
