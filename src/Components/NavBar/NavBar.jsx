@@ -36,7 +36,7 @@ export default function NavBar() {
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='h-28 hidden md:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50'>
+            <div className='h-28 hidden lg:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50'>
                 <nav className='flex w-[90%] mx-auto'>
                     <div>
                         {/* Logo */}
@@ -94,7 +94,7 @@ export default function NavBar() {
                 </nav>
             </div>
             {/* Mobile Menu */}
-            <div className='fixed top-0 md:hidden z-99 bg-white w-full'>
+            <div className='fixed top-0 lg:hidden z-99 bg-white w-full'>
             <div className='flex content-center justify-between p-5'>
                 <div>
                     <Link to="/cart"><PiShoppingCartThin className='text-2xl ' /></Link>
@@ -116,7 +116,7 @@ export default function NavBar() {
                     </div>
                 </div>
             </div>
-            <div className='md:hidden flex mt-5 flex-row-reverse h-50'>
+            <div className='lg:hidden flex mt-5 flex-row-reverse h-50'>
                 <ul>
                     <li className='mb-5'><Link to="/home" className='font-bold'>Home</Link></li>
                     <li className='mb-5'><Link to="/shop" className='font-bold'>Shop</Link></li>
@@ -139,7 +139,7 @@ export default function NavBar() {
             </div>
             {mobileMenuOpen && (
                 <div
-                    className='bg-neutral-700 opacity-70 mask-alpha md:hidden fixed inset-0 z-10 w-full h-full'
+                    className='bg-neutral-700 opacity-70 mask-alpha lg:hidden fixed inset-0 z-10 w-full h-full'
                     onClick={closeMobileMenu}
                 ></div>
             )}
