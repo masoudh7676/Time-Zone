@@ -108,25 +108,25 @@ export default function NavBar() {
             </div>
             {mobileMenuOpen && (
             <div className='bg-white h-full px-4 py-3 w-70 fixed right-0 z-99'>
-            <div className='flex flex-row-reverse'>
-                <div>
-                    <button onClick={closeMobileMenu} aria-label="Close menu" className='text-xl font-bold mb-4'>X</button>
+            <div className='flex flex-row-reverse border-b-2 p-2 border-gray-300'>
+                <div className='flex justify-between w-95'>
+                    <button onClick={closeMobileMenu} aria-label="Close menu" className='text-xl font-bold cursor-pointer'>X</button>
                     <div>
                         <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
                     </div>
                 </div>
             </div>
-            <div className='md:hidden flex mt-5 flex-row-reverse'>
+            <div className='md:hidden flex mt-5 flex-row-reverse h-50'>
                 <ul>
-                    <li><Link to="/home" className='font-bold'>Home</Link></li>
-                    <li><Link to="/shop" className='font-bold'>Shop</Link></li>
-                    <li><Link to="/about" className='font-bold'>About</Link></li>
-                    <li><a href="#" className='font-bold '>Latest</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Blog Details</a></li>
+                    <li className='mb-5'><Link to="/home" className='font-bold'>Home</Link></li>
+                    <li className='mb-5'><Link to="/shop" className='font-bold'>Shop</Link></li>
+                    <li className='mb-5'><Link to="/about" className='font-bold'>About</Link></li>
+                    <li className='mb-5'><a href="#" className='font-bold'>Latest</a></li>
+                    <li className='mb-5'><a href="#" className='font-bold'>Blog</a></li>
+                    <li className='mb-5'><a href="#" className='font-bold'>Blog Details</a></li>
                     </ul>
             </div>
-            <ul className='flex flex-row-reverse gap-5'>
+            <ul className='flex flex-row-reverse gap-5 mt-18'>
                     <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
                             <li className='cursor-pointer'><Link to="/user"><CiUser /></Link></li>
                             {/* Dark Mode */}
