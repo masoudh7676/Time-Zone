@@ -22,7 +22,7 @@ export default function Home() {
     <>
     <NavBar/>
       <Header />
-      <Carousel className="w-full max-w-7xl mx-auto">
+      <Carousel className="w-full max-w-7xl mx-auto mt-20">
       <CarouselContent className="-ml-1">
         {contextData.items.map((item) => (
           <CarouselItem key={item.id} className="pl-1 md:basis-1/2 lg:basis-1/3">

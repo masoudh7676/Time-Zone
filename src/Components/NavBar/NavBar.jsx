@@ -137,7 +137,12 @@ export default function NavBar() {
             </div>
             )}
             </div>
-            <div className='bg-neutral-500 opacity-50 mask-alpha md:hidden fixed inset-0 z-10 w-full h-full'></div>
+            {mobileMenuOpen && (
+                <div
+                    className='bg-neutral-700 opacity-70 mask-alpha md:hidden fixed inset-0 z-10 w-full h-full'
+                    onClick={closeMobileMenu}
+                ></div>
+            )}
         </>
     );
 }
