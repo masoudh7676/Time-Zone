@@ -104,7 +104,7 @@ export default function Shop() {
   const [value, setValue] = React.useState("")
 
   return (
-    <>
+    <div className='overflow-hidden'>
       <NavBar />
       <div className='relative top-24'>
         <img src="/images/about_hero.png.webp" alt="" className=' w-full h-full' />
@@ -202,6 +202,6 @@ export default function Shop() {
       </div>
       <Footer/>
       <ScrollUp />
-    </>
+    </div>
   )
 }
