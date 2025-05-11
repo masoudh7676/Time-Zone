@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Slider } from '../ui/slider'
 import { Button } from '../ui/button'
 import { Check, ChevronsUpDown } from "lucide-react"
-
+import swal from 'sweetalert'
 import { cn } from "@/lib/utils"
 import {
   Command,
@@ -102,7 +102,10 @@ export default function Shop() {
   ]
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
-
+  //Sweat Alert
+  const clickHandler = () =>{
+    swal({title: "Added To Cart SuccessFully" , icon: "success"})
+  }
   return (
     <div className='overflow-hidden'>
       <NavBar />
@@ -188,7 +191,7 @@ export default function Shop() {
               <div className=' group border p-2 border-gray-200 cursor-pointer' key={data.id}>
                 <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
                   <img src={data.src} className='object-cover' alt="" />
-                  <button className='text-center hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]'>add to cart</button>
+                  <button className='text-center hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]' onClick={clickHandler}>add to cart</button>
                 </div>
                 <div className='text-center'>
                   <h4>Brand: {data.title}</h4>
