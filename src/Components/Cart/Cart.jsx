@@ -1,7 +1,5 @@
 import React, { useContext } from 'react'
 import NavBar from '../NavBar/NavBar'
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Footer from '../Footer/Footer'
 
 // const contextData = useContext(AllProductsContext)
