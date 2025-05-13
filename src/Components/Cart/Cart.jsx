@@ -42,13 +42,13 @@ export default function Cart() {
           </form>
 
         </aside>
-        <table className='table-auto w-1/2 border border-gray-300 h-1'>
+        <table className='table-auto w-1/2 border border-gray-300 h-1' style={{ direction: 'rtl' }}>
           <thead className='border-b border-gray-300 bg-gray-100'>
             <tr>
-              <th className='px-4 py-2 text-left'>Product</th>
+              <th className='px-4 py-2 text-right'>Product</th>
               <th className='px-4 py-2 text-center'>Quantity</th>
-              <th className='px-4 py-2 text-right'>Price</th>
-              <th className='px-4 py-2 text-right'>Total Price</th>
+              <th className='px-4 py-2 text-left'>Price</th>
+              <th className='px-4 py-2 text-left'>Total Price</th>
             </tr>
           </thead>
           <tbody>
@@ -58,8 +58,8 @@ export default function Cart() {
                 Casio
               </td>
               <td className='px-4 py-2 text-center'>4</td>
-              <td className='px-4 py-2 text-right'>$1235</td>
-              <td className='px-4 py-2 text-right'>$4940</td>
+              <td className='px-4 py-2 text-left'>$1235</td>
+              <td className='px-4 py-2 text-left'>$4940</td>
             </tr>
           </tbody>
         </table>
