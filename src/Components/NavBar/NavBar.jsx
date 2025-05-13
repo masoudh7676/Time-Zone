@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import AllProductsContext from '@/Context/Products';
 import { IoSearchOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
@@ -24,7 +25,6 @@ function DarkModeToggle() {
 
 export default function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
@@ -32,7 +32,7 @@ export default function NavBar() {
     const closeMobileMenu = () => {
         setMobileMenuOpen(false);
     };
-
+    const ContextData = useContext(AllProductsContext)
     return (
         <>
             {/* Logo & Navigation */}
@@ -84,7 +84,7 @@ export default function NavBar() {
                         <ul className='flex gap-5'>
                             <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
                             <li className='cursor-pointer hover:scale-[1.4]'><Link to="/user"><CiUser /></Link></li>
-                            <li className='cursor-pointer hover:scale-[1.4]'><Link to="/cart"><PiShoppingCartThin /></Link><span></span></li>
+                            <li className='cursor-pointer hover:scale-[1.4]'><Link to="/cart"><PiShoppingCartThin/></Link><span className= {`${ContextData.showCart ? 'inline' : ''} hidden`}>1</span></li>
                             {/* Dark Mode */}
                             <li className='cursor-pointer hover:scale-[1.4]'>
                                 <DarkModeToggle />

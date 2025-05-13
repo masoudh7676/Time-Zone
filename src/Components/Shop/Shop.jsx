@@ -104,7 +104,8 @@ export default function Shop() {
   const [value, setValue] = React.useState("")
   //Sweat Alert
   const clickHandler = () =>{
-    swal({title: "Added To Cart SuccessFully" , icon: "success"})
+    swal({title: "Added To Cart SuccessFully" , icon: "success"}),
+    contextData.setShowCart(true)
   }
   return (
     <div className='overflow-hidden'>

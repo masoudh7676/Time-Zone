@@ -8,13 +8,15 @@ import { ThemeProvider } from 'next-themes'
 function App() {
   const router = useRoutes(routes)
   const [items,SetItems] = useState(watchData)
-  const [cart, setCart] = useState(false)
+  const [showCart, setShowCart] = useState(false)
   return (
     
       <>
       <AllProductsContext.Provider value= {{
         items,
-        cart
+        SetItems,
+        showCart,
+        setShowCart
       }}>
       {router}
       </AllProductsContext.Provider>

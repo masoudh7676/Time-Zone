@@ -1,8 +1,6 @@
-import React, { useContext } from 'react'
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
 
-// const contextData = useContext(AllProductsContext)
 export default function Cart() {
   return (
     <>
