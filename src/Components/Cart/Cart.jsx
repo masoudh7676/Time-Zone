@@ -57,7 +57,7 @@ export default function Cart() {
                   <tbody>
                     <tr className='border-b border-gray-200'>
                       <td className='px-4 py-2 flex items-center gap-2'>
-                        <img src={product.src} className='w-16 h-auto' alt="time-zone" />
+                        <img src={product.img} className='w-16 h-auto' alt="time-zone" />
                         <span>{product.title}</span>
                       </td>
                       <td className='px-4 py-2 text-center'>4</td>
