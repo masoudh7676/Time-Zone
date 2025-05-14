@@ -102,11 +102,6 @@ export default function Shop() {
   ]
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
-  //Sweat Alert
-  const clickHandler = () =>{
-    swal({title: "Added To Cart SuccessFully" , icon: "success"}),
-    contextData.setShowCart(true)
-  }
   return (
     <div className='overflow-hidden'>
       <NavBar />
@@ -192,7 +187,19 @@ export default function Shop() {
               <div className=' group border p-2 border-gray-200 cursor-pointer' key={data.id}>
                 <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
                   <img src={data.src} className='object-cover' alt="" />
-                  <button className='text-center hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]' onClick={clickHandler}>add to cart</button>
+                      <button className='text-center hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]' onClick={
+                    () => {
+                      swal({ title: "Added To Cart SuccessFully", icon: "success" }),
+                        contextData.setShowCart(true);
+                      let newUserCartProduct = {
+                        id: contextData.userCart.length + 1,
+                        title: data.title,
+                        price: data.price,
+                        img: data.src
+                         } 
+                         contextData.setUserCart(prevProduct => [...prevProduct, newUserCartProduct])
+                    }
+                  }>add to cart</button>
                 </div>
                 <div className='text-center'>
                   <h4>Brand: {data.title}</h4>
@@ -204,7 +211,7 @@ export default function Shop() {
           }
         </div>
       </div>
-      <Footer/>
+      <Footer />
       <ScrollUp />
     </div>
   )

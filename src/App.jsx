@@ -9,6 +9,7 @@ function App() {
   const router = useRoutes(routes)
   const [items,SetItems] = useState(watchData)
   const [showCart, setShowCart] = useState(false)
+  const [userCart, setUserCart] = useState([])
   return (
     
       <>
@@ -16,7 +17,9 @@ function App() {
         items,
         SetItems,
         showCart,
-        setShowCart
+        setShowCart,
+        userCart,
+        setUserCart
       }}>
       {router}
       </AllProductsContext.Provider>
