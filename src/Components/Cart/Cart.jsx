@@ -45,7 +45,7 @@ export default function Cart() {
             </aside>
             {
               contextData.userCart.map(product => (
-                <table className='table-auto w-1/2 border border-gray-300 h-1' style={{ direction: 'rtl' }}>
+                <table className='table-auto w-1/2 border border-gray-300 h-1 dire' dir='rtl' key={product.id}>
                   <thead className='border-b border-gray-300 bg-gray-100'>
                     <tr>
                       <th className='px-4 py-2 text-right'>Product</th>
@@ -66,6 +66,7 @@ export default function Cart() {
                     </tr>
                   </tbody>
                 </table>
+                
               ))
             }
           </div>
