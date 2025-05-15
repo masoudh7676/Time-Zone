@@ -1,13 +1,47 @@
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { CiSquarePlus } from "react-icons/ci";
 import { CiSquareMinus } from "react-icons/ci";
 import AllProductsContext from '../../Context/Products'
 
 export default function Cart() {
-  const [number, setNumber] = useState(1)
   const contextData = useContext(AllProductsContext)
+
+  // State to hold quantities for each product by id
+  const [quantities, setQuantities] = useState({})
+
+  // Initialize quantities state when userCart changes
+  useEffect(() => {
+    const initialQuantities = {}
+    contextData.userCart.forEach(product => {
+      initialQuantities[product.id] = 1
+    })
+    setQuantities(initialQuantities)
+  }, [contextData.userCart])
+
+  // Handler to increase quantity for a specific product
+  const increaseQuantity = (productId) => {
+    setQuantities(prev => ({
+      ...prev,
+      [productId]: prev[productId] + 1
+    }))
+  }
+
+  // Handler to decrease quantity for a specific product
+  const decreaseQuantity = (productId) => {
+    setQuantities(prev => ({
+      ...prev,
+      [productId]: prev[productId] > 1 ? prev[productId] - 1 : 1
+    }))
+  }
+
+  // Calculate total price by summing all product totals
+  const totalPrice = contextData.userCart.reduce((acc, product) => {
+    const quantity = quantities[product.id] || 1
+    return acc + product.price * quantity
+  }, 0)
+
   return (
     <>
       <NavBar />
@@ -19,7 +53,7 @@ export default function Cart() {
           </div>
           <div className='mt-12 w-full flex justify-center content-center'>
             <aside className='shadow-2xl rounded-2xl mr-10 w-2/7 p-7 flex flex-col text-center'>
-              <h5 className='mb-4 text-2xl'>Total Price: 454$</h5>
+              <h5 className='mb-4 text-2xl'>Total Price: {totalPrice.toFixed(2)}$</h5>
 
               <h6>Sending method:</h6>
               <form method='post'>
@@ -48,7 +82,6 @@ export default function Cart() {
             <div className='flex flex-col gap-10'>
               {
                 contextData.userCart.map(product => (
-
                   <table className='table-auto w-200 border border-gray-300 h-1 dire' dir='rtl' key={product.id}>
                     <thead className='border-b border-gray-300 bg-gray-100'>
                       <tr>
@@ -65,24 +98,19 @@ export default function Cart() {
                           <span>{product.title}</span>
                         </td>
                         <td className='px-4 py-2 text-center'>
-                        <div className='flex justify-center'>
-                          <div className='flex flex-col content-center items-center'>
-                           <CiSquarePlus  className='text-3xl cursor-pointer mb-3' onClick={() => {
-                             setNumber(prev => prev + 1)
-                           }}/>
-                           <CiSquareMinus  className='text-3xl cursor-pointer' onClick={() => {
-                             setNumber(prev => (prev > 1 ? prev - 1 : 1))
-                           }}/>
-                          </div>
-                          <span className='my-auto mr-5'>{number}</span>
+                          <div className='flex justify-center'>
+                            <div className='flex flex-col content-center items-center'>
+                              <CiSquarePlus className='text-3xl cursor-pointer mb-3' onClick={() => increaseQuantity(product.id)} />
+                              <CiSquareMinus className='text-3xl cursor-pointer' onClick={() => decreaseQuantity(product.id)} />
+                            </div>
+                            <span className='my-auto mr-5'>{quantities[product.id] || 1}</span>
                           </div>
                         </td>
                         <td className='px-4 py-2 text-left'>{product.price} $</td>
-                        <td className='px-4 py-2 text-left'>{(product.price * number).toFixed(2)} $</td>
+                        <td className='px-4 py-2 text-left'>{((product.price) * (quantities[product.id] || 1)).toFixed(2)} $</td>
                       </tr>
                     </tbody>
                   </table>
-
                 ))
               }
             </div>
