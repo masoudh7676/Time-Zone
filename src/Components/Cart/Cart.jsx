@@ -1,10 +1,12 @@
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
+import { CiSquarePlus } from "react-icons/ci";
+import { CiSquareMinus } from "react-icons/ci";
 import AllProductsContext from '../../Context/Products'
 
 export default function Cart() {
-
+  const [number, setNumber] = useState(1)
   const contextData = useContext(AllProductsContext)
   return (
     <>
@@ -43,32 +45,47 @@ export default function Cart() {
               </form>
 
             </aside>
-            {
-              contextData.userCart.map(product => (
-                <table className='table-auto w-1/2 border border-gray-300 h-1 dire' dir='rtl' key={product.id}>
-                  <thead className='border-b border-gray-300 bg-gray-100'>
-                    <tr>
-                      <th className='px-4 py-2 text-right'>Product</th>
-                      <th className='px-4 py-2 text-center'>Quantity</th>
-                      <th className='px-4 py-2 text-left'>Price</th>
-                      <th className='px-4 py-2 text-left'>Total Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className='border-b border-gray-200'>
-                      <td className='px-4 py-2 flex items-center gap-2'>
-                        <img src={product.img} className='w-16 h-auto' alt="time-zone" />
-                        <span>{product.title}</span>
-                      </td>
-                      <td className='px-4 py-2 text-center'>4</td>
-                      <td className='px-4 py-2 text-left'>{product.price} $</td>
-                      <td className='px-4 py-2 text-left'>$4940</td>
-                    </tr>
-                  </tbody>
-                </table>
-                
-              ))
-            }
+            <div className='flex flex-col gap-10'>
+              {
+                contextData.userCart.map(product => (
+
+                  <table className='table-auto w-200 border border-gray-300 h-1 dire' dir='rtl' key={product.id}>
+                    <thead className='border-b border-gray-300 bg-gray-100'>
+                      <tr>
+                        <th className='px-4 py-2 text-right'>Product</th>
+                        <th className='px-4 py-2 text-center'>Quantity</th>
+                        <th className='px-4 py-2 text-left'>Price</th>
+                        <th className='px-4 py-2 text-left'>Total Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className='border-b border-gray-200'>
+                        <td className='px-4 py-2 flex items-center gap-2'>
+                          <img src={product.img} className='w-16 h-auto' alt="time-zone" />
+                          <span>{product.title}</span>
+                        </td>
+                        <td className='px-4 py-2 text-center'>
+                        <div className='flex justify-center'>
+                          <div className='flex flex-col content-center items-center'>
+                           <CiSquarePlus  className='text-3xl cursor-pointer mb-3' onClick={() => {
+                             setNumber(prev => prev + 1)
+                           }}/>
+                           <CiSquareMinus  className='text-3xl cursor-pointer' onClick={() => {
+                             setNumber(prev => (prev > 1 ? prev - 1 : 1))
+                           }}/>
+                          </div>
+                          <span className='my-auto mr-5'>{number}</span>
+                          </div>
+                        </td>
+                        <td className='px-4 py-2 text-left'>{product.price} $</td>
+                        <td className='px-4 py-2 text-left'>{(product.price * number).toFixed(2)} $</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                ))
+              }
+            </div>
           </div>
         </>
       ) : (
