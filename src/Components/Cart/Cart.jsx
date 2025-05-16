@@ -1,45 +1,35 @@
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
-import { useContext, useState, useEffect } from 'react'
-import { CiSquarePlus } from "react-icons/ci";
-import { CiSquareMinus } from "react-icons/ci";
+import { useContext } from 'react'
+import { CiSquarePlus, CiSquareMinus } from "react-icons/ci";
 import AllProductsContext from '../../Context/Products'
 
 export default function Cart() {
   const contextData = useContext(AllProductsContext)
 
-  // State to hold quantities for each product by id
-  const [quantities, setQuantities] = useState({})
-
-  // Initialize quantities state when userCart changes
-  useEffect(() => {
-    const initialQuantities = {}
-    contextData.userCart.forEach(product => {
-      initialQuantities[product.id] = 1
-    })
-    setQuantities(initialQuantities)
-  }, [contextData.userCart])
-
   // Handler to increase quantity for a specific product
   const increaseQuantity = (productId) => {
-    setQuantities(prev => ({
-      ...prev,
-      [productId]: prev[productId] + 1
-    }))
+    const updatedCart = contextData.userCart.map(product =>
+      product.id === productId
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    )
+    contextData.setUserCart(updatedCart)
   }
 
   // Handler to decrease quantity for a specific product
   const decreaseQuantity = (productId) => {
-    setQuantities(prev => ({
-      ...prev,
-      [productId]: prev[productId] > 1 ? prev[productId] - 1 : 1
-    }))
+    const updatedCart = contextData.userCart.map(product =>
+      product.id === productId
+        ? { ...product, quantity: product.quantity > 1 ? product.quantity - 1 : 1 }
+        : product
+    )
+    contextData.setUserCart(updatedCart)
   }
 
   // Calculate total price by summing all product totals
   const totalPrice = contextData.userCart.reduce((acc, product) => {
-    const quantity = quantities[product.id] || 1
-    return acc + product.price * quantity
+    return acc + product.price * product.quantity
   }, 0)
 
   return (
@@ -77,7 +67,6 @@ export default function Cart() {
                   </a>
                 </div>
               </form>
-
             </aside>
             <div className='flex flex-col gap-10'>
               {
@@ -103,11 +92,11 @@ export default function Cart() {
                               <CiSquarePlus className='text-3xl cursor-pointer mb-3' onClick={() => increaseQuantity(product.id)} />
                               <CiSquareMinus className='text-3xl cursor-pointer' onClick={() => decreaseQuantity(product.id)} />
                             </div>
-                            <span className='my-auto mr-5'>{quantities[product.id] || 1}</span>
+                            <span className='my-auto mr-5'>{product.quantity}</span>
                           </div>
                         </td>
-                        <td className='px-4 py-2 text-left'>{product.price} $</td>
-                        <td className='px-4 py-2 text-left'>{((product.price) * (quantities[product.id] || 1)).toFixed(2)} $</td>
+                        <td className='px-4 py-2 text-left'>{product.price.toFixed(2)} $</td>
+                        <td className='px-4 py-2 text-left'>{(product.price * product.quantity).toFixed(2)} $</td>
                       </tr>
                     </tbody>
                   </table>
