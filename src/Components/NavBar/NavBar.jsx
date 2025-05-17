@@ -25,7 +25,7 @@ export default function NavBar() {
             {/* Logo & Navigation */}
             <div className='h-28 hidden lg:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50 dark:bg-black'>
                 <nav className='flex w-[90%] mx-auto'>
-                    <div>
+                    <div className='dark:bg-white rounded-2xl p-2'>
                         {/* Logo */}
                         <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
 
@@ -83,12 +83,12 @@ export default function NavBar() {
                 </nav>
             </div>
             {/* Mobile Menu */}
-            <div className='fixed top-0 lg:hidden z-99 bg-white w-full'>
+            <div className='fixed top-0 lg:hidden z-99 bg-white w-full dark:bg-black'>
             <div className='flex content-center justify-between p-5'>
                 <div>
                     <Link to="/cart"><PiShoppingCartThin className='text-2xl ' /></Link>
                 </div>
-                <div>
+                <div className='dark:bg-white rounded-2xl p-2'>
                     <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
                 </div>
                 <button onClick={toggleMobileMenu} aria-label="Toggle menu" className='cursor-pointer'>
@@ -96,7 +96,7 @@ export default function NavBar() {
                 </button>
             </div>
             {mobileMenuOpen && (
-            <div className='bg-white h-full px-4 py-3 w-70 fixed right-0 z-99'>
+            <div className='bg-white h-full px-4 py-3 w-70 fixed right-0 z-99 dark:bg-black'>
             <div className='flex flex-row-reverse border-b-2 p-2 border-gray-300'>
                 <div className='flex justify-between w-95'>
                     <button onClick={closeMobileMenu} aria-label="Close menu" className='text-xl font-bold cursor-pointer'>X</button>

@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css'
 export default function Header() {
   return (
-    <div className=' bg-[#f0f0f2] w-full mt-27'>
+    <div className=' bg-[#f0f0f2] dark:bg-gray-800 w-full mt-27'>
     <div className='flex items-center content-between justify-center'>
         <div className='text-description  w-[50%] mt-10 md:mt-0'>
             <h3 className='capitalize text-3xl large-text xl:text-[90px] sm:text-6xl font-bold'>
