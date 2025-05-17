@@ -1,9 +1,11 @@
 import React from 'react'
 import './Signup.css'
 import { useFormik } from 'formik'
+import NavBar from '@/Components/NavBar/NavBar'
 export default function Signup() {
   return (
     <>
+    <NavBar/>
       <div className="h-screen w-screen bg-gray-100 pt-10">
         <div className="max-w-xl mx-auto bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
         <h2 className='text-center text-2xl mb-12'>Sign Up</h2>

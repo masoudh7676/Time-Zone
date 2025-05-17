@@ -1,9 +1,10 @@
+import NavBar from '@/Components/NavBar/NavBar'
 import React from 'react'
 import { Link } from 'react-router'
 export default function User() {
   return (
     <>
-       
+    <NavBar/>   
 <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
   <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
     <h2 className="title font-bold text-gray-900 mb-6 text-center">Sign In</h2>
