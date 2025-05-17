@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import AllProductsContext from '@/Context/Products';
+import ThemeContext from '@/Context/ThemeContext';
 import { IoSearchOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
@@ -8,20 +8,6 @@ import { GoSun } from "react-icons/go";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import './Navbar.css'
 import { Link } from 'react-router-dom';
-// Child component for the dark mode toggle
-function DarkModeToggle() {
-    const [isDarkMode, setIsDarkMode] = useState(true);
-
-    const toggleTheme = () => {
-        setIsDarkMode(!isDarkMode);
-    };
-
-    return (
-        <button onClick={toggleTheme}>
-            {isDarkMode ? <FaMoon />  : <GoSun />}
-        </button>
-    );
-}
 
 export default function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,11 +18,12 @@ export default function NavBar() {
     const closeMobileMenu = () => {
         setMobileMenuOpen(false);
     };
-    const ContextData = useContext(AllProductsContext)
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
     return (
         <>
             {/* Logo & Navigation */}
-            <div className='h-28 hidden lg:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50'>
+            <div className='h-28 hidden lg:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50 dark:bg-black'>
                 <nav className='flex w-[90%] mx-auto'>
                     <div>
                         {/* Logo */}
@@ -84,10 +71,12 @@ export default function NavBar() {
                         <ul className='flex gap-5'>
                             <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
                             <li className='cursor-pointer hover:scale-[1.4]'><Link to="/user"><CiUser /></Link></li>
-                            <li className='cursor-pointer hover:scale-[1.4]'><Link to="/cart"><PiShoppingCartThin/></Link><span className= {`${ContextData.showCart ? 'inline' : ''} hidden`}>1</span></li>
+                            <li className='cursor-pointer hover:scale-[1.4]'><Link to="/cart"><PiShoppingCartThin/></Link></li>
                             {/* Dark Mode */}
                             <li className='cursor-pointer hover:scale-[1.4]'>
-                                <DarkModeToggle />
+                                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none">
+                                    {theme === 'dark' ? <FaMoon /> : <GoSun />}
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -131,7 +120,9 @@ export default function NavBar() {
                             <li className='cursor-pointer'><Link to="/user"><CiUser /></Link></li>
                             {/* Dark Mode */}
                             <li className='cursor-pointer'>
-                                <DarkModeToggle />
+                                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none">
+                                    {theme === 'dark' ? <FaMoon /> : <GoSun />}
+                                </button>
                             </li>
                             </ul>
             </div>
@@ -146,4 +137,3 @@ export default function NavBar() {
         </>
     );
 }
-

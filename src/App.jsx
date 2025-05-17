@@ -4,15 +4,15 @@ import AllProductsContext from './Context/Products'
 import routes from './router'
 import { useState } from 'react'
 import watchData from './watchsData'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from './Context/ThemeContext'
+
 function App() {
   const router = useRoutes(routes)
   const [items,SetItems] = useState(watchData)
   const [showCart, setShowCart] = useState(false)
   const [userCart, setUserCart] = useState([])
   return (
-    
-      <>
+    <ThemeProvider>
       <AllProductsContext.Provider value= {{
         items,
         SetItems,
@@ -23,7 +23,7 @@ function App() {
       }}>
       {router}
       </AllProductsContext.Provider>
-      </>
+    </ThemeProvider>
   )
 }
 
