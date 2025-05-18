@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 export default function Footer() {
     return (
         <>
-            <div className='footer w-[70%] mx-auto lg:grid grid-cols-3 gap-40 px-8 py-4 mt-40'>
+            <div className='footer w-[70%] mx-auto lg:grid grid-cols-3 gap-40 px-8 py-4 mt-40 overflow-hidden'>
                 <div className='mb-15 lg:mb-0'>
                     <div className='text-white text-5xl'><BsBoxSeam /></div>
                     <div className='mt-8'>
@@ -31,7 +31,7 @@ export default function Footer() {
                 </div>
             </div>
             
-            <div className='flex justify-center gap-50  align-middle w-full mt-26 mb-20'>
+            <div className='overflow-hidden w-[70%] gap-30 align-middle  mt-26 mb-20 grid grid-cols-1 sm:grid-cols-2 mx-auto xl:flex justify-center '>
                 <div>
                     <Link to="/home" ><img src="./images/logo.png.webp" className='mb-4' alt="time-zone" /></Link>
                     <p className='text-[#868c98]'>Asorem ipsum adipolor sdit amet, <br /> consectetur adipisicing elitcf sed do <br /> eiusmod tem.</p>
