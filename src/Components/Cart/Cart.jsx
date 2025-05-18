@@ -38,7 +38,7 @@ export default function Cart() {
       {contextData.userCart.length > 0 ? (
         <>
           <div className='mt-28 relative'>
-            <img src="/images/about_hero.png.webp" alt="" />
+            <img src="/images/about_hero.png.webp" className='dark:mask-y-from-5%' alt="" />
             <h4 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-7xl'>CheckOut</h4>
           </div>
           <div className='mt-12 w-full flex justify-center content-center'>

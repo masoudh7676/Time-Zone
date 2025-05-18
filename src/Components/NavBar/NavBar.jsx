@@ -38,7 +38,7 @@ export default function NavBar() {
                         <li className='relative action red__btn'>
                             <a href="#" className='relative hover-effect with-sub font-bold'>Latest</a>
                             {/* Sub Menu */}
-                            <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest__sub'>
+                            <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest__sub dark:bg-gray-800'>
                                 <ul>
                                     <li className='arrow hover-effect'><a href="">Product List</a> </li>
                                     <li className='hover-effect'><a href="">Product Details</a> </li>
@@ -48,7 +48,7 @@ export default function NavBar() {
                         <li className='action'>
                             <Link to="blog" className='hover-effect with-sub font-bold'>Blog</Link>
                             {/* Sub Menu */}
-                            <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub'>
+                            <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub dark:bg-gray-800'>
                                 <li className='arrow hover-effect'><a href="">Blog</a></li>
                                 <li className='hover-effect'><a href="">Blog Details</a></li>
                             </ul>
@@ -56,7 +56,7 @@ export default function NavBar() {
                         <li className='action'>
                             <a href="#" className='hover-effect with-sub font-bold'>Pages</a>
                             {/* Sub Menu */}
-                            <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub'>
+                            <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub dark:bg-gray-800'>
                                 <li className='hover-effect'><Link to="/user">Login</Link></li>
                                 <li className='hover-effect'>Cart</li>
                                 <li className='hover-effect'>Element</li>
