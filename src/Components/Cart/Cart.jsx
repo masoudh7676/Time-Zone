@@ -3,6 +3,7 @@ import Footer from '../Footer/Footer'
 import { useContext } from 'react'
 import { CiSquarePlus, CiSquareMinus } from "react-icons/ci";
 import AllProductsContext from '../../Context/Products'
+import { MdRemoveShoppingCart } from "react-icons/md";
 
 export default function Cart() {
   const contextData = useContext(AllProductsContext)
@@ -83,6 +84,7 @@ export default function Cart() {
                     <tbody>
                       <tr className='border-b border-gray-200'>
                         <td className='px-4 py-2 flex items-center gap-2'>
+                        <abbr title="Click to Remove From Cart"><MdRemoveShoppingCart className='text-2xl cursor-pointer'/></abbr>
                           <img src={product.img} className='w-16 h-auto' alt="time-zone" />
                           <span>{product.title}</span>
                         </td>
