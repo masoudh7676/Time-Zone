@@ -72,7 +72,7 @@ export default function Cart() {
               {
                 contextData.userCart.map(product => (
                   <table className='table-auto w-200 border border-gray-300 h-1 dire' dir='rtl' key={product.id}>
-                    <thead className='border-b border-gray-300 bg-gray-100'>
+                    <thead className='border-b border-gray-300 bg-gray-100 dark:bg-gray-800'>
                       <tr>
                         <th className='px-4 py-2 text-right'>Product</th>
                         <th className='px-4 py-2 text-center'>Quantity</th>
