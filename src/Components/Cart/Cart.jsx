@@ -42,7 +42,7 @@ export default function Cart() {
             <h4 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-7xl'>CheckOut</h4>
           </div>
           <div className='mt-12 w-full flex justify-center content-center'>
-            <aside className='shadow-2xl rounded-2xl mr-10 w-2/7 p-7 flex flex-col text-center'>
+            <aside className='shadow-2xl rounded-2xl mr-10 w-2/7 p-7 flex flex-col text-center dark:bg-gray-900'>
               <h5 className='mb-4 text-2xl'>Total Price: {totalPrice.toFixed(2)}$</h5>
 
               <h6>Sending method:</h6>
@@ -63,7 +63,7 @@ export default function Cart() {
                 </div>
                 <div>
                   <a href="#">
-                    <button className='cursor-pointer w-[70%] p-3 hover:scale-110 hover:text-blue-600 rounded-2xl text-xl bg-gray-200'>Proceed To payment</button>
+                    <button className='cursor-pointer w-[70%] p-3 hover:scale-110 hover:text-blue-600 rounded-2xl text-xl bg-gray-200 dark:bg-black'>Proceed To payment</button>
                   </a>
                 </div>
               </form>
