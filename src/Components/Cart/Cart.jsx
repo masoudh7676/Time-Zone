@@ -28,6 +28,12 @@ export default function Cart() {
     contextData.setUserCart(updatedCart)
   }
 
+  // Handler to remove a product from the cart by id
+  const removeProduct = (productId) => {
+    const updatedCart = contextData.userCart.filter(product => product.id !== productId)
+    contextData.setUserCart(updatedCart)
+  }
+
   // Calculate total price by summing all product totals
   const totalPrice = contextData.userCart.reduce((acc, product) => {
     return acc + product.price * product.quantity
@@ -84,7 +90,7 @@ export default function Cart() {
                     <tbody>
                       <tr className='border-b border-gray-200'>
                         <td className='px-4 py-2 flex items-center gap-2'>
-                        <abbr title="Click to Remove From Cart"><MdRemoveShoppingCart className='text-2xl cursor-pointer'/></abbr>
+                          <abbr title="Click to Remove From Cart"><MdRemoveShoppingCart className='text-2xl cursor-pointer' onClick={() => removeProduct(product.id)} /></abbr>
                           <img src={product.img} className='w-16 h-auto' alt="time-zone" />
                           <span>{product.title}</span>
                         </td>
