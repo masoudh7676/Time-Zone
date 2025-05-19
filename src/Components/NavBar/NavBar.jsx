@@ -1,5 +1,5 @@
-import React, { memo, useContext, useState } from 'react';
-import ThemeContext from '@/Context/ThemeContext';
+import React, { memo, useContext, useState, useEffect } from 'react';
+import ThemeContext from '../../Context/ThemeContext';
 import { IoSearchOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
@@ -28,6 +28,18 @@ function NavBar() {
   const closeSearch = () => {
     setSearchOpen(false);
   };
+
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === 'Escape' && searchOpen) {
+        setSearchOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [searchOpen]);
 
   const { theme, toggleTheme } = useContext(ThemeContext);
 
