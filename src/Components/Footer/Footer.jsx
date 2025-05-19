@@ -2,12 +2,11 @@ import React from 'react'
 import { BsBoxSeam } from "react-icons/bs";
 import { TfiUnlock } from "react-icons/tfi";
 import { FiRefreshCcw } from "react-icons/fi";
-import './Footer.css'
 import { Link } from 'react-router';
 export default function Footer() {
     return (
         <>
-            <div className='footer w-[70%] mx-auto lg:grid grid-cols-3 gap-40 px-8 py-4 mt-40 overflow-hidden'>
+            <div className='bg-[#ea0000] w-[70%] mx-auto lg:grid grid-cols-3 gap-40 px-8 py-4 mt-40 overflow-hidden'>
                 <div className='mb-15 lg:mb-0'>
                     <div className='text-white text-5xl'><BsBoxSeam /></div>
                     <div className='mt-8'>

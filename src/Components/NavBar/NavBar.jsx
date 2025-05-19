@@ -73,8 +73,8 @@ export default function NavBar() {
                             <li className='cursor-pointer hover:scale-[1.4]'><Link to="/user"><CiUser /></Link></li>
                             <li className='cursor-pointer hover:scale-[1.4]'><Link to="/cart"><PiShoppingCartThin/></Link></li>
                             {/* Dark Mode */}
-                            <li className='cursor-pointer hover:scale-[1.4]'>
-                                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none">
+                            <li>
+                                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none cursor-pointer hover:scale-[1.4]">
                                     {theme === 'dark' ? <FaMoon /> : <GoSun />}
                                 </button>
                             </li>
