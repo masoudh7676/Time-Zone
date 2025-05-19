@@ -99,7 +99,7 @@ function NavBar() {
               {/* Sub Menu */}
               <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub dark:bg-gray-800'>
                 <li className='hover-effect'><Link to="/user">Login</Link></li>
-                <li className='hover-effect'>Cart</li>
+                <li className='hover-effect'> <Link to="/cart">Cart</Link></li>
                 <li className='hover-effect'>Element</li>
                 <li className='hover-effect'>Confirmation</li>
                 <li className='hover-effect'>Product Checkout</li>
