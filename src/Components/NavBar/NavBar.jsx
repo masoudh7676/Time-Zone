@@ -1,4 +1,4 @@
-import React, { memo, useContext, useState} from 'react';
+import React, { memo, useContext, useState } from 'react';
 import ThemeContext from '@/Context/ThemeContext';
 import { IoSearchOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
@@ -8,133 +8,164 @@ import { GoSun } from "react-icons/go";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import './Navbar.css'
 import { Link } from 'react-router-dom';
- function NavBar() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const toggleMobileMenu = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
-    };
 
-    const closeMobileMenu = () => {
-        setMobileMenuOpen(false);
-    };
-    const { theme, toggleTheme } = useContext(ThemeContext);
+function NavBar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
-    return (
-        <>
-            {/* Logo & Navigation */}
-            <div className='h-28 hidden lg:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50 dark:bg-black'>
-                <nav className='flex w-[90%] mx-auto'>
-                    <div className='dark:bg-white rounded-2xl p-2'>
-                        {/* Logo */}
-                        <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
-                    </div>
-                    {/* Nav */}
-                    <ul className='flex w-[100%] justify-center gap-7'>
-                        <li><Link to="/home" className='hover-effect font-bold'>Home</Link></li>
-                        <li><Link to="/shop" className='hover-effect font-bold'>Shop</Link></li>
-                        <li><Link to="/about" className='hover-effect font-bold'>About</Link></li>
-                        <li className='relative action red__btn'>
-                            <a href="#" className='relative hover-effect with-sub font-bold'>Latest</a>
-                            {/* Sub Menu */}
-                            <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest__sub dark:bg-gray-800'>
-                                <ul>
-                                    <li className='arrow hover-effect'><a href="">Product List</a> </li>
-                                    <li className='hover-effect'><a href="">Product Details</a> </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li className='action'>
-                            <Link to="blog" className='hover-effect with-sub font-bold'>Blog</Link>
-                            {/* Sub Menu */}
-                            <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub dark:bg-gray-800'>
-                                <li className='arrow hover-effect'><a href="">Blog</a></li>
-                                <li className='hover-effect'><a href="">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li className='action'>
-                            <a href="#" className='hover-effect with-sub font-bold'>Pages</a>
-                            {/* Sub Menu */}
-                            <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub dark:bg-gray-800'>
-                                <li className='hover-effect'><Link to="/user">Login</Link></li>
-                                <li className='hover-effect'>Cart</li>
-                                <li className='hover-effect'>Element</li>
-                                <li className='hover-effect'>Confirmation</li>
-                                <li className='hover-effect'>Product Checkout</li>
-                            </ul>
-                        </li>
-                        <li><Link to="/contact" className='hover-effect font-bold'>Contact</Link></li>
-                    </ul>
-                    <div>
-                        {/* User Actions */}
-                        <ul className='flex gap-5'>
-                            <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
-                            <li className='cursor-pointer hover:scale-[1.4]'><Link to="/user"><CiUser /></Link></li>
-                            <li className='cursor-pointer hover:scale-[1.4]'><Link to="/cart"><PiShoppingCartThin/></Link></li>
-                            {/* Dark Mode */}
-                            <li>
-                                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none cursor-pointer hover:scale-[1.4]">
-                                    {theme === 'dark' ? <FaMoon /> : <GoSun />}
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            {/* Mobile Menu */}
-            <div className='fixed top-0 lg:hidden z-99 bg-white w-full dark:bg-black'>
-            <div className='flex content-center justify-between p-5'>
-                <div>
-                    <Link to="/cart"><PiShoppingCartThin className='text-2xl ' /></Link>
-                </div>
-                <div className='dark:bg-white rounded-2xl p-2'>
-                    <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
-                </div>
-                <button onClick={toggleMobileMenu} aria-label="Toggle menu" className='cursor-pointer'>
-                    <HiOutlineBars3BottomRight className='text-4xl'/>
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  const openSearch = () => {
+    setSearchOpen(true);
+  };
+
+  const closeSearch = () => {
+    setSearchOpen(false);
+  };
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  return (
+    <>
+      {/* Logo & Navigation */}
+      <div className='h-28 hidden lg:flex w-full fixed drop-shadow-xl top-0 bg-white justify-between items-center z-50 dark:bg-black'>
+        <nav className='flex w-[90%] mx-auto'>
+          <div className='dark:bg-white rounded-2xl p-2'>
+            {/* Logo */}
+            <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+          </div>
+          {/* Nav */}
+          <ul className='flex w-[100%] justify-center gap-7'>
+            <li><Link to="/home" className='hover-effect font-bold'>Home</Link></li>
+            <li><Link to="/shop" className='hover-effect font-bold'>Shop</Link></li>
+            <li><Link to="/about" className='hover-effect font-bold'>About</Link></li>
+            <li className='relative action red__btn'>
+              <a href="#" className='relative hover-effect with-sub font-bold'>Latest</a>
+              {/* Sub Menu */}
+              <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white latest__sub dark:bg-gray-800'>
+                <ul>
+                  <li className='arrow hover-effect'><a href="">Product List</a> </li>
+                  <li className='hover-effect'><a href="">Product Details</a> </li>
+                </ul>
+              </div>
+            </li>
+            <li className='action'>
+              <Link to="blog" className='hover-effect with-sub font-bold'>Blog</Link>
+              {/* Sub Menu */}
+              <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub dark:bg-gray-800'>
+                <li className='arrow hover-effect'><a href="">Blog</a></li>
+                <li className='hover-effect'><a href="">Blog Details</a></li>
+              </ul>
+            </li>
+            <li className='action'>
+              <a href="#" className='hover-effect with-sub font-bold'>Pages</a>
+              {/* Sub Menu */}
+              <ul className='absolute hidden cursor-pointer rounded-sm bg-white latest__sub dark:bg-gray-800'>
+                <li className='hover-effect'><Link to="/user">Login</Link></li>
+                <li className='hover-effect'>Cart</li>
+                <li className='hover-effect'>Element</li>
+                <li className='hover-effect'>Confirmation</li>
+                <li className='hover-effect'>Product Checkout</li>
+              </ul>
+            </li>
+            <li><Link to="/contact" className='hover-effect font-bold'>Contact</Link></li>
+          </ul>
+          <div>
+            {/* User Actions */}
+            <ul className='flex gap-5'>
+              <li className='cursor-pointer hover:scale-[1.4]' onClick={openSearch}><IoSearchOutline /></li>
+              <li className='cursor-pointer hover:scale-[1.4]'><Link to="/user"><CiUser /></Link></li>
+              <li className='cursor-pointer hover:scale-[1.4]'><Link to="/cart"><PiShoppingCartThin /></Link></li>
+              {/* Dark Mode */}
+              <li>
+                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none cursor-pointer hover:scale-[1.4]">
+                  {theme === 'dark' ? <FaMoon /> : <GoSun />}
                 </button>
-            </div>
-            {mobileMenuOpen && (
-            <div className='bg-white h-full px-4 py-3 w-70 fixed right-0 z-99 dark:bg-black'>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      {/* Mobile Menu */}
+      <div className='fixed top-0 lg:hidden z-99 bg-white w-full dark:bg-black'>
+        <div className='flex content-center justify-between p-5'>
+          <div>
+            <Link to="/cart"><PiShoppingCartThin className='text-2xl ' /></Link>
+          </div>
+          <div className='dark:bg-white rounded-2xl p-2'>
+            <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+          </div>
+          <button onClick={toggleMobileMenu} aria-label="Toggle menu" className='cursor-pointer'>
+            <HiOutlineBars3BottomRight className='text-4xl' />
+          </button>
+        </div>
+        {mobileMenuOpen && (
+          <div className='bg-white h-full px-4 py-3 w-70 fixed right-0 z-99 dark:bg-black'>
             <div className='flex flex-row-reverse border-b-2 p-2 border-gray-300'>
-                <div className='flex justify-between w-95'>
-                    <button onClick={closeMobileMenu} aria-label="Close menu" className='text-xl font-bold cursor-pointer'>X</button>
-                    <div>
-                        <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
-                    </div>
+              <div className='flex justify-between w-95'>
+                <button onClick={closeMobileMenu} aria-label="Close menu" className='text-xl font-bold cursor-pointer'>X</button>
+                <div>
+                  <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
                 </div>
+              </div>
             </div>
             <div className='lg:hidden flex mt-5 flex-row-reverse h-50'>
-                <ul>
-                    <li className='mb-5'><Link to="/home" className='font-bold'>Home</Link></li>
-                    <li className='mb-5'><Link to="/shop" className='font-bold'>Shop</Link></li>
-                    <li className='mb-5'><Link to="/about" className='font-bold'>About</Link></li>
-                    <li className='mb-5'><a href="#" className='font-bold'>Latest</a></li>
-                    <li className='mb-5'><a href="#" className='font-bold'>Blog</a></li>
-                    <li className='mb-5'><a href="#" className='font-bold'>Blog Details</a></li>
-                    </ul>
+              <ul>
+                <li className='mb-5'><Link to="/home" className='font-bold'>Home</Link></li>
+                <li className='mb-5'><Link to="/shop" className='font-bold'>Shop</Link></li>
+                <li className='mb-5'><Link to="/about" className='font-bold'>About</Link></li>
+                <li className='mb-5'><a href="#" className='font-bold'>Latest</a></li>
+                <li className='mb-5'><a href="#" className='font-bold'>Blog</a></li>
+                <li className='mb-5'><a href="#" className='font-bold'>Blog Details</a></li>
+              </ul>
             </div>
             <ul className='flex flex-row-reverse gap-5 mt-18'>
-                    <li className='cursor-pointer hover:scale-[1.4]'><IoSearchOutline /></li>
-                            <li className='cursor-pointer'><Link to="/user"><CiUser /></Link></li>
-                            {/* Dark Mode */}
-                            <li className='cursor-pointer'>
-                                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none">
-                                    {theme === 'dark' ? <FaMoon /> : <GoSun />}
-                                </button>
-                            </li>
-                            </ul>
-            </div>
-            )}
-            </div>
-            {mobileMenuOpen && (
-                <div
-                    className='bg-neutral-700 opacity-70 mask-alpha lg:hidden fixed inset-0 z-10 w-full h-full'
-                    onClick={closeMobileMenu}
-                ></div>
-            )}
-        </>
-    );
+              <li className='cursor-pointer hover:scale-[1.4]' onClick={openSearch}><IoSearchOutline /></li>
+              <li className='cursor-pointer'><Link to="/user"><CiUser /></Link></li>
+              {/* Dark Mode */}
+              <li className='cursor-pointer'>
+                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none">
+                  {theme === 'dark' ? <FaMoon /> : <GoSun />}
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+      {mobileMenuOpen && (
+        <div
+          className='bg-neutral-700 opacity-70 mask-alpha lg:hidden fixed inset-0 z-10 w-full h-full'
+          onClick={closeMobileMenu}
+        ></div>
+      )}
+      {/* Search Overlay */}
+      <div
+        className={`fixed inset-0 bg-white dark:bg-black z-50 flex flex-col items-center justify-center transform transition-transform duration-500 ease-in-out ${
+          searchOpen ? 'translate-y-0' : 'translate-y-full'
+        }`}
+      >
+        <button
+          onClick={closeSearch}
+          className='absolute top-10 right-10 text-3xl font-bold cursor-pointer'
+          aria-label="Close search"
+        >
+          &times;
+        </button>
+        <input
+          type="text"
+          placeholder='Search Product ...'
+          className='w-4/5 max-w-lg p-4 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white'
+          autoFocus={searchOpen}
+        />
+      </div>
+    </>
+  );
 }
 
-export default memo(NavBar)
+export default memo(NavBar);
