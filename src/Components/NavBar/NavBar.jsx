@@ -8,10 +8,13 @@ import { GoSun } from "react-icons/go";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import './Navbar.css'
 import { Link } from 'react-router-dom';
+import watchData from '../../watchsData';
 
 function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -27,12 +30,14 @@ function NavBar() {
 
   const closeSearch = () => {
     setSearchOpen(false);
+    setSearchQuery('');
+    setFilteredResults([]);
   };
 
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.key === 'Escape' && searchOpen) {
-        setSearchOpen(false);
+        closeSearch();
       }
     };
     window.addEventListener('keydown', handleEsc);
@@ -42,6 +47,20 @@ function NavBar() {
   }, [searchOpen]);
 
   const { theme, toggleTheme } = useContext(ThemeContext);
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+    if (query.trim() === '') {
+      setFilteredResults([]);
+    } else {
+      const results = watchData.filter((product) =>
+        product.title.toLowerCase().includes(query.toLowerCase()) ||
+        product.description.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredResults(results);
+    }
+  };
 
   return (
     <>
@@ -174,7 +193,24 @@ function NavBar() {
           placeholder='Search Product ...'
           className='w-4/5 max-w-lg p-4 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white'
           autoFocus={searchOpen}
+          value={searchQuery}
+          onChange={handleSearchChange}
         />
+        {filteredResults.length > 0 && (
+          <ul className="w-4/5 max-w-lg mt-2 border border-gray-300 rounded-md bg-white dark:bg-gray-900 text-left max-h-60 overflow-y-auto">
+            {filteredResults.map((product) => (
+              <li key={product.id} className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer">
+                <div className="flex items-center gap-3">
+                  <img src={product.src} alt={product.title} className="w-10 h-10 object-cover rounded" />
+                  <div>
+                    <p className="font-semibold">{product.title}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{product.description}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
