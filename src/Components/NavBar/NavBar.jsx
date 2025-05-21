@@ -1,4 +1,4 @@
-import React, { memo, useContext, useState, useEffect } from 'react';
+import React, { memo, useContext, useState, useEffect, useRef } from 'react';
 import ThemeContext from '../../Context/ThemeContext';
 import { IoSearchOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
@@ -9,7 +9,8 @@ import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 import watchData from '../../watchsData';
-
+import { IoSearchSharp } from "react-icons/io5";
+import { FaMicrophone } from "react-icons/fa"
 function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -61,7 +62,44 @@ function NavBar() {
       setFilteredResults(results);
     }
   };
+  const [listening, setListening] = useState(false);
+  const recognitionRef = useRef(null);
 
+  // Voice recognition logic
+  const handleMicClick = () => {
+    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+      alert('Speech recognition not supported in this browser.');
+      return;
+    }
+    if (!recognitionRef.current) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognitionRef.current = new SpeechRecognition();
+      recognitionRef.current.lang = 'en-US';
+      recognitionRef.current.interimResults = false;
+      recognitionRef.current.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setSearchQuery(transcript);
+        setFilteredResults(
+          transcript.trim() === ''
+            ? []
+            : watchData.filter((product) =>
+                product.title.toLowerCase().includes(transcript.toLowerCase()) ||
+                product.description.toLowerCase().includes(transcript.toLowerCase())
+              )
+        );
+      };
+      recognitionRef.current.onend = () => setListening(false);
+    }
+
+    if (!listening) {
+      setListening(true);
+      recognitionRef.current.start();
+    } else {
+      setListening(false);
+      recognitionRef.current.stop();
+    }
+  };
+  
   return (
     <>
       {/* Logo & Navigation */}
@@ -176,7 +214,7 @@ function NavBar() {
         ></div>
       )}
       {/* Search Overlay */}
-      <div
+     <div
         className={`fixed inset-0 bg-white dark:bg-black z-50 flex flex-col items-center justify-center transform transition-transform duration-500 ease-in-out ${
           searchOpen ? 'translate-y-0' : 'translate-y-full'
         }`}
@@ -188,14 +226,27 @@ function NavBar() {
         >
           &times;
         </button>
-        <input
-          type="text"
-          placeholder='Search Product ...'
-          className='w-4/5 max-w-lg p-4 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white'
-          autoFocus={searchOpen}
-          value={searchQuery}
-          onChange={handleSearchChange}
-        />
+        <div className="relative w-4/5 max-w-lg flex items-center">
+          <IoSearchSharp className="absolute left-4 text-2xl text-gray-400 pointer-events-none" />
+          <input
+            type="text"
+            placeholder='Search Product ...'
+            className='w-full p-4 pl-12 pr-12 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white'
+            autoFocus={searchOpen}
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          <button
+            type="button"
+            onClick={handleMicClick}
+            className={`absolute right-4 text-2xl focus:outline-none transition-all
+              ${listening ? 'animate-pulse text-red-500 scale-125' : 'text-gray-400 hover:text-blue-500'}
+            `}
+            aria-label="Voice search"
+          >
+            <FaMicrophone />
+          </button>
+        </div>
         {filteredResults.length > 0 && (
           <ul className="w-4/5 max-w-lg mt-2 border border-gray-300 rounded-md bg-white dark:bg-gray-900 text-left max-h-60 overflow-y-auto">
             {filteredResults.map((product) => (
