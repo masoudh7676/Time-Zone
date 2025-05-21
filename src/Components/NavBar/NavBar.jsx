@@ -215,7 +215,7 @@ function NavBar() {
       )}
       {/* Search Overlay */}
      <div
-        className={`fixed inset-0 bg-white dark:bg-black z-50 flex flex-col items-center justify-center transform transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 bg-white dark:bg-black z-99 flex flex-col items-center justify-center transform transition-transform duration-500 ease-in-out ${
           searchOpen ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
@@ -227,7 +227,7 @@ function NavBar() {
           &times;
         </button>
         <div className="relative w-4/5 max-w-lg flex items-center">
-          <IoSearchSharp className="absolute left-4 text-2xl text-gray-400 pointer-events-none" />
+          <IoSearchSharp className="absolute left-4 text-2xl text-gray-400 cursor-pointer " />
           <input
             type="text"
             placeholder='Search Product ...'
@@ -239,7 +239,7 @@ function NavBar() {
           <button
             type="button"
             onClick={handleMicClick}
-            className={`absolute right-4 text-2xl focus:outline-none transition-all
+            className={`absolute cursor-pointer right-4 text-2xl focus:outline-none transition-all
               ${listening ? 'animate-pulse text-red-500 scale-125' : 'text-gray-400 hover:text-blue-500'}
             `}
             aria-label="Voice search"
