@@ -5,7 +5,7 @@ import routes from './router'
 import { useState } from 'react'
 import watchData from './watchsData'
 import { ThemeProvider } from './Context/ThemeContext'
-
+import ScrollProgress from './Components/ScrollProgress/ScrollProgress'
 function App() {
   const router = useRoutes(routes)
   const [items,SetItems] = useState(watchData)
@@ -13,6 +13,7 @@ function App() {
   const [userCart, setUserCart] = useState([])
   return (
     <ThemeProvider>
+    <ScrollProgress/>
       <AllProductsContext.Provider value= {{
         items,
         SetItems,
