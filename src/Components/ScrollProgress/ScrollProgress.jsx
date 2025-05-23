@@ -21,7 +21,7 @@ const ScrollProgress = () => {
 
   return (
     <div className="fixed top-19 xl:top-27 left-0 w-full  text-white text-center font-bold py-1 z-120 select-none text-sm">
-     <p className='w-15 h-15 bg-[#eb566c] mx-auto p-2 text-center rounded-4xl'>{Math.round(scrollPercent)}% viewed</p> 
+      <p className='w-15 h-15 bg-[#ff003c] mx-auto p-2 text-center rounded-4xl'>{Math.round(scrollPercent)}% viewed</p>
     </div>
   );
 };
