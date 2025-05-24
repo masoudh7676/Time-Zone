@@ -43,7 +43,7 @@ export default function User() {
 
     <div className="mt-6 text-center text-sm text-gray-600">
       Don't have an account? 
-      <Link to="/signup" class="text-indigo-600 hover:text-indigo-500 font-medium"> Sign up</Link>
+      <Link to="/signup" className="text-indigo-600 hover:text-indigo-500 font-medium"> Sign up</Link>
     </div>
   </div>
 </div>
