@@ -1,27 +1,81 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import NavBar from '@/Components/NavBar/NavBar'
+
+function allowOnlyEnglishInput(event) {
+  // Allow control keys like backspace, delete, arrow keys
+  if (
+    event.ctrlKey ||
+    event.altKey ||
+    event.metaKey ||
+    event.key.length > 1
+  ) {
+    return;
+  }
+  // Regex to allow English letters, numbers, and common symbols for email and password
+  const englishRegex = /^[a-zA-Z0-9@._\-!#$%&'*+/=?^_`{|}~]+$/;
+  // For name field, allow space as well
+  const nameField = event.target.name === 'name';
+  const char = event.key;
+  if (nameField) {
+    if (!/^[a-zA-Z ]$/.test(char)) {
+      event.preventDefault();
+    }
+  } else {
+    if (!englishRegex.test(char)) {
+      event.preventDefault();
+    }
+  }
+}
+
 export default function Signup() {
   return (
     <>
       <NavBar />
-      
-      <Formik initialValues={{ email: '', password: '', name: '' }} onSubmit={(values) => {
-        console.log('values is:', values)
-      }}>
-        {({ values, handleChange, handleSubmit }) => (
+
+      <Formik
+        validate={(values) => {
+          const errors = {};
+          if (values.name === '') {
+            errors.name = "please enter a name"
+          } else if (values.name.length < 3) {
+            errors.name = "name length should not less than 3 words"
+          }
+          if (values.email === '') {
+            errors.email = 'enter your E-mail'
+          } else if ((!/^\w+([\.-]?\w)*@\w*(\.\w{2,7})+$/i.test(values.email))) {
+            errors.email = 'please enter a Valid E-mail!'
+          }
+          if (values.password === '') {
+            errors.password = 'please enter a password'
+          } else if ((!/^\d+\D+\W$/i.test(values.password))) {
+            errors.password = 'enter a Valid Password!'
+          }
+
+          return errors
+        }}
+        initialValues={{ email: '', password: '', name: '' }} onSubmit={(values) => {
+          console.log('values is:', values)
+        }}>
+        {({ values, handleChange, handleSubmit, errors }) => (
+
           <div className="h-screen w-screen bg-gray-100 pt-10 mt-20">
             <div className="max-w-xl mx-auto bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
               <h2 className='text-center text-2xl mb-12'>Sign Up</h2>
               <Form className="flex-col space-y-4">
+                {console.log(errors)}
                 <label className="block font-medium text-gray-700">E-Mail Adress</label>
-                <Field type="text" name="email" required placeholder="email..." className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none  " />
+                <Field type="text" name="email" required placeholder="email..." className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none  " onKeyPress={allowOnlyEnglishInput} />
+                {errors.email && errors.email}
                 <div className="flex flex-col space-y-2">
-                  <label className="block font-medium text-gray-700">Password <span className="text-gray-500 font-base text-sm"></span></label>   <Field type="password" placeholder="Password..." className="shadow-sm block w-full py-2  rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none" name="password" />
+                  <label className="block font-medium text-gray-700">Password <span className="text-gray-500 font-base text-sm"></span></label>
+                  <Field type="password" placeholder="Password..." className="shadow-sm block w-full py-2  rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none" name="password" onKeyPress={allowOnlyEnglishInput} />
+                  {errors.password && errors.password}
                 </div>
                 <div className="flex flex-col space-y-2">
                   <label className="block font-medium text-gray-700">First and Last Name</label>
-                  <Field type="text" className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none " name="name" required placeholder="First and Last Name"/>
+                  <Field type="text" className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none " name="name" required placeholder="First and Last Name" onKeyPress={allowOnlyEnglishInput} />
+                  {errors.name && errors.name}
                 </div>
                 <div className="flex flex-col space-y-2">
                   <label className="text-gray-600 font-normal flex items-start space-x-2"><div>
