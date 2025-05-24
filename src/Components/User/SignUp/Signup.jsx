@@ -1,5 +1,5 @@
-import React from 'react'
-import { Formik, Form, Field } from 'formik'
+import React, { memo } from 'react'
+import { Formik, Form, Field, FastField } from 'formik'
 import NavBar from '@/Components/NavBar/NavBar'
 
 function allowOnlyEnglishInput(event) {
@@ -27,6 +27,17 @@ function allowOnlyEnglishInput(event) {
     }
   }
 }
+
+const MemoizedField = memo(({ name, type, placeholder, required, className, onKeyPress }) => (
+  <FastField
+    name={name}
+    type={type}
+    placeholder={placeholder}
+    required={required}
+    className={className}
+    onKeyPress={onKeyPress}
+  />
+))
 
 export default function Signup() {
   return (
@@ -62,19 +73,19 @@ export default function Signup() {
           <div className="h-screen w-screen bg-gray-100 pt-10 mt-20">
             <div className="max-w-xl mx-auto bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
               <h2 className='text-center text-2xl mb-12'>Sign Up</h2>
+              <h4 className='-mt-10 text-center text-xl text-red-500 mb-8'>(only type english!)</h4>
               <Form className="flex-col space-y-4">
-                {console.log(errors)}
                 <label className="block font-medium text-gray-700">E-Mail Adress</label>
-                <Field type="text" name="email" required placeholder="email..." className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none  " onKeyPress={allowOnlyEnglishInput} />
+                <MemoizedField type="text" name="email" required placeholder="email..." className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none  " onKeyPress={allowOnlyEnglishInput} />
                 {errors.email && errors.email}
                 <div className="flex flex-col space-y-2">
                   <label className="block font-medium text-gray-700">Password <span className="text-gray-500 font-base text-sm"></span></label>
-                  <Field type="password" placeholder="Password..." className="shadow-sm block w-full py-2  rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none" name="password" onKeyPress={allowOnlyEnglishInput} />
+                  <MemoizedField type="password" placeholder="Password..." className="shadow-sm block w-full py-2  rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none" name="password" onKeyPress={allowOnlyEnglishInput} />
                   {errors.password && errors.password}
                 </div>
                 <div className="flex flex-col space-y-2">
                   <label className="block font-medium text-gray-700">First and Last Name</label>
-                  <Field type="text" className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none " name="name" required placeholder="First and Last Name" onKeyPress={allowOnlyEnglishInput} />
+                  <MemoizedField type="text" className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none " name="name" required placeholder="First and Last Name" onKeyPress={allowOnlyEnglishInput} />
                   {errors.name && errors.name}
                 </div>
                 <div className="flex flex-col space-y-2">
