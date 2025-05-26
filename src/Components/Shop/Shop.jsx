@@ -29,7 +29,7 @@ export default function Shop() {
   const contextData = useContext(AllProductsContext)      // watch data
   const [values, setValues] = useState([min, max])
   const [filteredItems, setFilteredItems] = useState(contextData.items) //creating filter price
-  const navigate = useNavigate()
+
 
   const handleFilter = () => {            //price filter function
     const [minPrice, maxPrice] = values
@@ -189,41 +189,42 @@ export default function Shop() {
               <Link to={`/product/${data.id}`} key={data.id} className='group border p-2 border-gray-200 cursor-pointer block no-underline'>
                 <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
                   <img src={data.src} className='object-cover' alt="" />
-                  <button
-                    className="text-center block xl:hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      swal({ title: "Added To Cart Successfully", icon: "success" });
-                      contextData.setShowCart(true);
+<button
+  className="text-center block xl:hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
+  onClick={(e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    swal({ title: "Added To Cart Successfully", icon: "success" });
+    contextData.setShowCart(true);
 
-                      // Check if product already in cart
-                      const existingProduct = contextData.userCart.find(item => item.id === data.id);
+    // Check if product already in cart
+    const existingProduct = contextData.userCart.find(item => item.id === data.id);
 
-                      if (existingProduct) {
-                        // Increase quantity
-                        const updatedCart = contextData.userCart.map(item =>
-                          item.id === data.id
-                            ? { ...item, quantity: item.quantity + 1 }
-                            : item
-                        );
-                        contextData.setUserCart(updatedCart);
-                      } else {
-                        // Add new product with quantity 1
-                        contextData.setUserCart([
-                          ...contextData.userCart,
-                          {
-                            id: data.id,
-                            title: data.title,
-                            price: data.price,
-                            img: data.src,
-                            quantity: 1
-                          }
-                        ]);
-                      }
-                    }}
-                  >
-                    add to cart
-                  </button>
+    if (existingProduct) {
+      // Increase quantity
+      const updatedCart = contextData.userCart.map(item =>
+        item.id === data.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+      contextData.setUserCart(updatedCart);
+    } else {
+      // Add new product with quantity 1
+      contextData.setUserCart([
+        ...contextData.userCart,
+        {
+          id: data.id,
+          title: data.title,
+          price: data.price,
+          img: data.src,
+          quantity: 1
+        }
+      ]);
+    }
+  }}
+>
+  add to cart
+</button>
                 </div>
                 <div className='text-center'>
                   <h4>Brand: {data.title}</h4>
