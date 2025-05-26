@@ -11,13 +11,14 @@ import {
 } from "@/components/ui/accordion"
 import AllProductsContext from '@/Context/Products';
 import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
 
 export default function Product() {
   const { id } = useParams()
   const contextData = useContext(AllProductsContext)
   const product = contextData.items.find(item => item.id === parseInt(id))
 
-  if (!product) {
+  if (!product) {     //  when product item not found
     return (
       <>
         <NavBar />
@@ -109,11 +110,12 @@ export default function Product() {
             <img src={product.src} className='object-cover' alt={product.title} />
           </div>
           <div className='mt-10'>
-            <h5 className = 'text-center text-2xl font-bold mb-10'>title: {product.title}</h5>
+            <h5 className = 'text-center text-2xl font-bold mb-10'>{product.title}</h5>
             <p className='leading-9'>additionalDescription: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ut veniam dolor architecto assumenda possimus est iure quidem debitis praesentium porro, quod voluptatem eius. Nulla, consequuntur repudiandae. Nisi, laborum laboriosam debitis facere ab autem praesentium!'</p>
           </div>
         </main>
       </div>
+      <Footer/>
     </>
   )
 }
