@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import watchData from './watchsData'
 import { ThemeProvider } from './Context/ThemeContext'
 import ScrollProgress from './Components/ScrollProgress/ScrollProgress'
+
 function App() {
   const router = useRoutes(routes)
   const [items, SetItems] = useState(watchData)

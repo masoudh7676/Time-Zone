@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 import { Slider } from '../ui/slider'
 import { Button } from '../ui/button'
 import { Check, ChevronsUpDown } from "lucide-react"
