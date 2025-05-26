@@ -56,7 +56,13 @@ export default function Product() {
               </AccordionItem>
             </Accordion>
           </ul>
+          <div className='flex justify-center'>
+          <button className='bg-red-500 w-[75%] cursor-pointer hover:text-white rounded-xl p-1'>add to cart</button>
+          </div>
         </aside>
+        <main className=''>
+
+        </main>
       </div>
     </>
   )
