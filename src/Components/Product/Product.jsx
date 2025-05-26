@@ -1,25 +1,53 @@
 import React from 'react'
 import { CiStar } from "react-icons/ci";
+import { FaTruckFast } from "react-icons/fa6";
+import { FaRegCreditCard } from "react-icons/fa";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
 export default function Product() {
   return (
     <>
-      <div>
+      <div className='w-[30%] md:w-[60%] lg:w-[40%] mx-auto my-10 p-5 border border-gray-300 rounded-lg shadow-lg'>
         <aside>
           <h5 className='font-bold'>price : $</h5>
           <ul>
             <li>
-              <span>guarantee</span>
-                <CiStar />
-            </li>
-            <li>
-      
-            </li>
-            <li>
+              <Accordion type="single" collapsible className="w-full flex items-center">
+                <CiStar className='mr-5' />
+                <AccordionItem className={'w-full'} value="item-1">
+                  <AccordionTrigger>Guarantee</AccordionTrigger>
+                  <AccordionContent>
+                    life time guarantee
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
 
             </li>
             <li>
-
+              <Accordion type="single" collapsible className="w-full flex items-center ">
+                <FaTruckFast className='mr-5' />
+                <AccordionItem className={'w-full'} value="item-1">
+                  <AccordionTrigger>Fast Delivery</AccordionTrigger>
+                  <AccordionContent>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo temporibus, dolores modi ad odio dolor assumenda qui veritatis, libero amet dicta dolorem ullam quod error a voluptates doloremque deserunt porro
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </li>
+            <Accordion type="single" collapsible className="w-full flex items-center ">
+              <FaRegCreditCard className='mr-5' />
+              <AccordionItem className={'w-full'} value="item-1">
+                <AccordionTrigger>Secure Payment</AccordionTrigger>
+                <AccordionContent>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo temporibus, dolores modi ad odio dolor assumenda qui veritatis, libero amet dicta dolorem ullam quod error a voluptates doloremque deserunt porro
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </ul>
         </aside>
       </div>
