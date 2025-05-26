@@ -20,7 +20,7 @@ function App() {
         showCart,
         setShowCart,
         userCart,
-        setUserCart
+        setUserCart,
       }}>
       {router}
       </AllProductsContext.Provider>

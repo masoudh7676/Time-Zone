@@ -18,7 +18,7 @@ const routes = [
     {path: '/user', element: <User/>},
     {path: '/signup', element: <Signup/>},
     {path: '/cart', element: <Cart/>},
-    {path: '/product', element: <Product/>}
+{path: '/product/:id', element: <Product/>}
 ]
 
 export default routes

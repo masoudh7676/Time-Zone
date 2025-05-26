@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import { Slider } from '../ui/slider'
 import { Button } from '../ui/button'
 import { Check, ChevronsUpDown } from "lucide-react"
@@ -28,6 +29,7 @@ export default function Shop() {
   const contextData = useContext(AllProductsContext)      // watch data
   const [values, setValues] = useState([min, max])
   const [filteredItems, setFilteredItems] = useState(contextData.items) //creating filter price
+  const navigate = useNavigate()
 
   const handleFilter = () => {            //price filter function
     const [minPrice, maxPrice] = values
@@ -184,8 +186,13 @@ export default function Shop() {
         <div className='parent mt-50 mb-16 grid grid-cols-3 sm:w-[80%] mx-auto xl:w-[52%] xl:mx-0 bg-gray-100 border border-gray-200 dark:bg-gray-800'>
           {
             filteredItems.map(data => (
-              <div className=' group border p-2 border-gray-200 cursor-pointer' key={data.id} 
-              onClick={() => {
+              <Link to={`/product/${data.id}`} key={data.id} className='group border p-2 border-gray-200 cursor-pointer block no-underline'>
+                <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
+                  <img src={data.src} className='object-cover' alt="" />
+                  <button
+                    className="text-center block xl:hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
+                    onClick={(e) => {
+                      e.stopPropagation();
                       swal({ title: "Added To Cart Successfully", icon: "success" });
                       contextData.setShowCart(true);
 
@@ -213,12 +220,7 @@ export default function Shop() {
                           }
                         ]);
                       }
-                    }}>
-                <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
-                  <img src={data.src} className='object-cover' alt="" />
-                  <button
-                    className="text-center block xl:hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
-                    
+                    }}
                   >
                     add to cart
                   </button>
@@ -228,7 +230,7 @@ export default function Shop() {
                   <p>{data.description}</p>
                   <span>Price: {data.price}$</span>
                 </div>
-              </div>
+              </Link>
             ))
           }
         </div>
