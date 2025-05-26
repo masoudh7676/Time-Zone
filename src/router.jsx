@@ -9,16 +9,16 @@ import Signup from './Components/User/SignUp/Signup';
 import Cart from './Components/Cart/Cart';
 import Product from './Components/Product/Product';
 const routes = [
-    {path: '/', element: <Navigate to="/home" />}, // Redirect '/' to '/home'
-    {path: '/home', element: <Home />},
-    {path:'/shop', element: <Shop />},
-    {path:'/about', element:<About />},
-    {path:'/contact', element: <Contact />},
-    {path:'/blog', element: <Blog />},
-    {path: '/user', element: <User/>},
-    {path: '/signup', element: <Signup/>},
-    {path: '/cart', element: <Cart/>},
-{path: '/product/:id', element: <Product/>}
+    { path: '/', element: <Navigate to="/home" /> }, // Redirect  to home
+    { path: '/home', element: <Home /> },
+    { path: '/shop', element: <Shop /> },
+    { path: '/about', element: <About /> },
+    { path: '/contact', element: <Contact /> },
+    { path: '/blog', element: <Blog /> },
+    { path: '/user', element: <User /> },
+    { path: '/signup', element: <Signup /> },
+    { path: '/cart', element: <Cart /> },
+    { path: '/product/:id', element: <Product /> }
 ]
 
 export default routes

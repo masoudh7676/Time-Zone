@@ -8,7 +8,7 @@ import { ThemeProvider } from './Context/ThemeContext'
 import ScrollProgress from './Components/ScrollProgress/ScrollProgress'
 function App() {
   const router = useRoutes(routes)
-  const [items,SetItems] = useState(watchData)
+  const [items, SetItems] = useState(watchData)
   const [showCart, setShowCart] = useState(false)
   const [userCart, setUserCart] = useState(() => {
     const savedCart = localStorage.getItem('userCart')
@@ -21,8 +21,8 @@ function App() {
 
   return (
     <ThemeProvider>
-    <ScrollProgress/>
-      <AllProductsContext.Provider value= {{
+      <ScrollProgress />
+      <AllProductsContext.Provider value={{
         items,
         SetItems,
         showCart,
@@ -30,7 +30,7 @@ function App() {
         userCart,
         setUserCart,
       }}>
-      {router}
+        {router}
       </AllProductsContext.Provider>
     </ThemeProvider>
   )
