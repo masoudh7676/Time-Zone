@@ -3,6 +3,7 @@ import { BsBoxSeam } from "react-icons/bs";
 import { TfiUnlock } from "react-icons/tfi";
 import { FiRefreshCcw } from "react-icons/fi";
 import { Link } from 'react-router';
+import Logo from '../Logo/Logo';
 export default function Footer() {
     return (
         <>
@@ -32,8 +33,8 @@ export default function Footer() {
             
             <div className='overflow-hidden w-[70%] gap-30 align-middle  mt-26 mb-20 grid grid-cols-1 sm:grid-cols-2 mx-auto xl:flex justify-center '>
                 <div>
-                    <Link to="/home" ><img src="./images/logo.png.webp" className='mb-4' alt="time-zone" /></Link>
-                    <p className='text-[#868c98]'>Asorem ipsum adipolor sdit amet, <br /> consectetur adipisicing elitcf sed do <br /> eiusmod tem.</p>
+                    <Link to="/home" ><Logo/></Link>
+                    <p className='text-[#868c98] mt-5'>Asorem ipsum adipolor sdit amet, <br /> consectetur adipisicing elitcf sed do <br /> eiusmod tem.</p>
                 </div>
                 <div>
                 <h5 className='text-xl font-bold mb-3'>Quick Links</h5>

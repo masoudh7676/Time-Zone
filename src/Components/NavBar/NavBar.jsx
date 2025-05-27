@@ -1,5 +1,6 @@
 import React, { memo, useContext, useState, useEffect, useRef } from 'react';
 import ThemeContext from '../../Context/ThemeContext';
+import Logo from '../Logo/Logo';
 import { IoSearchOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
@@ -107,7 +108,7 @@ function NavBar() {
         <nav className='flex w-[90%] mx-auto'>
           <div className='dark:bg-white rounded-2xl p-2'>
             {/* Logo */}
-            <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+            <Link to="/home"><Logo/></Link>
           </div>
           {/* Nav */}
           <ul className='flex w-[100%] justify-center gap-7'>
@@ -168,7 +169,7 @@ function NavBar() {
             <Link to="/cart"><PiShoppingCartThin className='text-2xl ' /></Link>
           </div>
           <div className='dark:bg-white rounded-2xl p-2'>
-            <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+            <Link to="/home"><img src="/images/logo.png.webp" alt="Time-Zone" /></Link>
           </div>
           <button onClick={toggleMobileMenu} aria-label="Toggle menu" className='cursor-pointer'>
             <HiOutlineBars3BottomRight className='text-4xl' />
