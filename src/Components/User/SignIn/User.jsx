@@ -20,7 +20,7 @@ export default function User() {
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb__1">Password</label>
+        <label className="block text-sm font-medium text-gray-700 mb__1">Password</label>
         <input 
           type="password" 
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
@@ -30,7 +30,7 @@ export default function User() {
 
       <div className="flex items-center justify-between mb__custom margin">
         <label className="flex items-center">
-          <input type="checkbox" class="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"/>
+          <input type="checkbox" className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"/>
           <span className="ml-2 text-sm text-gray-600">Remember me</span>
         </label>
         <a href="#" className="text-sm text-indigo-600 hover:text-indigo-500">Forgot password?</a>
