@@ -135,10 +135,10 @@ function NavBar() {
                 <li className='hover-effect'><a href="">Blog Details</a></li>
               </ul>
             </li>
-            <li className='group'>
-              <a href="#" className='hover-effect py-40 px-3 font-bold'>Pages</a>
+            <li className='group '>
+              <a href="#" className='hover-effect py-40 px-3 font-bold '>Pages</a>
               {/* Sub Menu */}
-              <ul className='absolute hidden cursor-pointer rounded-sm bg-white group-hover:block p-3 mt-9 leading-10 shadow-2xl transition-all duration-150 dark:bg-gray-800'>
+              <ul className='absolute arrow hidden cursor-pointer rounded-sm bg-white group-hover:block p-3 mt-9 leading-10 shadow-2xl transition-all duration-150 dark:bg-gray-800'>
                 <li className='hover-effect'><Link to="/user">Login</Link></li>
                 <li className='hover-effect'> <Link to="/cart">Cart</Link></li>
                 <li className='hover-effect'>Element</li>
