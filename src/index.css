@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "./fonts/fonts.css";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
 *, body, html{
     font-family: 'josefin-sans' !important;

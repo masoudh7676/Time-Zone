@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { CiStar } from "react-icons/ci";
 import { FaTruckFast } from "react-icons/fa6";
@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import AllProductsContext from '@/Context/Products';
+import { CgSpinner } from "react-icons/cg";
 
 export default function Product() {
   const { id } = useParams()
@@ -24,7 +25,11 @@ export default function Product() {
     )
   }
 
+  const [isAdding, setIsAdding] = useState(false);
+
   const handleAddToCart = () => {
+    setIsAdding(true);
+
     const existingProduct = contextData.userCart.find(item => item.id === product.id)
 
     if (existingProduct) {
@@ -47,6 +52,10 @@ export default function Product() {
       ])
     }
     contextData.setShowCart(true)
+
+    setTimeout(() => {
+      setIsAdding(false);
+    }, 1000); // simulate loading for 1 second
   }
 
   return (
@@ -95,7 +104,14 @@ export default function Product() {
           </Accordion>
         </ul>
         <div className='flex justify-center'>
-          <button className='bg-red-500 w-[75%] cursor-pointer hover:text-white rounded-xl p-1' onClick={handleAddToCart}>add to cart</button>
+          <button 
+            className='bg-red-500 w-[75%] cursor-pointer hover:text-white rounded-xl p-1 flex items-center justify-center' 
+            onClick={handleAddToCart}
+            disabled={isAdding}
+          > 
+            {isAdding && <CgSpinner className='animate-spin mr-2 text-white text-xl'/>} 
+            add to cart
+          </button>
         </div>
       </aside>
       <main className='w-[30%]'>

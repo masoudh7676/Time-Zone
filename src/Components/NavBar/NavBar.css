@@ -27,20 +27,7 @@
 .with-sub{
     padding: 65px 10px;
 }
-.latest__sub{
-   padding: 10px;
-   margin-top: 3.6rem;
-   line-height: 25px;
-   border-top: 4px solid #ff003c;
-   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
-   animation: fadeIn 1s ;
-   -webkit-animation: fadeIn 230ms ;
-   transition: all 230ms ease-out;
-   -webkit-transition: all 230ms ease-out;
-   -moz-transition: all 230ms ease-out;
-   -ms-transition: all 230ms ease-out;
-   -o-transition: all 230ms ease-out;
-}
+
 @keyframes fadeIn{
     from {top: 100%;}
     to {top: 50%;}
@@ -53,9 +40,4 @@
     border-bottom: 10px solid #ff003c;
     top: -13px;
     left: 7px;
-}
-.action:hover{
-    .latest__sub{
-        display: block;
-    }
 }
