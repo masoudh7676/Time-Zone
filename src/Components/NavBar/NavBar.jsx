@@ -1,4 +1,5 @@
-import React, { memo, useContext, useState, useEffect, useRef } from 'react';
+import React, { memo, useContext, useState, useEffect, useRef, } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ThemeContext from '../../Context/ThemeContext';
 import Logo from '../Logo/Logo';
 import { IoSearchOutline } from "react-icons/io5";
@@ -17,7 +18,7 @@ function NavBar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
-
+ const navigate = useNavigate();
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -118,7 +119,7 @@ function NavBar() {
             <li className='relative group red__btn'>
               <a href="#" className='relative hover-effect py-40 px-3 font-bold'>Latest</a>
               {/* Sub Menu */}
-              <div className='hidden absolute cursor-pointer w-[290%] rounded-sm bg-white group-hover:block p-3 mt-9 leading-10 shadow-2xl transition-all duration-150 dark:bg-gray-800'>
+              <div className='hidden absolute cursor-pointer w-[290%] fadeInCustom rounded-sm bg-white group-hover:block p-3 mt-9 leading-10 shadow-2xl transition-all duration-150 dark:bg-gray-800'>
                 <ul>
                   <li className='arrow hover-effect'><a href="">Product List</a> </li>
                   <li className='hover-effect'><a href="">Product Details</a> </li>
@@ -251,7 +252,14 @@ function NavBar() {
         {filteredResults.length > 0 && (
           <ul className="w-4/5 max-w-lg mt-2 border border-gray-300 rounded-md bg-white dark:bg-gray-900 text-left max-h-60 overflow-y-auto">
             {filteredResults.map((product) => (
-              <li key={product.id} className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer">
+              <li
+                key={product.id}
+                className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer"
+                onClick={() => {
+                  closeSearch();
+                  navigate(`/product/${product.id}`);
+                }}
+              >
                 <div className="flex items-center gap-3">
                   <img src={product.src} alt={product.title} className="w-10 h-10 object-cover rounded" />
                   <div>

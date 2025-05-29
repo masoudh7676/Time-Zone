@@ -1,10 +1,10 @@
-.red__btn::before{
+.red__btn::before {
     position: absolute;
     content: 'Hot';
     color: #fff;
     background-color: #ff003c;
     font-size: 12px;
-    bottom: 30px;
+    bottom: 35px;
     left: 1.8rem;
     border-radius: 10px;
     padding: 5px 12px;
@@ -14,29 +14,39 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-.hover-effect{
+
+.hover-effect {
     transition: ease 260ms;
     -webkit-transition: ease 260ms;
     -moz-transition: ease 260ms;
     -ms-transition: ease 260ms;
     -o-transition: ease 260ms;
 }
-.hover-effect:hover{
+
+.hover-effect:hover {
     color: #ff003c;
 }
-.with-sub{
-    padding: 65px 10px;
+
+.with-sub {
+    animation-name: fadeIn;
+    animation-duration: 2s;
 }
 
-@keyframes fadeIn{
-    from {top: 100%;}
-    to {top: 50%;}
+@keyframes fadeIn {
+    from {
+        top: 100%;
+    }
+
+    to {
+        top: 50%;
+    }
 }
-.arrow::before{
+
+.arrow::before {
     position: absolute;
     content: '';
     border-left: 8px solid transparent;
-	border-right: 8px solid transparent;
+    border-right: 8px solid transparent;
     border-bottom: 10px solid #ff003c;
     top: -13px;
     left: 7px;
