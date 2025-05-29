@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { lazy, useContext, useState } from 'react'
 import {  Link } from 'react-router-dom'
 import { Slider } from '../ui/slider'
 import { Button } from '../ui/button'
@@ -108,7 +108,7 @@ export default function Shop() {
     <div className='overflow-hidden'>
       <NavBar />
       <div className='relative top-24'>
-        <img src="/images/about_hero.png.webp" alt="" className=' w-full h-full dark:mask-y-from-5%' />
+        <img src="/images/about_hero.png.webp" loading='lazy' alt="time-zone" className='w-full h-full dark:mask-y-from-5%' />
         <div className='absolute top-2/5 text-center text-7xl font-black w-full'>
           <h4 className='capitalize'>watch shop</h4>
         </div>
@@ -188,7 +188,7 @@ export default function Shop() {
             filteredItems.map(data => (
               <Link to={`/product/${data.id}`} key={data.id} className='group border p-2 border-gray-200 cursor-pointer block no-underline'>
                 <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
-                  <img src={data.src} className='object-cover' alt="" />
+                  <img src={data.src} className='object-cover' loading='lazy' alt="time-zone" />
 <button
   className="text-center block xl:hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
   onClick={(e) => {

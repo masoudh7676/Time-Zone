@@ -18,7 +18,7 @@ function NavBar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
- const navigate = useNavigate();
+  const navigate = useNavigate();
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -85,9 +85,9 @@ function NavBar() {
           transcript.trim() === ''
             ? []
             : watchData.filter((product) =>
-                product.title.toLowerCase().includes(transcript.toLowerCase()) ||
-                product.description.toLowerCase().includes(transcript.toLowerCase())
-              )
+              product.title.toLowerCase().includes(transcript.toLowerCase()) ||
+              product.description.toLowerCase().includes(transcript.toLowerCase())
+            )
         );
         if (e.button === 0 && !e.metaKey && !e.ctrlKey) closeSearch();
       };
@@ -102,7 +102,7 @@ function NavBar() {
       recognitionRef.current.stop();
     }
   };
-  
+
   return (
     <>
       {/* Logo & Navigation */}
@@ -110,7 +110,7 @@ function NavBar() {
         <nav className='flex w-[90%] mx-auto'>
           <div className='dark:bg-white rounded-2xl p-2'>
             {/* Logo */}
-            <Link to="/home"><Logo/></Link>
+            <Link to="/home"><Logo /></Link>
           </div>
           {/* Nav */}
           <ul className='flex w-[100%] justify-center gap-7'>
@@ -181,7 +181,11 @@ function NavBar() {
           <div className='bg-white h-full px-4 py-3 w-70 fixed right-0 z-99 dark:bg-black'>
             <div className='flex flex-row-reverse border-b-2 p-2 border-gray-300'>
               <div className='flex justify-between w-95'>
-                <button onClick={closeMobileMenu} aria-label="Close menu" className='text-xl font-bold cursor-pointer'>X</button>
+                <button
+                  onClick={closeMobileMenu}
+                  aria-label="Close menu" className='text-4xl font-bold cursor-pointer'>
+                  &times;
+                </button>
                 <div>
                   <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
                 </div>
@@ -217,10 +221,8 @@ function NavBar() {
         ></div>
       )}
       {/* Search Overlay */}
-     <div
-        className={`fixed inset-0 bg-white dark:bg-black z-99 flex flex-col items-center justify-center transform transition-transform duration-500 ease-in-out ${
-          searchOpen ? 'translate-y-0' : 'translate-y-full'
-        }`}
+      <div
+        className={`fixed inset-0 bg-white dark:bg-black z-99 flex flex-col items-center justify-center transform transition-transform duration-500 ease-in-out ${searchOpen ? 'translate-y-0' : 'translate-y-full'}`}
       >
         <button
           onClick={closeSearch}
@@ -253,23 +255,23 @@ function NavBar() {
         {filteredResults.length > 0 && (
           <ul className="w-4/5 max-w-lg mt-2 border border-gray-300 rounded-md bg-white dark:bg-gray-900 text-left max-h-60 overflow-y-auto">
             {filteredResults.map((product) => (
-      <li key={product.id}>
-        <Link
-          to={`/product/${product.id}`}
-          className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer"
-          onClick={() => closeSearch()}
-        >
-          <div className="flex items-center gap-3">
-            <img src={product.src} alt={product.title} className="w-10 h-10 object-cover rounded" />
-            <div>
-              <p className="font-semibold">{product.title}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{product.description}</p>
-            </div>
-          </div>
-        </Link>
-      </li>
+              <li key={product.id}>
+                <Link
+                  to={`/product/${product.id}`}
+                  className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer"
+                  onClick={() => closeSearch()}
+                >
+                  <div className="flex items-center gap-3">
+                    <img src={product.src} alt={product.title} className="w-10 h-10 object-cover rounded" />
+                    <div>
+                      <p className="font-semibold">{product.title}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{product.description}</p>
+                    </div>
+                  </div>
+                </Link>
+              </li>
             ))}
-            
+
           </ul>
         )}
       </div>

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { lazy, useContext, useState } from "react"
 import {
   Carousel,
   CarouselContent,
@@ -28,7 +28,7 @@ export default function Home() {
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <img src={item.src} alt={item.description} className="w-full h-full object-cover" />
+                  <img src={item.src} alt= 'time-zone' loading="lazy" className="w-full h-full object-cover" />
                 </CardContent>
               </Card>
             </div>
@@ -40,7 +40,7 @@ export default function Home() {
     </Carousel>
         <div className='relative mt-25'>
         <div className='absolute w-[85px] h-[85px] top-[40%] left-[45%] border border-amber-50 rounded-full cursor-pointer'><FaPlay className='text-4xl ml-6 mt-5.5 text-white'/></div>
-          <img src="/images/sectin_bg1.png.webp" alt="" />
+          <img src="/images/sectin_bg1.png.webp" loading="lazy" alt="time-zone" />
           <div className='bg-[#ff2020] absolute w-[30%] bottom-0 '>
           <a href="#" className='flex justify-around items-center cursor-pointer p-15'>
             <span className='capitalize text-2xl text-white font-bold'>next video</span>

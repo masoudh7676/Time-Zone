@@ -105,7 +105,7 @@ export default function Product() {
         </ul>
         <div className='flex justify-center'>
           <button 
-            className='bg-red-500 w-[75%] cursor-pointer hover:text-white rounded-xl p-1 flex items-center justify-center' 
+            className='bg-red-500 w-[75%] cursor-pointer hover:text-white rounded-xl p-1 flex items-center justify-center capitalize text-xl' 
             onClick={handleAddToCart}
             disabled={isAdding}
           > 
@@ -116,7 +116,7 @@ export default function Product() {
       </aside>
       <main className='w-[30%]'>
         <div className='border-1 border-gray-300'>
-          <img src={product.src} className='object-cover' alt={product.title} />
+          <img src={product.src} loading='lazy' className='object-cover' alt={product.title} />
         </div>
         <div className='mt-10'>
           <h5 className = 'text-center text-2xl font-bold mb-10'>{product.title}</h5>

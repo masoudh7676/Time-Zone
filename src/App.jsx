@@ -5,7 +5,6 @@ import routes from './router'
 import { useState, useEffect } from 'react'
 import watchData from './watchsData'
 import { ThemeProvider } from './Context/ThemeContext'
-import ScrollProgress from './Components/ScrollProgress/ScrollProgress'
 
 function App() {
   const router = useRoutes(routes)
@@ -22,7 +21,6 @@ function App() {
 
   return (
     <ThemeProvider>
-      <ScrollProgress />
       <AllProductsContext.Provider value={{
         items,
         SetItems,

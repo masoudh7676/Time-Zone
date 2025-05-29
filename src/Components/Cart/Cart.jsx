@@ -117,8 +117,8 @@ export default function Cart() {
           </div>
         </>
       ) : (
-        <h3 className='capitalize mt-60 text-center'>
-          still nothing here to show
+        <h3 className='capitalize mt-60 text-center text-2xl text-orange-400 leading-12'>
+          still nothing here to show !
         </h3>
       )}
       <Footer />
