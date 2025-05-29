@@ -89,6 +89,7 @@ function NavBar() {
                 product.description.toLowerCase().includes(transcript.toLowerCase())
               )
         );
+        if (e.button === 0 && !e.metaKey && !e.ctrlKey) closeSearch();
       };
       recognitionRef.current.onend = () => setListening(false);
     }
@@ -252,23 +253,23 @@ function NavBar() {
         {filteredResults.length > 0 && (
           <ul className="w-4/5 max-w-lg mt-2 border border-gray-300 rounded-md bg-white dark:bg-gray-900 text-left max-h-60 overflow-y-auto">
             {filteredResults.map((product) => (
-              <li
-                key={product.id}
-                className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer"
-                onClick={() => {
-                  closeSearch();
-                  navigate(`/product/${product.id}`);
-                }}
-              >
-                <div className="flex items-center gap-3">
-                  <img src={product.src} alt={product.title} className="w-10 h-10 object-cover rounded" />
-                  <div>
-                    <p className="font-semibold">{product.title}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{product.description}</p>
-                  </div>
-                </div>
-              </li>
+      <li key={product.id}>
+        <Link
+          to={`/product/${product.id}`}
+          className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer"
+          onClick={() => closeSearch()}
+        >
+          <div className="flex items-center gap-3">
+            <img src={product.src} alt={product.title} className="w-10 h-10 object-cover rounded" />
+            <div>
+              <p className="font-semibold">{product.title}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{product.description}</p>
+            </div>
+          </div>
+        </Link>
+      </li>
             ))}
+            
           </ul>
         )}
       </div>
