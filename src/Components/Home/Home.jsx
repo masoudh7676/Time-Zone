@@ -9,7 +9,6 @@ import {
 import { Card, CardContent } from "@/components/ui/card"
 import AllProductsContext from '@/Context/Products'
 import Header from '../Header/Header'
-import './Home.css'
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
 import ScrollUp from '../ScrollUp/ScrollUp'
