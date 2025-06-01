@@ -177,49 +177,45 @@ function NavBar() {
             <HiOutlineBars3BottomRight className='text-4xl' />
           </button>
         </div>
-        {mobileMenuOpen && (
-          <div className='bg-white h-full px-4 py-3 w-70 fixed right-0 z-99 dark:bg-black'>
-            <div className='flex flex-row-reverse border-b-2 p-2 border-gray-300'>
-              <div className='flex justify-between w-95'>
-                <button
-                  onClick={closeMobileMenu}
-                  aria-label="Close menu" className='text-4xl font-bold cursor-pointer'>
-                  &times;
-                </button>
-                <div>
-                  <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
-                </div>
+        <div className={`bg-white h-full px-4 py-3 w-70 fixed right-0 z-99 dark:bg-black transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className='flex flex-row-reverse border-b-2 p-2 border-gray-300'>
+            <div className='flex justify-between w-95'>
+              <button
+                onClick={closeMobileMenu}
+                aria-label="Close menu" className='text-4xl font-bold cursor-pointer'>
+                &times;
+              </button>
+              <div>
+                <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
               </div>
             </div>
-            <div className='lg:hidden flex mt-5 flex-row-reverse h-50'>
-              <ul>
-                <li className='mb-5'><Link to="/home" className='font-bold'>Home</Link></li>
-                <li className='mb-5'><Link to="/shop" className='font-bold'>Shop</Link></li>
-                <li className='mb-5'><Link to="/about" className='font-bold'>About</Link></li>
-                <li className='mb-5'><a href="#" className='font-bold'>Latest</a></li>
-                <li className='mb-5'><a href="#" className='font-bold'>Blog</a></li>
-                <li className='mb-5'><a href="#" className='font-bold'>Blog Details</a></li>
-              </ul>
-            </div>
-            <ul className='flex flex-row-reverse gap-5 mt-18'>
-              <li className='cursor-pointer hover:scale-[1.4]' onClick={openSearch}><IoSearchOutline /></li>
-              <li className='cursor-pointer'><Link to="/user"><CiUser /></Link></li>
-              {/* Dark Mode */}
-              <li className='cursor-pointer'>
-                <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none">
-                  {theme === 'dark' ? <FaMoon /> : <GoSun />}
-                </button>
-              </li>
+          </div>
+          <div className='lg:hidden flex mt-5 flex-row-reverse h-50'>
+            <ul>
+              <li className='mb-5'><Link to="/home" className='font-bold'>Home</Link></li>
+              <li className='mb-5'><Link to="/shop" className='font-bold'>Shop</Link></li>
+              <li className='mb-5'><Link to="/about" className='font-bold'>About</Link></li>
+              <li className='mb-5'><a href="#" className='font-bold'>Latest</a></li>
+              <li className='mb-5'><a href="#" className='font-bold'>Blog</a></li>
+              <li className='mb-5'><a href="#" className='font-bold'>Blog Details</a></li>
             </ul>
           </div>
-        )}
+          <ul className='flex flex-row-reverse gap-5 mt-18'>
+            <li className='cursor-pointer hover:scale-[1.4]' onClick={openSearch}><IoSearchOutline /></li>
+            <li className='cursor-pointer'><Link to="/user"><CiUser /></Link></li>
+            {/* Dark Mode */}
+            <li className='cursor-pointer'>
+              <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none">
+                {theme === 'dark' ? <FaMoon /> : <GoSun />}
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-      {mobileMenuOpen && (
-        <div
-          className='bg-neutral-700 opacity-70 mask-alpha lg:hidden fixed inset-0 z-10 w-full h-full'
-          onClick={closeMobileMenu}
-        ></div>
-      )}
+      <div
+        className={`bg-neutral-700 mask-alpha lg:hidden fixed inset-0 z-10 w-full h-full transition-opacity duration-300 ease-in-out ${mobileMenuOpen ? 'opacity-70 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        onClick={closeMobileMenu}
+      ></div>
       {/* Search Overlay */}
       <div
         className={`fixed inset-0 bg-white dark:bg-black z-99 flex flex-col items-center justify-center transform transition-transform duration-500 ease-in-out ${searchOpen ? 'translate-y-0' : 'translate-y-full'}`}
