@@ -66,7 +66,7 @@ export default function User() {
           <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
             <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
               <h2 className="title font-bold text-gray-900 mb-6 text-xl text-center">Log In</h2>
-              {isNonEnglishInput && <h4 className='-mt-10 text-center text-xl text-red-500 mb-8'>(only type english!)</h4>}
+              {isNonEnglishInput && <h4 className=' text-center text-xl text-red-500 mb-8'>(only type english!)</h4>}
               <Form className="space-y-4">
                 <div className='margin__bottom'>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
