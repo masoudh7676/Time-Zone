@@ -79,7 +79,7 @@ export default function Signup() {
         }}
         initialValues={{ email: '', password: '', name: '' }} onSubmit={(values) => {
         }}>
-        {({ values, handleChange, handleSubmit, errors }) => (
+        {({ errors, touched }) => (
 
           <div className="h-screen w-screen bg-gray-100 pt-10 mt-20">
             <div className="max-w-xl mx-auto bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
@@ -92,12 +92,12 @@ export default function Signup() {
                 <div className="flex flex-col space-y-2">
                   <label className="block font-medium text-gray-700">Password <span className="text-gray-500 font-base text-sm"></span></label>
                   <MemoizedField type="password" placeholder="Password..." className="shadow-sm block w-full py-2  rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none" name="password" setIsNonEnglishInput={setIsNonEnglishInput} />
-                  {errors.password && errors.password}
+                  {errors.password && touched.password  && errors.password}
                 </div>
                 <div className="flex flex-col space-y-2">
                   <label className="block font-medium text-gray-700">First and Last Name</label>
                   <MemoizedField type="text" className="shadow-sm block w-full py-2 rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none " name="name" required placeholder="First and Last Name" setIsNonEnglishInput={setIsNonEnglishInput} />
-                  {errors.name && errors.name}
+                  {errors.name && touched.name && errors.name}
                 </div>
                 <div className="flex flex-col space-y-2">
                   <label className="text-gray-600 font-normal flex items-start space-x-2"><div>
