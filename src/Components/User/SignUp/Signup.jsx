@@ -77,12 +77,11 @@ export default function Signup() {
 
           return errors
         }}
-        initialValues={{ email: '', password: '', name: '' }} onSubmit={(values) => {
-        }}>
+        initialValues={{ email: '', password: '', name: '' }}>
         {({ errors, touched }) => (
 
-          <div className="h-screen w-screen bg-gray-100 pt-10 mt-20">
-            <div className="max-w-xl mx-auto bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          <div className="h-screen  bg-gray-100 pt-10 mt-20">
+            <div className="max-w-xl mx-auto my-20 bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
               <h2 className='text-center text-2xl mb-12'>Sign Up</h2>
               {isNonEnglishInput && <h4 className='-mt-10 text-center text-xl text-red-500 mb-8'>(only type english!)</h4>}
               <Form className="flex-col space-y-4">
@@ -113,7 +112,7 @@ export default function Signup() {
         )}
 
       </Formik>
-
+        
     </>
   )
 }
