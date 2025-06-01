@@ -58,6 +58,8 @@ export default function User() {
             errors.password = 'please enter a password';
           } else if (!/^\d+\D+\W$/i.test(values.password)) {
             errors.password = 'enter a Valid Password!';
+          } else if (values.password.length < 4) {
+            errors.password = 'password length must be more than 4';
           }
           return errors;
         }}

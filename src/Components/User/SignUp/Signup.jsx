@@ -73,6 +73,8 @@ export default function Signup() {
             errors.password = 'please enter a password'
           } else if ((!/^\d+\D+\W$/i.test(values.password))) {
             errors.password = 'Invalid, must contain an UpperCase & special charter!'
+          } else if (values.password.length < 4) {
+            errors.password = 'password length must be more than 4'
           }
 
           return errors
@@ -91,7 +93,7 @@ export default function Signup() {
                 <div className="flex flex-col space-y-2">
                   <label className="block font-medium text-gray-700">Password <span className="text-gray-500 font-base text-sm"></span></label>
                   <MemoizedField type="password" placeholder="Password..." className="shadow-sm block w-full py-2  rounded-md text-gray-800 disabled:bg-gray-200 sm:text-sm border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:outline-none" name="password" setIsNonEnglishInput={setIsNonEnglishInput} />
-                  {errors.password && touched.password  && errors.password && <div className="text-red-500 text-sm mt-1">{errors.password}</div>}
+                  {errors.password && touched.password && errors.password && <div className="text-red-500 text-sm mt-1">{errors.password}</div>}
                 </div>
                 <div className="flex flex-col space-y-2">
                   <label className="block font-medium text-gray-700">First and Last Name</label>
@@ -112,7 +114,7 @@ export default function Signup() {
         )}
 
       </Formik>
-        
+
     </>
   )
 }
