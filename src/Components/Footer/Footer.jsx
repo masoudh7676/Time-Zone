@@ -33,7 +33,7 @@ export default function Footer() {
             
             <div className='overflow-hidden w-[70%] gap-30 align-middle  mt-26 mb-20 grid grid-cols-1 sm:grid-cols-2 mx-auto xl:flex justify-center '>
                 <div>
-                    <Link to="/home" ><Logo/></Link>
+                    <Link to="/home"><Logo/></Link>
                     <p className='text-[#868c98] mt-5'>Asorem ipsum adipolor sdit amet, <br /> consectetur adipisicing elitcf sed do <br /> eiusmod tem.</p>
                 </div>
                 <div>

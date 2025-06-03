@@ -8,9 +8,9 @@ export default function About() {
       <NavBar />
       <div className='relative top-24'>
         <img src="/images/about_hero.png.webp" alt="" className=' w-full h-full dark:mask-y-from-5%' />
-        <div className='absolute top-2/5 text-center text-7xl font-black w-full'>
-          <h4 className='capitalize'>About Us</h4>
-        </div>
+            <div className='absolute top-2/5 text-center w-full'>
+              <h4 className='capitalize text-5xl sm:text-7xl font-black'>about us</h4>
+            </div>
       </div>
       <div className='mt-70'>
         <div className="w-full flex justify-center">

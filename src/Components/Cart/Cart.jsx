@@ -47,7 +47,9 @@ export default function Cart() {
         <>
           <div className='mt-28 relative'>
             <img src="/images/about_hero.png.webp" className='dark:mask-y-from-5%' alt="" />
-            <h4 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-7xl'>CheckOut</h4>
+            <div className='absolute top-2/5 text-center w-full'>
+              <h4 className='capitalize text-5xl sm:text-7xl font-black'>check out</h4>
+            </div>
           </div>
           <div className='mt-12 w-full flex flex-col xl:flex-row justify-center overflow-hidden items-center content-center'>
             <aside className='shadow-2xl rounded-2xl xl:mr-10 max-w-5xl mb-20  xl:w-2/7 xl:mb-0 p-7 flex flex-col text-center dark:bg-gray-900'>
