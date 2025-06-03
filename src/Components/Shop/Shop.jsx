@@ -190,7 +190,7 @@ export default function Shop() {
                 <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
                   <img src={data.src} className='object-cover' loading='lazy' alt="time-zone" />
 <button
-  className="text-center block xl:hidden group-hover:block w-full rounded-b-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
+  className="text-center block xl:hidden group-hover:block w-full rounded-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
   onClick={(e) => {
     e.preventDefault();
     e.stopPropagation();
