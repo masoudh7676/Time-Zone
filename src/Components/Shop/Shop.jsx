@@ -109,8 +109,8 @@ export default function Shop() {
       <NavBar />
       <div className='relative top-24'>
         <img src="/images/about_hero.png.webp" loading='lazy' alt="time-zone" className='w-full h-full dark:mask-y-from-5%' />
-        <div className='absolute top-2/5 text-center text-7xl font-black w-full'>
-          <h4 className='capitalize'>watch shop</h4>
+        <div className='absolute top-2/5 text-center w-full'>
+          <h4 className='capitalize text-4xl sm:text-7xl  font-black'>watch shop</h4>
         </div>
       </div>
       <div className='sm:block xl:flex content-center'>
