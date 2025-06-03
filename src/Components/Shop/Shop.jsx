@@ -185,54 +185,58 @@ export default function Shop() {
         </aside>
         <div className='parent mt-50 mb-16 grid grid-cols-3 sm:w-[80%] mx-auto xl:w-[52%] xl:mx-0 bg-gray-100 border border-gray-200 dark:bg-gray-800'>
           {
-            filteredItems.map(data => (
-              <Link to={`/product/${data.id}`} key={data.id} className='group border p-2 border-gray-200 cursor-pointer block no-underline'>
-                <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
-                  <img src={data.src} className='object-cover' loading='lazy' alt="time-zone" />
-<button
-  className="text-center block xl:hidden group-hover:block w-full rounded-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
-  onClick={(e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    swal({ title: "Added To Cart Successfully", icon: "success" });
-    contextData.setShowCart(true);
+            filteredItems.length === 0 ? (
+              <p className="text-center w-full col-span-3 text-xl font-semibold text-orange-600 p-10 capitalize">change the filter proprerty !</p>
+            ) : (
+              filteredItems.map(data => (
+                <Link to={`/product/${data.id}`} key={data.id} className='group border p-2 border-gray-200 cursor-pointer block no-underline'>
+                  <div className=' bg-white shadow-2xl rounded-4xl p-3 mb-8'>
+                    <img src={data.src} className='object-cover' loading='lazy' alt="time-zone" />
+    <button
+      className="text-center block xl:hidden group-hover:block w-full rounded-xl cursor-pointer text-white p-1 hover:text-blue-200 bg-[#ff203c]"
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        swal({ title: "Added To Cart Successfully", icon: "success" });
+        contextData.setShowCart(true);
 
-    // Check if product already in cart
-    const existingProduct = contextData.userCart.find(item => item.id === data.id);
+        // Check if product already in cart
+        const existingProduct = contextData.userCart.find(item => item.id === data.id);
 
-    if (existingProduct) {
-      // Increase quantity
-      const updatedCart = contextData.userCart.map(item =>
-        item.id === data.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      );
-      contextData.setUserCart(updatedCart);
-    } else {
-      // Add new product with quantity 1
-      contextData.setUserCart([
-        ...contextData.userCart,
-        {
-          id: data.id,
-          title: data.title,
-          price: data.price,
-          img: data.src,
-          quantity: 1
+        if (existingProduct) {
+          // Increase quantity
+          const updatedCart = contextData.userCart.map(item =>
+            item.id === data.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          );
+          contextData.setUserCart(updatedCart);
+        } else {
+          // Add new product with quantity 1
+          contextData.setUserCart([
+            ...contextData.userCart,
+            {
+              id: data.id,
+              title: data.title,
+              price: data.price,
+              img: data.src,
+              quantity: 1
+            }
+          ]);
         }
-      ]);
-    }
-  }}
->
-  add to cart
-</button>
-                </div>
-                <div className='text-center'>
-                  <h4>Brand: {data.title}</h4>
-                  <p>{data.description}</p>
-                  <span>Price: {data.price}$</span>
-                </div>
-              </Link>
-            ))
+      }}
+    >
+      add to cart
+    </button>
+                  </div>
+                  <div className='text-center'>
+                    <h4>Brand: {data.title}</h4>
+                    <p>{data.description}</p>
+                    <span>Price: {data.price}$</span>
+                  </div>
+                </Link>
+              ))
+            )
           }
         </div>
       </div>
