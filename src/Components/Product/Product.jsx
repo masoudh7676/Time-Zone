@@ -61,8 +61,8 @@ export default function Product() {
 
   return (
     <>
-    <div className='flex items-center justify-center mt-28'>
-      <aside className='w-[40%] md:w-[30%] lg:w-[40%]  p-5 border border-gray-300 rounded-lg shadow-lg mr-15'>
+    <div className='flex flex-col md:flex-row items-center justify-center mt-28 overflow-hidden'>
+      <aside className='md:w-[40%] lg:w-[40%] md:mr-15 p-5 w-screen border border-gray-300 rounded-lg shadow-lg'>
         <h5 className='text-2xl'>price : <span className='text-blue-500'>${product.price}</span> </h5>
         <ul>
           <li>
@@ -116,7 +116,7 @@ export default function Product() {
           </button>
         </div>
       </aside>
-      <main className='w-[33%] mt-20'>
+      <main className='md:w-[33%] w-[65%] mt-20'>
         <div className='border-1 border-gray-300'>
           <img src={product.src} loading='lazy' className='object-cover' alt={product.title} />
         </div>
