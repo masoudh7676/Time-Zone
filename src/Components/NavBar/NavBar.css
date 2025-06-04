@@ -28,8 +28,7 @@
 }
 
 .with-sub {
-    animation-name: fadeIn;
-    animation-duration: 2s;
+    animation-name: fadeIn; 
 }
 
 @keyframes fadeIn {

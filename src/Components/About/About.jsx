@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
+import ScrollUp from '../ScrollUp/ScrollUp'
 
 export default function About() {
   return (
@@ -31,6 +32,7 @@ export default function About() {
         </div>
       </div>
       <Footer/>
+      <ScrollUp/>
     </>
   )
 }
