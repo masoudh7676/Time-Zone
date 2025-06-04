@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion"
 import AllProductsContext from '@/Context/Products';
 import { CgSpinner } from "react-icons/cg";
+import Footer from '../Footer/Footer';
 
 export default function Product() {
   const { id } = useParams()
@@ -59,6 +60,7 @@ export default function Product() {
   }
 
   return (
+    <>
     <div className='flex items-center justify-center mt-28'>
       <aside className='w-[40%] md:w-[30%] lg:w-[40%]  p-5 border border-gray-300 rounded-lg shadow-lg mr-15'>
         <h5 className='text-2xl'>price : <span className='text-blue-500'>${product.price}</span> </h5>
@@ -114,7 +116,7 @@ export default function Product() {
           </button>
         </div>
       </aside>
-      <main className='w-[30%]'>
+      <main className='w-[33%] mt-20'>
         <div className='border-1 border-gray-300'>
           <img src={product.src} loading='lazy' className='object-cover' alt={product.title} />
         </div>
@@ -124,5 +126,8 @@ export default function Product() {
         </div>
       </main>
     </div>
+    <Footer/>
+    </>
   )
+  
 }
