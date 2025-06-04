@@ -41,9 +41,9 @@ export default function Home() {
         <div className='relative mt-25'>
         <div className='absolute w-[85px] h-[85px] top-[40%] left-[45%] border border-amber-50 rounded-full cursor-pointer'><FaPlay className='text-4xl ml-6 mt-5.5 text-white'/></div>
           <img src="/images/sectin_bg1.png.webp" loading="lazy" alt="time-zone" />
-          <div className='bg-[#ff2020] absolute w-[30%] bottom-0 '>
-          <a href="#" className='flex justify-around items-center cursor-pointer p-15'>
-            <span className='capitalize text-2xl text-white font-bold'>next video</span>
+          <div className='bg-[#ff2020] absolute w-[40%] md:w-[30%] bottom-0 '>
+          <a href="#" className='flex p-2 justify-around items-center cursor-pointer sm:p-5 lg:p-15'>
+            <span className='capitalize text-xl text-white font-bold'>next video</span>
             <FaArrowRightLong className='text-white text-2xl'/>
             </a>
           </div>

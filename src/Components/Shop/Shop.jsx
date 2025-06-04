@@ -186,7 +186,7 @@ export default function Shop() {
         <div className='parent mt-50 mb-16 grid grid-cols-3 sm:w-[80%] mx-auto xl:w-[52%] xl:mx-0 bg-gray-100 border border-gray-200 dark:bg-gray-800'>
           {
             filteredItems.length === 0 ? (
-              <p className="text-center w-full col-span-3 text-xl font-semibold text-orange-600 p-10 capitalize">change the filter proprerty !</p>
+              <p className="text-center w-full col-span-3 text-xl font-semibold text-orange-600 p-10 font">change the filter proprerty !</p>
             ) : (
               filteredItems.map(data => (
                 <Link to={`/product/${data.id}`} key={data.id} className='group border p-2 border-gray-200 cursor-pointer block no-underline'>
