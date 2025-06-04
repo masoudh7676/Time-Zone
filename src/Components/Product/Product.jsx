@@ -61,7 +61,7 @@ export default function Product() {
   return (
     <div className='flex items-center justify-center mt-28'>
       <aside className='w-[40%] md:w-[30%] lg:w-[40%]  p-5 border border-gray-300 rounded-lg shadow-lg mr-15'>
-        <h5 className='font-bold'>price : ${product.price}</h5>
+        <h5 className='text-2xl'>price : <span className='text-blue-500'>${product.price}</span> </h5>
         <ul>
           <li>
             <Accordion type="single" collapsible className="w-full flex items-center">
