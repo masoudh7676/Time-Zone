@@ -13,11 +13,13 @@ import { Link } from 'react-router-dom';
 import watchData from '../../watchsData';
 import { IoSearchSharp } from "react-icons/io5";
 import { FaMicrophone } from "react-icons/fa"
+import AllProductsContext from '@/Context/Products';
 function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
+  const contextData = useContext(AllProductsContext)
   const navigate = useNavigate();
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -167,9 +169,16 @@ function NavBar() {
       {/* Mobile Menu */}
       <div className='fixed top-0 lg:hidden z-99 bg-white w-full dark:bg-black'>
         <div className='flex content-center justify-between p-5'>
-          <div>
-            <Link to="/cart"><PiShoppingCartThin className='text-2xl ' /></Link>
-          </div>
+          <ul className='flex gap-5'>
+            <li className='relative cursor-pointer hover:scale-[1.4]'>
+              <Link to="/cart"><PiShoppingCartThin className='text-2xl ' />
+                {contextData.userCart.length > 0 && (
+                  <span className='absolute -top-1 -right-1 block h-3 w-3 rounded-full bg-red-500 border-2 border-white'></span>
+                )}
+              </Link>
+            </li>
+
+          </ul>
           <div className='dark:bg-white rounded-2xl p-2'>
             <Link to="/home"><img src="/images/logo.png.webp" alt="Time-Zone" /></Link>
           </div>
