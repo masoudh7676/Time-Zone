@@ -155,7 +155,12 @@ function NavBar() {
             <ul className='flex gap-5'>
               <li className='cursor-pointer hover:scale-[1.4]' onClick={openSearch}><IoSearchOutline /></li>
               <li className='cursor-pointer hover:scale-[1.4]'><Link to="/user"><CiUser /></Link></li>
-              <li className='cursor-pointer hover:scale-[1.4]'><Link to="/cart"><PiShoppingCartThin /></Link></li>
+              <li className='cursor-pointer hover:scale-[1.4] relative'>
+                <Link to="/cart"><PiShoppingCartThin /></Link>
+                {contextData.userCart.length > 0 && (
+                  <span className='absolute -top-1 -right-1 block h-3 w-3 rounded-full bg-red-500 border-2 border-white'></span>
+                )}
+              </li>
               {/* Dark Mode */}
               <li>
                 <button onClick={toggleTheme} aria-label="Toggle Dark Mode" className="focus:outline-none cursor-pointer hover:scale-[1.4]">

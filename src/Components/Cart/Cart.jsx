@@ -75,6 +75,14 @@ export default function Cart() {
                     <button className='cursor-pointer w-[70%] p-3 hover:scale-110 hover:text-blue-600 rounded-2xl text-xl bg-gray-200 dark:bg-black'>Proceed To payment</button>
                   </a>
                 </div>
+                <div className='mt-5'>
+                  <button
+                    className='cursor-pointer w-[70%] p-3 hover:scale-110 hover:text-red-600 rounded-2xl text-xl bg-gray-200 dark:bg-black'
+                    onClick={() => contextData.setUserCart([])}
+                  >
+                    Empty Cart
+                  </button>
+                </div>
               </form>
             </aside>
             <div className='flex flex-col gap-10'>
