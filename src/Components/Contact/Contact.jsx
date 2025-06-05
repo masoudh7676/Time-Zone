@@ -11,12 +11,12 @@ export default function Contact() {
       </div>
     </div>
     <h5 className='mt-50 text-center text-3xl font-bold'>get in touch</h5>
-    <div className='mt-20 flex justify-center'>
+    <div className='mt-20 flex justify-center overflow-hidden'>
       <form className='flex flex-col'>
-        <textarea name="" id="" rows={12} className='w-150 border border-gray-300 outline-0 p-2' placeholder='Enter message'></textarea>
-        <div className='mt-12 mb-10'>
-        <input type="text" className='w-73 border border-gray-300 mr-5 p-2 rounded-md outline-0' placeholder='Enter your name'/>
-        <input type="email" className='w-73 border border-gray-300 p-2 rounded-md outline-0' placeholder='Email'/>
+        <textarea rows={12} className='w-150 border border-gray-300 outline-0 p-2' placeholder='Enter message'></textarea>
+        <div className='mt-12 mb-10 flex flex-col gap-5 md:block'>
+        <input type="text" className='md:w-73 border border-gray-300 mr-5 p-2 rounded-md outline-0 w-full' placeholder='Enter your name'/>
+        <input type="email" className='md:w-73 border border-gray-300 p-2 rounded-md outline-0 w-full' placeholder='Email'/>
         </div>
         <input type="text" className='w-152 border border-gray-300 rounded-md p-2 outline-0' placeholder='Subject'/>
         <button type='submit' className='bg-red-500 cursor-pointer text-white mx-auto hover:text-black w-45 rounded-md p-2 mt-10 mb-15'>SEND</button>
