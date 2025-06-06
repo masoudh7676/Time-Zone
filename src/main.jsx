@@ -7,7 +7,7 @@ import App from './App.jsx'
 
 const root = ReactDOM.createRoot(document.querySelector('body'));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/Time-Zone/">
     <App/>
   </BrowserRouter>
 )
