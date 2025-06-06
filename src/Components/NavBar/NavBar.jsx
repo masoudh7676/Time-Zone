@@ -130,7 +130,7 @@ function NavBar() {
               </div>
             </li>
             <li className='group'>
-              <Link to="blog" className='hover-effect py-40 px-3 font-bold'>Blog</Link>
+              <a href="/#" className='hover-effect py-40 px-3 font-bold'>Blog</a>
               {/* Sub Menu */}
               <ul className='absolute hidden cursor-pointer rounded-sm bg-white group-hover:block p-3 mt-9 leading-10 shadow-2xl transition-all duration-150 dark:bg-gray-800'>
                 <li className='arrow hover-effect'><a href="">Blog</a></li>
