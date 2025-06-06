@@ -14,11 +14,9 @@ export const ThemeProvider = ({ children }) => {
         document.documentElement.classList.add('dark');
       }
     } else {
-      // Check system preference
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setTheme('dark');
-        document.documentElement.classList.add('dark');
-      }
+      // Default to light mode, do not check system preference
+      setTheme('light');
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
