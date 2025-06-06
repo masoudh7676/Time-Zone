@@ -52,7 +52,7 @@ export default function Cart() {
             </div>
           </div>
           <div className='mt-12 w-full flex flex-col xl:flex-row justify-center overflow-hidden items-center content-center'>
-            <aside className='shadow-2xl rounded-2xl xl:mr-10 max-w-5xl mb-20  xl:w-2/7 xl:mb-0 p-7 flex flex-col text-center dark:bg-gray-900'>
+            <aside className='shadow-2xl rounded-2xl xl:mr-10 max-w-5xl mb-20  xl:w-2/7 xl:mb-5 p-7 flex flex-col text-center dark:bg-gray-900'>
               <h5 className='mb-4 text-2xl'>Total Price: {totalPrice.toFixed(2)}$</h5>
               <h6>Sending method:</h6>
               <form method='post'>
@@ -88,7 +88,7 @@ export default function Cart() {
             <div className='flex flex-col gap-10'>
               {
                 contextData.userCart.map(product => (
-                  <table className='table-auto w-150 xl:w-200 border border-gray-300 h-1 dire' dir='rtl' key={product.id}>
+                  <table className='table-auto w-full mx-auto sm:w-150 xl:w-200 border border-gray-300 h-1 dire' dir='rtl' key={product.id}>
                     <thead className='border-b border-gray-300 bg-gray-100 dark:bg-gray-800'>
                       <tr>
                         <th className='px-4 py-2 text-right'>Product</th>
