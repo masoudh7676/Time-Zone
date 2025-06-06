@@ -5,12 +5,16 @@
     <title>time-zone 404</title>
     <meta charset="UTF-8">
 </head>
-
+        <h1>404 - Page Not Found</h1>
+    <p>Sorry, the page you are looking for does not exist.</p>
+    <p><a href="/Time-Zone/">Go back to the homepage</a></p>
 <body>
-    <script>
-        // Redirect all 404s to index.html for React Router
-        location.replace('/Time-Zone/' + 'index.html' + location.search + location.hash)
-    </script>
+<script>
+  // If the path doesn't start with /Time-Zone/, add it
+  var base = '/Time-Zone';
+  var path = location.pathname.startsWith(base) ? location.pathname : base + location.pathname;
+  location.replace(base + '/' + location.search + location.hash);
+</script>
 </body>
 
 </html>
