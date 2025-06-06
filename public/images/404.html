@@ -10,10 +10,13 @@
     <p><a href="/Time-Zone/">Go back to the homepage</a></p>
 <body>
 <script>
-  // If the path doesn't start with /Time-Zone/, add it
+  // Remove /index.html if present, then redirect to the original path under /Time-Zone/
   var base = '/Time-Zone';
-  var path = location.pathname.startsWith(base) ? location.pathname : base + location.pathname;
-  location.replace(base + '/' + location.search + location.hash);
+  var path = location.pathname;
+  if (!path.startsWith(base)) path = base + path;
+  // Remove /index.html from the end if present
+  path = path.replace(/\/index\.html$/, '/');
+  location.replace(path + location.search + location.hash);
 </script>
 </body>
 
