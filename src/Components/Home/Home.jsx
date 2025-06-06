@@ -40,7 +40,7 @@ export default function Home() {
     </Carousel>
         <div className='relative mt-25'>
         <div className='absolute flex content-center items-center w-[55px] h-[55px] left-[40%] top-[27%] sm:w-[85px] sm:h-[85px] sm:top-[40%] sm:left-[45%] border border-amber-50 rounded-full cursor-pointer'><FaPlay className='text-4xl ml-2 sm:ml-6 text-white'/></div>
-          <img src="/images/sectin_bg1.png.webp" loading="lazy" alt="time-zone" />
+          <img src="./images/sectin_bg1.png.webp" loading="lazy" alt="time-zone" />
           <div className='bg-[#ff2020] absolute w-[40%] sm:w-[30%] bottom-0 '>
           <a href="#" className='flex p-2 justify-around items-center cursor-pointer sm:p-5 lg:p-15'>
             <span className='capitalize text-xl text-white font-bold'>next video</span>

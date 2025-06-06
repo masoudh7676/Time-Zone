@@ -14,7 +14,7 @@ export default function Header() {
            </Link>
         </div>
         <div className='hidden sm:block w-[20%]'>
-                <img src="/images/watch.png.webp" className='w-full xl:w-full' alt="Time-Zone" />
+                <img src="./images/watch.png.webp" className='w-full xl:w-full' alt="Time-Zone" />
             </div>
             </div>
     </div>
