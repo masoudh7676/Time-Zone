@@ -10,17 +10,10 @@
     <p><a href="/Time-Zone/">Go back to the homepage</a></p>
 <body>
     <script>
-      // Redirect to the same path but under /Time-Zone/
+      // Redirect to the original path under /Time-Zone/
       var base = '/Time-Zone';
-      var path = location.pathname;
-      // If not already under /Time-Zone, add it
-      if (!path.startsWith(base)) path = base + path;
-      // Remove /index.html from the end if present
-      path = path.replace(/\/index\.html$/, '/');
-      // Only redirect if not already on /Time-Zone/index.html (to avoid infinite loop)
-      if (!location.pathname.endsWith('/index.html')) {
-        location.replace(path + location.search + location.hash);
-      }
+      var fullPath = base + location.pathname.replace(base, '') + location.search + location.hash;
+      location.replace(fullPath);
     </script>
 </body>
 
