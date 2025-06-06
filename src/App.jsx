@@ -5,6 +5,7 @@ import routes from './router'
 import { useState, useEffect } from 'react'
 import watchData from './watchsData'
 import { ThemeProvider } from './Context/ThemeContext'
+import Preloader from './Components/Preloader/Preloader'
 
 function App() {
   const router = useRoutes(routes)
@@ -14,10 +15,22 @@ function App() {
     const savedCart = localStorage.getItem('userCart')
     return savedCart ? JSON.parse(savedCart) : []
   })
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     localStorage.setItem('userCart', JSON.stringify(userCart))
   }, [userCart])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <Preloader />
+  }
 
   return (
     <ThemeProvider>
