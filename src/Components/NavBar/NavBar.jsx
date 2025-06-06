@@ -182,10 +182,9 @@ function NavBar() {
                 )}
               </Link>
             </li>
-
           </ul>
           <div className='dark:bg-white rounded-2xl p-2'>
-            <Link to="/home"><img src="/images/logo.png.webp" alt="Time-Zone" /></Link>
+            <Link to="/home"><Logo/></Link>
           </div>
           <button onClick={toggleMobileMenu} aria-label="Toggle menu" className='cursor-pointer'>
             <HiOutlineBars3BottomRight className='text-4xl' />
@@ -200,7 +199,7 @@ function NavBar() {
                 &times;
               </button>
               <div>
-                <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" className='dark:bg-white dark:p-3 dark:rounded-2xl'/></Link>
+                <Link to="/home"><Logo/></Link>
               </div>
             </div>
           </div>
