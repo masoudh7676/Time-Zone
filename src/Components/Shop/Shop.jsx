@@ -165,7 +165,7 @@ export default function Shop() {
     <div className='overflow-hidden'>
       <NavBar />
       <div className='relative top-24'>
-        <img src="/images/about_hero.png.webp" loading='lazy' alt="time-zone" className='w-full h-full dark:mask-y-from-5%' />
+        <img src="./images/about_hero.png.webp" loading='lazy' alt="time-zone" className='w-full h-full dark:mask-y-from-5%' />
         <div className='absolute top-2/5 text-center w-full'>
           <h4 className='capitalize text-5xl sm:text-7xl font-black'>watch shop</h4>
         </div>

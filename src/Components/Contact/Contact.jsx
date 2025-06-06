@@ -5,7 +5,7 @@ export default function Contact() {
     <>
     <NavBar/>
     <div className='relative top-24'>
-      <img src="/images/about_hero.png.webp" alt="" className=' w-full h-full dark:mask-y-from-5%'/>
+      <img src="./images/about_hero.png.webp" alt="" className=' w-full h-full dark:mask-y-from-5%'/>
       <div className='absolute top-2/5 text-center text-7xl font-black w-full'>
         <h4>contact</h4>
       </div>
