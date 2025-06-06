@@ -200,7 +200,7 @@ function NavBar() {
                 &times;
               </button>
               <div>
-                <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" /></Link>
+                <Link to="/home"><img src="./images/logo.png.webp" alt="Time-Zone" className='dark:bg-white dark:p-3 dark:rounded-2xl'/></Link>
               </div>
             </div>
           </div>

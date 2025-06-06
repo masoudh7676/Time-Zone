@@ -14,7 +14,7 @@ export default function Header() {
            </Link>
         </div>
         <div className='hidden sm:block w-[20%]'>
-               <img src={`${import.meta.env.BASE_URL}images/watch.png.webp`} alt="" className='w-full h-full dark:mask-y-from-5%' />
+               <img src={`${import.meta.env.BASE_URL}images/watch.png.webp`} alt="" className='w-full h-full dark:mask-y-from-75%' />
             </div>
             </div>
     </div>

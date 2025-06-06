@@ -46,7 +46,7 @@ export default function Cart() {
       {contextData.userCart.length > 0 ? (
         <>
           <div className='mt-28 relative'>
-            <img src="/images/about_hero.png.webp" className='dark:mask-y-from-5%' alt="" />
+            <img src={`${import.meta.env.BASE_URL}images/about_hero.png.webp`} alt="" className='w-full h-full dark:mask-y-from-5%' />
             <div className='absolute top-2/5 text-center w-full'>
               <h4 className='capitalize text-5xl sm:text-7xl font-black'>check out</h4>
             </div>
