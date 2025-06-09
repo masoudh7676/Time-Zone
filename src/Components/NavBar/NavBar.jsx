@@ -190,7 +190,7 @@ function NavBar() {
             <HiOutlineBars3BottomRight className='text-4xl' />
           </button>
         </div>
-        <div className={`bg-white h-full px-4 py-3 w-70 fixed right-0 z-99 dark:bg-black transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`bg-white h-full overflow-y-auto px-4 py-3 w-70 fixed right-0 z-99 dark:bg-black transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className='flex flex-row-reverse border-b-2 p-2 border-gray-300'>
             <div className='flex justify-between w-95'>
               <button
