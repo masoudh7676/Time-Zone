@@ -14,7 +14,7 @@ function allowOnlyEnglishInput(event, setNonEnglishInput) {
     return;
   }
   // Regex to allow English letters, numbers, and common symbols for email and password
-  const englishRegex = /^[a-zA-Z0-9@._\-!#$%&'*+/=?^_`{|}~]+$/;
+  const englishRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const char = event.key;
   if (!englishRegex.test(char)) {
     event.preventDefault();
