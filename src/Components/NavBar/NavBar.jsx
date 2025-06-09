@@ -213,7 +213,7 @@ function NavBar() {
               <li className='mb-5'><a href="#" className='font-bold'>Blog Details</a></li>
             </ul>
           </div>
-          <ul className='flex flex-row-reverse gap-5 mt-18'>
+          <ul className='flex flex-row-reverse h-[50%] gap-5 mt-18'>
             <li className='cursor-pointer hover:scale-[1.4]' onClick={openSearch}><IoSearchOutline /></li>
             <li className='cursor-pointer'><Link to="/user"><CiUser /></Link></li>
             {/* Dark Mode */}
