@@ -71,10 +71,8 @@ export default function Signup() {
           }
           if (values.password === '') {
             errors.password = 'please enter a password'
-          } else if ((!/^\d+\D+\W$/i.test(values.password))) {
-            errors.password = 'Invalid, must contain an UpperCase & special charter!'
-          } else if (values.password.length < 4) {
-            errors.password = 'password length must be more than 4'
+          } else if (!/^(?=.*[A-Z])(?=.*[\W_]).{4,}$/i.test(values.password)) {
+            errors.password = 'Password must be at least 4 characters long, contain an uppercase letter and a special character';
           }
 
           return errors
