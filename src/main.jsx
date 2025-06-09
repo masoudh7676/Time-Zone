@@ -7,7 +7,7 @@ import App from './App.jsx'
 
 const root = ReactDOM.createRoot(document.querySelector('body'));
 root.render(
-  <HashRouter basename="/Time-Zone/">
+  <HashRouter>
     <App/>
   </HashRouter>
 )
