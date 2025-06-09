@@ -118,7 +118,7 @@ export default function Product() {
       </aside>
       <main className='md:w-[33%] w-[65%] mt-20'>
         <div className='border-1 border-gray-300'>
-          <img src={product.src} loading='lazy' className='object-cover' alt={product.title} />
+          <img src={`${import.meta.env.BASE_URL}images/${product.src.replace(/^\.\/images\//, '')}`} loading='lazy' className='object-cover' alt={product.title} />
         </div>
         <div className='mt-10'>
           <h5 className = 'text-center text-2xl font-bold mb-10'>{product.title}</h5>
