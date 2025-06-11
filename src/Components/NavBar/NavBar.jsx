@@ -115,7 +115,7 @@ function NavBar() {
             <Link to="/home"><Logo /></Link>
           </div>
           {/* Nav */}
-          <ul className='flex w-[100%] justify-center gap-7'>
+          <ul className='flex w-[100%] justify-center gap-7 mt-4'>
             <li><Link to="/home" className='hover-effect font-bold'>Home</Link></li>
             <li><Link to="/shop" className='hover-effect font-bold'>Shop</Link></li>
             <li><Link to="/about" className='hover-effect font-bold'>About</Link></li>
@@ -152,7 +152,7 @@ function NavBar() {
           </ul>
           <div>
             {/* User Actions */}
-            <ul className='flex gap-5'>
+            <ul className='flex gap-5 mt-5'>
               <li className='cursor-pointer hover:scale-[1.4]' onClick={openSearch}><IoSearchOutline /></li>
               <li className='cursor-pointer hover:scale-[1.4]'><Link to="/user"><CiUser /></Link></li>
               <li className='cursor-pointer hover:scale-[1.4] relative'>
